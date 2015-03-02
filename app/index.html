@@ -2,12 +2,16 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>ER Simulation App</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
+    <link rel="stylesheet" href="bower_components/tooltipster/css/tooltipster.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -20,7 +24,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    
+    <div class="container" ui-view></div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -36,15 +40,30 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/videogular/videogular.js"></script>
+    <script src="bower_components/videogular-controls/vg-controls.js"></script>
+    <script src="bower_components/videogular-buffering/vg-buffering.js"></script>
+    <script src="bower_components/videogular-overlay-play/vg-overlay-play.js"></script>
+    <script src="bower_components/videogular-poster/vg-poster.js"></script>
+    <script src="bower_components/tooltipster/js/jquery.tooltipster.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/video1.js"></script>
+        <script src="scripts/controllers/information1.js"></script>
+        <script src="scripts/controllers/assessment1.js"></script>
+        <script src="scripts/directives/video/videoPlayer.js"></script>
+        <script src="scripts/directives/rightMenu/rightMenu.js"></script>
+        <script src="scripts/directives/bottomMenu/bottomMenu.js"></script>
         <!-- endbuild -->
 </body>
 </html>

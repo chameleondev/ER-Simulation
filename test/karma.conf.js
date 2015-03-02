@@ -19,9 +19,18 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       // bower:js
+      'bower_components/jquery/dist/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/ui-router/release/angular-ui-router.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
+      'bower_components/videogular/videogular.js',
+      'bower_components/videogular-controls/vg-controls.js',
+      'bower_components/videogular-buffering/vg-buffering.js',
+      'bower_components/videogular-overlay-play/vg-overlay-play.js',
+      'bower_components/videogular-poster/vg-poster.js',
+      'bower_components/tooltipster/js/jquery.tooltipster.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

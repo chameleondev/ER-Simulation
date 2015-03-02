@@ -1,0 +1,26 @@
+
+<div ui-view></div>
+
+
+<div class="bottom-menu">
+
+	<button class="replay-btn left-btn" >
+		<span ng-show="state !== 'case1.assessment'" ng-click="replay()" ui-sref="case1.video">REPLAY VIDEO</span>
+		<span ng-show="state === 'case1.assessment'" ng-click="showMenu()" ui-sref="case1.video">PATIENT HISTORY</span>
+	</button>
+
+
+	<div class="middle-section">
+		<button ui-sref="case1.info">Information</button>
+		<button>Hint</button>
+		<button>Expert</button>
+	</div>
+	
+	<button class="assessment-btn right-btn" ui-sref="case1.assessment">
+		<span>ASSESSMENT</span>
+		<span>NEXT STEP</span>
+		<span>REDO</span>
+	</button>
+	
+	
+</div>
