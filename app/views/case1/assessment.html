@@ -7,14 +7,13 @@
 	</div>
 
 	<div class="wrapper">
-		<form action="" novalidate>
+		<form action="" novalidate name="assessment_form">
 
-			<div class="answer-row">
+			<div class="answer-row incorrect" ng-class="{'active':form.physicalExam}">
 
 				<label 
 				for="physical-exam" 
 				class="assessment-selection"
-				ng-class="{'active':form.physicalExam}"
 				>
 					<input 
 					type="checkbox"
@@ -22,21 +21,19 @@
 					name="physical_exam"
 					ng-model="form.physicalExam"
 					> 
-				Physical exam of the leg only
+					Physical exam of the leg only
+
+					<i class="result"></i>
 				</label>
 
-				<i class="result">x</i> 
-
-				<i>?</i>
-
+					<i tooltip class="help" title="This is my div's tooltip message!"></i> 
 			</div>
 
-			<div class="answer-row">
+			<div class="answer-row correct" ng-class="{'active':form.fullPhysicalExam}">
 				
 				<label 
 				for="full-physical-exam" 
 				class="assessment-selection"
-				ng-class="{'active':form.fullPhysicalExam}"
 				>
 					<input 
 					type="checkbox"
@@ -44,21 +41,18 @@
 					name="full_physical_exam"
 					ng-model="form.fullPhysicalExam"
 					> 
-				Full physical exam
+					Full physical exam
+					<i class="result"></i>
 				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
+				
+				<i class="help"></i>
 			</div>
 
-			<div class="answer-row">
+			<div class="answer-row incorrect" ng-class="{'active':form.urinalysis}">
 				
 				<label 
 				for="urinalysis" 
 				class="assessment-selection"
-				ng-class="{'active':form.urinalysis}"
 				>
 					<input 
 					type="checkbox"
@@ -66,21 +60,18 @@
 					name="urinalysis"
 					ng-model="form.urinalysis"
 					> 
-				Urinalysis
+					Urinalysis
+					<i class="result"></i>
 				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
+				
+				<i class="help"></i>  
 			</div>
 
-			<div class="answer-row">
+			<div class="answer-row correct" ng-class="{'active':form.twoLevel}">
 				
 				<label 
 				for="two-level" 
 				class="assessment-selection"
-				ng-class="{'active':form.twoLevel}"
 				>
 					<input 
 					type="checkbox"
@@ -88,21 +79,18 @@
 					name="two_level"
 					ng-model="form.twoLevel"
 					> 
-				Two-level Wells' score
+					Two-level Wells' score
+					<i class="result"></i>
 				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
+					
+				<i class="help"></i> 
 			</div>
 
-			<div class="answer-row">
+			<div class="answer-row" ng-class="{'active':form.ecg}">
 				
 				<label 
 				for="ecg" 
-				class="assessment-selection"
-				ng-class="{'active':form.ecg}"
+				class="assessment-selection incorrect"
 				>
 					<input 
 					type="checkbox"
@@ -110,21 +98,18 @@
 					name="ecg"
 					ng-model="form.ecg"
 					> 
-				ECG
+					ECG
+					<i class="result"></i>
 				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
+				
+				<i class="help"></i>
 			</div>
 
-			<div class="answer-row">
+			<div class="answer-row incorrect" ng-class="{'active':form.noExaminations}">
 				
 				<label 
 				for="no-examinations" 
 				class="assessment-selection"
-				ng-class="{'active':form.noExaminations}"
 				>
 					<input 
 					type="checkbox"
@@ -132,177 +117,18 @@
 					name="no_examinations"
 					ng-model="form.noExaminations"
 					> 
-				No examinations
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
-			</div>
-
-			<h3>BLOOD TESTS</h3>
-
-			<div class="answer-row">
+					No examinations
+					<i class="result"></i>
+				</label>  
 				
-				<label 
-				for="thyroid" 
-				class="assessment-selection"
-				ng-class="{'active':form.thyroid}"
-				>
-					<input 
-					type="checkbox"
-					id="thyroid"
-					name="thyroid"
-					ng-model="form.thyroid"
-					> 
-				Thyroid function
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
+				<i class="help"></i>
 			</div>
 
-			<div class="answer-row">
-				
-				<label 
-				for="d-dimer" 
-				class="assessment-selection"
-				ng-class="{'active':form.dDimer}"
-				>
-					<input 
-					type="checkbox"
-					id="d-dimer"
-					name="d_dimer"
-					ng-model="form.dDimer"
-					> 
-				D-dimer
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
-			</div>
-
-			<div class="answer-row">
-				
-				<label 
-				for="fasting" 
-				class="assessment-selection"
-				ng-class="{'active':form.fasting}"
-				>
-					<input 
-					type="checkbox"
-					id="fasting"
-					name="fasting"
-					ng-model="form.fasting"
-					> 
-				Fasting-glucose level
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
-			</div>
-
-			<div class="answer-row">
-				
-				<label 
-				for="renal" 
-				class="assessment-selection"
-				ng-class="{'active':form.renal}"
-				>
-					<input 
-					type="checkbox"
-					id="renal"
-					name="renal"
-					ng-model="form.renal"
-					> 
-				Renal function
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
-			</div>
-
-			<div class="answer-row">
-				
-				<label 
-				for="level" 
-				class="assessment-selection"
-				ng-class="{'active':form.level}"
-				>
-					<input 
-					type="checkbox"
-					id="level"
-					name="level"
-					ng-model="form.level"
-					> 
-				Liver function
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
-			</div>
-
-			<div class="answer-row">
-				
-				<label 
-				for="electrolytes" 
-				class="assessment-selection"
-				ng-class="{'active':form.electrolytes}"
-				>
-					<input 
-					type="checkbox"
-					id="electrolytes"
-					name="electrolytes"
-					ng-model="form.electrolytes"
-					> 
-				Electrolytes
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
-			</div>
-
-			<div class="answer-row">
-				
-				<label 
-				for="blood" 
-				class="assessment-selection"
-				ng-class="{'active':form.blood}"
-				>
-					<input 
-					type="checkbox"
-					id="blood"
-					name="blood"
-					ng-model="form.blood"
-					> 
-				Full blood count
-				</label>
-
-				<i class="result">x</i> 
-
-				<i>?</i>
-				 
-			</div>
-
-			<div class="answer-row">
+			<div class="answer-row incorrect" ng-class="{'active':form.recommend}">
 				
 				<label 
 				for="recommend" 
 				class="assessment-selection"
-				ng-class="{'active':form.recommend}"
 				>
 					<input 
 					type="checkbox"
@@ -310,13 +136,148 @@
 					name="recommend"
 					ng-model="form.recommend"
 					> 
-				Recommend rest, ice, compression and elevation
+					Recommend rest, ice, compression and elevation
+					<i class="result"></i>
+				</label>
+				
+				<i class="help"></i> 
+			</div>
+
+			<h3>BLOOD TESTS</h3>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.thyroid}">
+				
+				<label 
+				for="thyroid" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="thyroid"
+					name="thyroid"
+					ng-model="form.thyroid"
+					> 
+					Thyroid function
+					<i class="result"></i>
+				</label>
+				
+				<i class="help"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.dDimer}">
+				
+				<label 
+				for="d-dimer" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="d-dimer"
+					name="d_dimer"
+					ng-model="form.dDimer"
+					> 
+					D-dimer
+					<i class="result"></i>
+				</label>
+				
+				<i class="help"></i>
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.fasting}">
+				
+				<label 
+				for="fasting" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="fasting"
+					name="fasting"
+					ng-model="form.fasting"
+					> 
+					Fasting-glucose level
+					<i class="result"></i>
+				</label> 
+				
+				<i class="help"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.renal}">
+				
+				<label 
+				for="renal" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="renal"
+					name="renal"
+					ng-model="form.renal"
+					> 
+					Renal function
+					<i class="result"></i>
+					
 				</label>
 
-				<i class="result">x</i> 
+				<i class="help"></i>
+			</div>
 
-				<i>?</i>
-				 
+			<div class="answer-row correct" ng-class="{'active':form.level}">
+				
+				<label 
+				for="level" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="level"
+					name="level"
+					ng-model="form.level"
+					> 
+					Liver function
+					<i class="result"></i>
+					 
+				</label> 
+
+				<i class="help"></i>			 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.electrolytes}">
+				
+				<label 
+				for="electrolytes" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="electrolytes"
+					name="electrolytes"
+					ng-model="form.electrolytes"
+					> 
+					Electrolytes
+					<i class="result"></i>
+				</label> 
+				
+				<i class="help"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.blood}">
+				
+				<label 
+				for="blood" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="blood"
+					name="blood"
+					ng-model="form.blood"
+					> 
+					Full blood count
+					<i class="result"></i>
+				</label> 
+
+				<i class="help"></i> 
 			</div>
 
 		</form>

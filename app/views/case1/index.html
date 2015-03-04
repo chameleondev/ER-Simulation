@@ -4,22 +4,38 @@
 
 <div class="bottom-menu">
 
-	<button class="replay-btn left-btn" >
-		<span ng-show="state !== 'case1.assessment'" ng-click="replay()" ui-sref="case1.video">REPLAY VIDEO</span>
+	<button class="left-btn" >
+		<span ng-show="state !== 'case1.assessment'" ng-click="replay()" ui-sref="case1.video">
+			<i class="replay-icon"></i> 
+			REPLAY VIDEO
+		</span>
 		<span ng-show="state === 'case1.assessment'" ng-click="showMenu()" ui-sref="case1.video">PATIENT HISTORY</span>
 	</button>
 
 
 	<div class="middle-section">
-		<button ui-sref="case1.info">Information</button>
-		<button>Hint</button>
-		<button>Expert</button>
+
+		<div class="button-bg info">
+			<button class="info-btn" ui-sref="case1.info"></button>
+		</div>
+		
+		<div class="button-bg hint">
+			<button class="hint-btn" ng-click="showHint = !showHint;showExpert = false"></button>
+		</div>
+
+		<div class="button-bg expert">
+			<button class="expert-btn" ng-click="showExpert = !showExpert;showHint = false"></button>
+		</div>
+		
+		
 	</div>
 	
-	<button class="assessment-btn right-btn" ui-sref="case1.assessment">
-		<span>ASSESSMENT</span>
-		<span>NEXT STEP</span>
-		<span>REDO</span>
+	<button class="right-btn">
+		<span ng-show="state !== 'case1.assessment'" ui-sref="case1.assessment">
+			ASSESSMENT 
+			<i class="next-icon"></i>
+		</span>
+		<span ng-show="state === 'case1.assessment'" ng-click="submitForm(showMenu)" >NEXT STEP</span>
 	</button>
 	
 	

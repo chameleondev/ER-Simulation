@@ -29,3 +29,9 @@
   display: block;
   position: absolute;
 }
+
+@mixin button($bgColor,$textColor){
+  background:$bgColor;
+  border: none;
+  color: $textColor;
+}
