@@ -5,37 +5,43 @@
 <div class="bottom-menu">
 
 	<button class="left-btn" >
-		<span ng-show="state !== 'case1.assessment'" ng-click="replay()" ui-sref="case1.video">
+		<span ng-show="'case1.video' | includedByState" ng-click="replay()" ui-sref="case1.video">
 			<i class="replay-icon"></i> 
 			REPLAY VIDEO
 		</span>
-		<span ng-show="state === 'case1.assessment'" ng-click="showMenu()" ui-sref="case1.video">PATIENT HISTORY</span>
+
+		<span ng-show="'case1.assessment' | includedByState" ng-click="showMenu()" ui-sref="case1.video">PATIENT HISTORY</span>
 	</button>
 
 
 	<div class="middle-section">
 
-		<div class="button-bg info">
-			<button class="info-btn" ui-sref="case1.info"></button>
+		<div class="button-bg"></div>
+
+		<div class="label-bg info-label">
+			<button class="info-btn" ui-sref="case1.video.info" ng-show="'case1.video' | includedByState"></button>
+			<button class="info-btn" ui-sref="case1.assessment.info" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 		
-		<div class="button-bg hint">
-			<button class="hint-btn" ng-click="showHint = !showHint;showExpert = false"></button>
+		<div class="label-bg hint-label">
+			<button class="hint-btn" ui-sref="case1.video.hint" ng-show="'case1.video' | includedByState"></button>
+			<button class="hint-btn" ui-sref="case1.assessment.hint" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 
-		<div class="button-bg expert">
-			<button class="expert-btn" ng-click="showExpert = !showExpert;showHint = false"></button>
+		<div class="label-bg expert-label" >
+			<button class="expert-btn" ui-sref="case1.video.expert" ng-show="'case1.video' | includedByState"></button>
+			<button class="expert-btn" ui-sref="case1.assessment.expert" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
-		
+
 		
 	</div>
 	
 	<button class="right-btn">
-		<span ng-show="state !== 'case1.assessment'" ui-sref="case1.assessment">
+		<span ng-show="'case1.video' | includedByState" ui-sref="case1.assessment">
 			ASSESSMENT 
 			<i class="next-icon"></i>
 		</span>
-		<span ng-show="state === 'case1.assessment'" ng-click="submitForm(showMenu)" >NEXT STEP</span>
+		<span ng-show="'case1.assessment' | includedByState" ng-click="submitForm()" >NEXT STEP</span>
 	</button>
 	
 	

@@ -1,7 +1,8 @@
+@import 'compass/css3';
 @import 'myVars';
 @import 'myMixins';
 @import 'myExtensions';
-@import 'compass/css3';
+
 
 @font-face {
     font-family: 'source_sans_prolight';
@@ -44,6 +45,8 @@
 
 }
 
+
+
 body{
 	font-family: 'source_sans_prolight';
 	margin: 0;
@@ -58,9 +61,30 @@ h1{
 	font-weight: normal;
 }
 
+/* This is how you would create a theme called "my-custom-theme": */
+
+.my-custom-theme {
+	border: 2px solid $red;
+	background: white;
+	color: $red;
+	width: 362px;
+}
+/* Use this next selector to style things like font-size and line-height: */
+.my-custom-theme .tooltipster-content {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+	padding: 8px 10px;
+}
+
+.tooltipster-arrow span:nth-child(2){
+	border-color: $red !important;
+	border-right: none;
+}
+
 .header-bg{
 	height: 40px;
-	padding: 10px 0;
+	padding: 15px 0;
 	background: $lightGrey;
 }
 
@@ -117,6 +141,57 @@ h1{
   position: relative;
   overflow: hidden;
   background: white;
+
+
+	 .overlay{
+	 	width: 1024px;
+		height: 768px;
+		position: absolute;
+	 	@include transition-property(all);
+		@include transition-duration(1s);
+
+		&.ng-enter{
+			bottom: -768px;
+		}
+
+		&.ng-enter-active{
+			bottom:0;
+		}
+
+		&.ng-leave{
+			bottom: 0;
+		}
+
+		&.ng-leave-active{
+			bottom:-768px;
+		}
+	
+
+	 	.information{
+		  	@extend %middleSection;
+		  	width: 1024px;
+			height: 763px;
+		}
+
+		  .hint{
+		  	@extend %middleSection;
+		  	width: 1024px;
+			height: 215px;
+			text-align: center;
+		  }
+
+		  .expert{
+		  	@extend %middleSection;
+		  	width: 1024px;
+			height: 215px;
+			text-align: center;
+		  }
+
+	 }
+
+  
+
+  
 }
 
 .bottom-menu{
@@ -163,19 +238,26 @@ h1{
 		right: 3px;
 		top: -1px;
 
-		.hint{
+		.button-bg{
+			position: absolute;
+			width: 100px;
+			height: inherit;
+			background: $secondaryBlue;
+			opacity: 0;
+			@include transition-property(all);
+			@include transition-duration(1s);
+
+		}
+
+		.hint-label{
 			margin-left: 21px;
 			margin-right:10px;
 		}
 
-		.button-bg{
+		.label-bg{
 			width: 100px;
-			height: 75px;
+			height: 1px;
 			float: left;
-
-			.active{
-				background-color: $secondaryBlue;
-			}
 		}
 
 		button{
@@ -289,10 +371,20 @@ h1{
 	form{
 		margin-top: 20px;
 
+		.blood-test{
+			@include at2x('../images/blood-test-icon',png, 22px, 16px);
+			width: 22px;
+			height: 16px;
+			display: inline-block;
+			position: relative;
+			top: 2px;
+		}
+
 		h3{
 			font-weight: normal;
-			margin: 10px 0;
-
+			margin: 25px 0 10px;
+			font-size: 17px;
+			color: $secondaryBlue;
 		}
 	}
 
@@ -371,4 +463,46 @@ h1{
 
 	}
 
+}
+
+.information{
+
+	ul{
+		list-style: none;
+	}
+
+
+	.left-content{
+		width: 444px;
+		float:left;
+		text-align: center;
+
+		li{
+			color: white;
+
+			&.active{
+				color: $darkGrey;
+				font-weight: bold;
+			}
+		}
+
+	}
+
+	.right-content{
+		width: 460px;
+		padding: 0 60px;
+		background: white;
+		float:left;
+
+		.table{
+
+			.left{
+				
+			}
+
+			.right{
+
+			}
+		}
+	}
 }

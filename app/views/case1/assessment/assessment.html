@@ -1,3 +1,4 @@
+<div ui-view class="overlay"></div>
 <div class="assessment">
 	
 	<div class="header-bg">
@@ -26,7 +27,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="This is my div's tooltip message!"></i> 
+					<i tooltip class="help" title="The heart and lungs should also be examined to check for breathing difficulties (indicating possible PE) and/or an abnormal heart rate"></i> 
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.fullPhysicalExam}">
@@ -64,7 +65,7 @@
 					<i class="result"></i>
 				</label>
 				
-				<i class="help"></i>  
+				<i tooltip class="help" title="This is not required if VTE suspected; could be relevant if oedema is due to renal function"></i>  
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.twoLevel}">
@@ -99,10 +100,10 @@
 					ng-model="form.ecg"
 					> 
 					ECG
-					<i class="result"></i>
+					<i  class="result" ></i>
 				</label>
 				
-				<i class="help"></i>
+				<i tooltip class="help" title="This is not required; listen to breathing and heart rate during a physical exam"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.noExaminations}">
@@ -118,10 +119,10 @@
 					ng-model="form.noExaminations"
 					> 
 					No examinations
-					<i class="result"></i>
+					<i class="result" ></i>
 				</label>  
 				
-				<i class="help"></i>
+				<i tooltip class="help" title="Symptoms suggest further examinations needed"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.recommend}">
@@ -140,10 +141,10 @@
 					<i class="result"></i>
 				</label>
 				
-				<i class="help"></i> 
+				<i tooltip class="help" title="This is not required if VTE suspected; relevant following trauma to the leg"></i> 
 			</div>
 
-			<h3>BLOOD TESTS</h3>
+			<h3><i class="blood-test"></i> BLOOD TESTS</h3>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.thyroid}">
 				
@@ -161,7 +162,7 @@
 					<i class="result"></i>
 				</label>
 				
-				<i class="help"></i>
+				<i tooltip class="help" title="This is not appropriate if VTE suspected"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.dDimer}">
@@ -199,7 +200,7 @@
 					<i class="result"></i>
 				</label> 
 				
-				<i class="help"></i>
+				<i tooltip class="help" title="This is not appropriate if VTE suspected"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.renal}">
