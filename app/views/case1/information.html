@@ -1,79 +1,114 @@
 <div class="information">
 	<i class="close" ui-sref="^"></i>
 
-	<div class="left-content">
+	<div class="left-content" ng-show="stage === 1">
 		<h1 class="header-bg">Differential Diagnosis</h1>
 
 		<ul>
-			<li>Swollen legs</li>
-			<li>Trauma</li>
-			<li>Cellulitis</li>
-			<li>VTE</li>
-			<li>Others</li>
+			<li ui-sref=".swollenLegs" ui-sref-active="active">
+				Swollen legs
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".trauma" ui-sref-active="active">
+				Trauma
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".cellulitis" ui-sref-active="active">
+				Cellulitis
+				<div class="arrow-right"></div>
+			
+			</li>
+			<li ui-sref=".vte" ui-sref-active="active">
+				VTE
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".others" ui-sref-active="active">
+				Others
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".investigations" ui-sref-active="active">
+				Investigations
+				<div class="arrow-right"></div>
+				
+			</li>
 		</ul>
 
-		<h1 class="header-bg">Investigations</h1>
-
-		<ul>
-			<li>Urinalysis</li>
-			<li>FBC</li>
-			<li>Biochemistry</li>
-			<li>D-dimer</li>
-			<li>ECG</li>
-			<li>Ultrasound, CT scan</li>
-			<li>Duplex Doppler, venography</li>
-			<li>Lymphangiography</li>
-			<li>Lymph node biopsy</li>
-			<li>Other</li>
-		</ul>
 	</div>
 
-	<div class="right-content">
-		<h1 class="header-bg">Swollen legs</h1>
+
+	<div class="left-content" ng-show="stage === 2">
+		<h1 class="header-bg">Differential Diagnosis</h1>
 
 		<ul>
-			<li>Check for bilateral swelling which indicates systemic disease (e.g. cardiac 
-	 failure). Swelling may not be even in both legs</li>
-			<li>Unilateral swelling indicates a more localised cause (e.g. trauma, DVT)</li>
-			<li>Consider pregnancy, obesity or immobility as a cause of swollen legs</li>
+			<li ui-sref=".physicalExam" ui-sref-active="active">
+				Physical exam
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".wells" ui-sref-active="active">
+				Well's score
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".dimerTest" ui-sref-active="active">
+				D-dimer test
+				<div class="arrow-right"></div>
+			
+			</li>
 		</ul>
 
-		<div class"table">
-			<div class="left">
-				<h3>Local</h3>
-				<ul>
-					<li>Acute:</li>
-					<li>Trauma</li>
-					<li>DVT</li>
-					<li>Cellulitis</li>
-					<li>Allergic reaction</li>
-					<li>Rheumatoid arthritis</li>
-				</ul>
+	</div>
 
-				<ul>
-					<li>Chronic:</li>
-					<li>Venous problem (e.g. varicose veins)</li>
-					<li>Lymphoedema</li>
-					<li>Congenital malformation</li>
-					<li>Stasis due to obesity or poor mobility</li>
-				</ul>
+	<div class="left-content" ng-show="stage === 3">
+		<h1 class="header-bg">Differential Diagnosis</h1>
 
-			</div>
-			<div class="right">
-				<h3>Systemic</h3>
-				<ul>
-					<li>Congestive cardiac failure</li>
-					<li>Hypoproteinaemia</li>
-					<li>Renal failure</li>
-					<li>Fluid overload</li>
-					<li>Anaemia</li>
-					<li>Drugs (e.g. NSAIDs)</li>
-					<li>Hypothyroidism</li>
-					<li>Hereditary angioneurotic</li>
-					<li>oedema</li>
-				</ul>
-			</div>
-		</div>
+		<ul>
+			<li ui-sref=".thrombophilia" ui-sref-active="active">
+				Thrombophilia test
+				<div class="arrow-right"></div>
 
+			</li>
+			<li ui-sref=".xray" ui-sref-active="active">
+				Chest X-ray
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".ultrasound" ui-sref-active="active">
+				Ultrasound scan
+				<div class="arrow-right"></div>
+			
+			</li>
+			<li ui-sref=".anticoagulationTherapy" ui-sref-active="active">
+				Anticoagulation therapy
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".venogram" ui-sref-active="active">
+				Venogram
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".ctpa" ui-sref-active="active">
+				CTPA
+				<div class="arrow-right"></div>
+				
+			</li>
+			<li ui-sref=".ventilation" ui-sref-active="active">
+				Ventilation/perfusion lung scan
+				<div class="arrow-right"></div>
+				
+			</li>
+		</ul>
+
+	</div>
+
+
+	<div class="right-content">
+		<h1 class="header-bg"></h1>
+		<div ui-view></div>
 	</div>
 </div>

@@ -1,5 +1,5 @@
 
-<div ui-view></div>
+<div ui-view class="fade-view"></div>
 
 
 <div class="bottom-menu">
@@ -10,7 +10,7 @@
 			REPLAY VIDEO
 		</span>
 
-		<span ng-show="'case1.assessment' | includedByState" ng-click="showMenu()" ui-sref="case1.video">PATIENT HISTORY</span>
+		<span ng-show="'case1.assessment' | includedByState" ng-click="backToLoop()" ui-sref="case1.video">PATIENT HISTORY</span>
 	</button>
 
 

@@ -1,4 +1,22 @@
 <div class="hint">
 	<i class="close" ui-sref="^"></i>
-	<h1 class="overlay-message">Hint</h1>
+
+	<div class="overlay-message" ng-show="stage === 1">
+		<p>What do these symptoms suggest?</p>
+
+		<p>Could the broken toe have caused pain and swelling in the leg?</p>
+	</div>
+
+	<div class="overlay-message" ng-show="stage === 2">
+		<p>What does a Wells’ score of 3 indicate?</p>
+
+		<p>What are the differential diagnoses? Can you rule them out?</p>
+	</div>
+
+	<div class="overlay-message" ng-show="stage === 3">
+		<p>What diagnostic test can identify or confirm a DVT?</p>
+
+		<p>How can you check the blood flow to the leg?</p>
+	</div>
+
 </div>

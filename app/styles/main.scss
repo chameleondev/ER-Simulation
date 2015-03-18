@@ -45,6 +45,11 @@
 
 }
 
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
 
 
 body{
@@ -52,6 +57,18 @@ body{
 	margin: 0;
 	padding: 0;
 	background: blue;
+
+	.loader{
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: white;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		animation-name: fadeOut;
+   		animation-duration: 2s;
+	}
 }
 
 h1{
@@ -59,6 +76,10 @@ h1{
 	color: $primaryBlue;
 	font-family: 'source_sans_prolight';
 	font-weight: normal;
+}
+
+div,button{
+	outline: none;
 }
 
 /* This is how you would create a theme called "my-custom-theme": */
@@ -85,7 +106,7 @@ h1{
 .header-bg{
 	height: 40px;
 	padding: 15px 0;
-	background: $lightGrey;
+	background: $labelGrey;
 }
 
 .replay-icon{
@@ -93,9 +114,9 @@ h1{
 	height: 16px;
 	width: 18px;
 	display: inline-block;
-	position: relative;
-	top: 3px;
-	right: 2px
+	position: absolute;
+	top: 29px;
+	left: 19px;
 }
 
 .next-icon{
@@ -103,9 +124,19 @@ h1{
 	height: 12px;
 	width: 15px;
 	display: inline-block;
-	position: relative;
-	top: 1px;
-	left: 4px;
+	position: absolute;
+	top: 31px;
+	right: 20px;
+}
+
+.skip-icon{
+	@include at2x('../images/skip-icon',png, 10px, 12px);
+	height: 12px;
+	width: 10px;
+	display: inline-block;
+	position: absolute;
+	top: 33px;
+	right: 34px;
 }
 
 .info-btn{
@@ -133,6 +164,27 @@ h1{
 	background-repeat: no-repeat;
 	top: 11px;
 	left: 31px;
+}
+
+.fade-view{
+	@include transition-property(all);
+	@include transition-duration(1.5s);
+}
+
+.fade-view.ng-enter{
+	opacity: 0;
+}
+
+.fade-view.ng-enter-active{
+	opacity: 1;
+}
+
+.fade-view.ng-leave{
+	display: none;
+}
+
+.fade-view.ng-leave-active{
+	display: none;
 }
 
 .container{
@@ -178,6 +230,7 @@ h1{
 		  	width: 1024px;
 			height: 215px;
 			text-align: center;
+			line-height: 20px;
 		  }
 
 		  .expert{
@@ -185,6 +238,7 @@ h1{
 		  	width: 1024px;
 			height: 215px;
 			text-align: center;
+			line-height: 20px;
 		  }
 
 	 }
@@ -208,6 +262,7 @@ h1{
 
 	&.active{
 		bottom:0;
+		transition-delay: 1s;
 	}
 
 	.right-btn{
@@ -270,15 +325,148 @@ h1{
 
 }
 
+.intro{
+
+	.logo{
+		position: absolute;
+		display: block;
+		@include at2x('../images/logo',png, 84px, 84px);
+		width: 84px;
+		height: 84px;
+		top: 35px;
+	}
+
+
+	.left{
+		width:400px;
+		height: 728px;
+		padding: 0 40px;
+		float:left;
+
+		h1{
+			margin-top:165px;
+			margin-bottom: 40px;
+			font-size: 48px;
+		}
+
+		p{
+			color: $darkGrey;
+			font-size: 16px;
+			line-height: 28px;
+		}
+	}
+
+	.right{
+		width:464px;
+		height: 728px;
+		padding: 0 40px;
+		float:left;
+		background: $labelGrey;
+
+		ul{
+			list-style: none;
+			padding: 0;
+			margin-top: 165px;
+		}
+
+		li{
+			background:$primaryBlue;
+			padding: 20px;
+			margin-bottom: 30px;
+			color: white;
+			font-size: 30px;
+			position: relative;
+
+			.case-icon{
+				@include at2x('../images/case-icon',png, 26px, 26px);
+				width: 26px;
+				height: 26px;
+				position: absolute;
+				right: 25px;
+				top: 25px;
+			}
+		}
+	}
+
+	footer{
+		height: 40px;
+		width: 100%;
+		font-size: 12px;
+		text-align: center;
+		background: $darkGrey;
+		color: white;
+		float: left;
+		padding: 15px 0;
+	}
+
+}
+
 .videos{
+
+	videogular vg-controls{
+		height: 80px;
+		top: calc(100% - 215px);
+		left: 480px;
+	}
+
+	videogular vg-controls .controls-container{
+		height: 80px ;
+		opacity: 1 ;
+		background-color: rgba($primaryBlue,0.5);
+	}
+
+	videogular vg-scrub-bar{
+		// background-color: white;
+		height: 80px;
+	}
+
+	videogular vg-scrub-bar-current-time{
+		background-color: $primaryBlue;
+		height: 80px
+	}
+
+	videogular .iconButton{
+		font-size: 22px;
+	}
+
+	videogular vg-play-pause-button{
+		width: 190px;
+		padding:1px 6px;	
+	}
+
+	vg-controls{
+		width: 1024px;
+	}
+
+	.time-container{
+		// background: white;
+	}
+
+	.skip-button{
+		display: table-cell;
+		width: 190px;
+		padding:1px 6px;
+		vertical-align: middle;
+		text-align: center;
+		cursor: pointer;
+		background: $darkGrey;
+		color: white;
+	}
+
+
+	// videogular vg-controls .controls-container{
+	// 	height: 30px !important;
+	// }
 
 	.video-frame{
 		@include transition-property(all);
 		@include transition-duration(1s);
-		right: 0;
+		right: 480px;
+		bottom: 80px;
+		width: 1750px;
 
 		&.active{
-			right: 375px;
+			// right: 375px;
 		}
 	}
 
@@ -286,7 +474,7 @@ h1{
 		border-top: solid 5px $primaryBlue;
 		width: 375px;
 		height: 768px;
-		background: white;
+		background: rgba(255,255,255,0.8);
 		position: absolute;
 		right: -375px;
 		top: 0;
@@ -302,12 +490,22 @@ h1{
 			padding-left: 25px;
 		}
 
+		.wrapper{
+			height: 580px;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.scroll-content > ul{
+			padding:0 40px;
+		}
+
 
 		.list-header{
 			list-style: none;
 			color: $primaryBlue;
 			font-family: 'source_sans_prosemibold';
-			font-size: 14px;
+			font-size: 18px;
 
 			.header-icon{
 				@include at2x('../images/history-icon',png, 20px, 20px);
@@ -323,7 +521,7 @@ h1{
 		.list-content li{
 			font-family: 'source_sans_proregular';
 			list-style: initial;
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 
@@ -335,23 +533,23 @@ h1{
 
 	}
 
-	.bottom-menu{
-		height: 50px;
-		width: 1024px;
-		position: absolute;
-		bottom: -50px;
-		left: 0;
-		background: black;
-		z-index: 1000;
-		text-align: center;
-		@include transition-property(all);
-		@include transition-duration(1s);
+	// .bottom-menu{
+	// 	height: 50px;
+	// 	width: 1024px;
+	// 	position: absolute;
+	// 	bottom: -50px;
+	// 	left: 0;
+	// 	background: black;
+	// 	z-index: 1000;
+	// 	text-align: center;
+	// 	@include transition-property(all);
+	// 	@include transition-duration(1s);
 
-		&.active{
-			bottom:0;
-		}
+	// 	&.active{
+	// 		bottom:0;
+	// 	}
 
-	}
+	// }
 
 }
 
@@ -466,9 +664,16 @@ h1{
 }
 
 .information{
+	font-family: 'source_sans_proregular';
+	
 
 	ul{
 		list-style: none;
+		padding: 0;
+
+		li{
+			font-size: 16px;
+		}
 	}
 
 
@@ -477,32 +682,156 @@ h1{
 		float:left;
 		text-align: center;
 
+		.header-bg{
+			position: relative;
+			z-index: 100;
+		}
+
+		ul{
+			position: relative;
+			z-index: 100;
+		}
+
 		li{
 			color: white;
+			padding: 25px 0;
+			font-size: 28px;
+			position: relative;
+			// @include transition-property(all);
+			// @include transition-duration(1s);
+
+			.arrow-right{
+				// @include transition-property(all);
+				// @include transition-duration(1s);
+				opacity: 0;
+				width: 0; 
+				height: 0; 
+				border-bottom: 44px solid transparent;  /* left arrow slant */
+				border-top: 44px solid transparent; /* right arrow slant */
+				border-left: 44px solid $highlightedBlue; /* bottom, add background color here */
+				font-size: 0;
+				line-height: 0;
+				position: absolute;
+				right: -44px;
+				top:0;
+				z-index: 100;
+			}
 
 			&.active{
 				color: $darkGrey;
 				font-weight: bold;
+				background: $highlightedBlue;
+
+				.arrow-right {
+					opacity: 1;
+				}
 			}
 		}
+
 
 	}
 
 	.right-content{
-		width: 460px;
-		padding: 0 60px;
 		background: white;
-		float:left;
+		overflow: auto;
+
+		div[ui-view]{
+			@include transition-property(all);
+			@include transition-duration(1s);
+			position: relative;
+			float:left;
+			width: 580px;
+			height: 768px;
+			overflow: hidden;
+
+			&.ng-enter{
+				right: -580px;
+				opacity: 0;
+			}
+
+			&.ng-enter-active{
+				right: 0;
+				opacity: 1;
+			}
+
+			&.ng-leave{
+				right: 0;
+				position: absolute;
+				opacity: 1;
+			}
+
+			&.ng-leave-active{
+				right: -580px;
+				opacity: 0;
+			}
+
+		}
+		
+
+		
+		.header-bg{
+			width: 460px;
+			padding: 15px 60px;
+			background: $lightGrey;
+			height: 40px;
+		}
+
+		.content{
+			width: 460px;
+			padding: 0 60px;
+		}
+
+		.right-list{	
+			list-style: disc;
+			padding: 0 20px;
+
+			ul{
+				padding-left: 20px;
+				list-style: circle;
+			}
+
+			li{
+				margin-bottom: 20px;
+			}
+		}
 
 		.table{
+			font-size: 13px;
+			
+			h3{
+				background: $highlightedBlue;
+				color: white;
+				padding: 10px;
+				margin-top: 0;
+				font-weight: normal;
+				font-size: 24px;
+				font-family: 'source_sans_proregular';
+			}
+
+			ul{
+				margin-left: 10px;
+				list-style: none;
+
+				li{
+					margin-bottom: 5px;
+					font-size: 15px;
+				}
+			}
 
 			.left{
-				
+				width: 220px;
+				float:left;
+				background: $lightGrey;
+				height: 400px;
 			}
 
 			.right{
-
+				width: 220px;
+				float:right;
+				background: $lightGrey;
+				height: 400px;
 			}
+	
 		}
 	}
 }

@@ -31,7 +31,10 @@ angular.module('ersimulationToolApp')
 
 	    .state('home', {
 	      url: '/',
-	      templateUrl: 'views/home/index.html'
+	      templateUrl: 'views/home/index.html',
+	      controller : function($rootScope){
+	      	$rootScope.stage = 1;
+	      }
 	    })
 
 	    .state('case1', {
@@ -78,62 +81,79 @@ angular.module('ersimulationToolApp')
 	      templateUrl: 'views/case1/expert.html'
 	    });
 
-	// //function for adding a child shoopingCart state to a state
-	// function addShoppingCartState (stateName) {
-	//   $stateProvider.state(stateName + '.shoppingCart', {
-	//     url: '/shoppingCart',
-	//     templateUrl: 'views/shopping-cart.html',
-	//     data: {
-	//       parentStateName: stateName // for use in the controller
-	//     },
-	//     controller: 'MyShoppingCartController'
-	//   });
-	// }
-	// // Add a child shoppingCart state to all the states you want.
-	// ['random','browse','browse.product','browse.search'].forEach(addShoppingCartState);
+	//function for adding a child information state to a state
+	function addInformationState (stateName) {
+	  $stateProvider
+	  .state('case1.video.info.'+stateName, {
+	    templateUrl: 'views/case1/info/'+stateName+'.html'
+	  })
+
+	  .state('case1.assessment.info.'+stateName, {
+	    templateUrl: 'views/case1/info/'+stateName+'.html'
+	  });
+	}
+
+	[
+	'swollenLegs',
+	'trauma',
+	'cellulitis',
+	'vte',
+	'others',
+	'investigations',
+	'physicalExam',
+	'wells',
+	'dimerTest',
+	'thrombophilia',
+	'xray',
+	'ultrasound',
+	'anticoagulationTherapy',
+	'venogram',
+	'ctpa',
+	'ventilation',
+	'anticoagulationOnly',
+	'anticoagulationPlus',
+	'rivaroxaban'
+	].forEach(addInformationState);
 
 	});
 
 angular.module('ersimulationToolApp')
 	.run( ['$rootScope', '$state', '$stateParams',function ($rootScope,   $state,   $stateParams) {
 	    
-	    $(document).bind('touchmove', false);
+		$rootScope.$state = $state;
+   		$rootScope.$stateParams = $stateParams;
+   		$rootScope.stage = 1;
 
-		$rootScope.$on('$stateChangeStart', 
+	    // $(document).bind('touchmove', false);
+
+		$rootScope.$on('$stateChangeSuccess', 
 		function(event, toState, toParams, fromState, fromParams){ 
 		   console.log(toState.name);
 
+		   
 
-		   switch(toState.name){
-
-		   		case 'case1.video.info' :
-		   		case 'case1.assessment.info' :
+		   if ($state.includes('*.*.info.**')) {
 		   		$('.middle-section .button-bg').css({
 		   			left : '0',
 		   			opacity :'1'
 		   		});
-		   		break;
-
-		   		case 'case1.video.hint' :
-		   		case 'case1.assessment.hint' :
+		   }
+		   else if ($state.includes('*.*.hint')) {
 		   		$('.middle-section .button-bg').css({
 		   			left : '120px',
 		   			opacity :'1'
 		   		});
-		   		break;
-
-		   		case 'case1.video.expert' :
-		   		case 'case1.assessment.expert' :
+		   } 
+		   else if ($state.includes('*.*.expert')) {
 		   		$('.middle-section .button-bg').css({
 		   			left : '230px',
 		   			opacity :'1'
 		   		});
-		   		break;
-
-		   		default:
-		   		$('.middle-section .button-bg').css("opacity","0");
-
+		   } 
+		   else{
+		   	$('.middle-section .button-bg').css("opacity","0");
 		   }
+
 		})
 
 

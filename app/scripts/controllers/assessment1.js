@@ -18,7 +18,21 @@ angular.module('ersimulationToolApp')
 		switch(count){
 			case 1 :
 			// highlights wrong answers
-			$scope.assessment_form.$setSubmitted();
+			switch($scope.stage){
+
+				case 1 :
+				$scope.assessment_form1.$setSubmitted();
+				break;
+
+				case 2 :
+				$scope.assessment_form2.$setSubmitted();
+				break;
+
+				case 3 :
+				$scope.assessment_form3.$setSubmitted();
+				break;
+
+			}
 			break;
 
 			case 2 :
@@ -28,8 +42,14 @@ angular.module('ersimulationToolApp')
 			break;
 
 			case 3 :
+			$rootScope.stage++;
 			$state.go('case1.video');
-			$scope.$parent.showMenu();
+			$('.right-menu,.bottom-menu').removeClass('active');
+			// $scope.$parent.showMenu();
+			// $timeout(function(){
+			// 	$scope.replay();
+			// },500);
+			
 			break;
 		}
 

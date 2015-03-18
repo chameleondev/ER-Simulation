@@ -1,5 +1,6 @@
 <div ui-view class="overlay"></div>
-<div class="assessment">
+
+<div class="assessment" ng-show="stage === 1">
 	
 	<div class="header-bg">
 		<div class="wrapper">
@@ -8,7 +9,7 @@
 	</div>
 
 	<div class="wrapper">
-		<form action="" novalidate name="assessment_form">
+		<form action="" novalidate name="assessment_form1">
 
 			<div class="answer-row incorrect" ng-class="{'active':form.physicalExam}">
 
@@ -284,6 +285,305 @@
 		</form>
 	</div>
 
-</div>
+</div> <!-- stage 1 -->
 
 
+<div class="assessment" ng-show="stage === 2">
+	
+	<div class="header-bg">
+		<div class="wrapper">
+			<h1>Following the Assessment - what are your next steps?</h1>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<form action="" novalidate name="assessment_form2">
+		
+			<div class="answer-row incorrect" ng-class="{'active':form.traumaLikely}">
+
+				<label 
+				for="trauma-likely" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="trauma-likely"
+					name="trauma_likely"
+					ng-model="form.traumaLikely"
+					> 
+					Trauma most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="No evidence of further trauma"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.dvtLikely}">
+
+				<label 
+				for="dvt-likely" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="dvt-likely"
+					name="dvt_likely"
+					ng-model="form.dvtLikely"
+					> 
+					DVT most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i class="help"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.cellulitis}">
+
+				<label 
+				for="cellulitis" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="cellulitis"
+					name="cellulitis"
+					ng-model="form.cellulitis"
+					> 
+					Cellulitis most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="No evidence of cellulitis"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.pe}">
+
+				<label 
+				for="pe" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="pe"
+					name="pe"
+					ng-model="form.pe"
+					> 
+					PE most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="No chest pain or dyspnoea, normal heart rate"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.none}">
+
+				<label 
+				for="none" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="none"
+					name="none"
+					ng-model="form.none"
+					>
+					None of the above
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="Assessment and patient history suggest the patient has an acute condition"></i> 
+			</div>
+
+
+
+		</form>
+	</div>
+
+</div> <!-- stage 2 -->
+
+
+<div class="assessment" ng-show="stage === 3">
+	
+	<div class="header-bg">
+		<div class="wrapper">
+			<h1>Following the Assessment - what are your next steps?</h1>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<form action="" novalidate name="assessment_form3">
+		
+			<div class="answer-row incorrect" ng-class="{'active':form.thrombophilia}">
+
+				<label 
+				for="thrombophilia" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="thrombophilia"
+					name="thrombophilia"
+					ng-model="form.thrombophilia"
+					> 
+					Thrombophilia test
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="Provoked event suspected rather than clotting due to thrombophilia"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.xray}">
+
+				<label 
+				for="xray" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="xray"
+					name="xray"
+					ng-model="form.xray"
+					> 
+					Chest X-ray
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="Not required for a suspected DVT"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.computerized}">
+
+				<label 
+				for="computerized" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="computerized"
+					name="computerized"
+					ng-model="form.computerized"
+					> 
+					Computerized tomography pulmonary angiogram (CTPA)
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="PE unlikely"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.ventilation}">
+
+				<label 
+				for="ventilation" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="ventilation"
+					name="ventilation"
+					ng-model="form.ventilation"
+					> 
+					Ventilation/perfusion lung scan
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="PE unlikely"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.ultrasound}">
+
+				<label 
+				for="ultrasound" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="ultrasound"
+					name="ultrasound"
+					ng-model="form.ultrasound"
+					>
+					Ultrasound of symptomatic leg
+
+					<i class="result"></i>
+				</label>
+
+					<i class="help"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.venogram}">
+
+				<label 
+				for="venogram" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="venogram"
+					name="venogram"
+					ng-model="form.venogram"
+					> 
+					Venogram
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="Use D-dimer and ultrasound first"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.anticoagulant}">
+
+				<label 
+				for="anticoagulant" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="anticoagulant"
+					name="anticoagulant"
+					ng-model="form.anticoagulant"
+					> 
+					Start anticoagulant treatment
+
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="The scan can be performed straight away so anticoagulant therapy can be given following results, if required"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.tests}">
+
+				<label 
+				for="tests" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="tests"
+					name="tests"
+					ng-model="form.tests"
+					> 
+					No tests or treatment required
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip class="help" title="If DVT suspected, a diagnostic test is required"></i> 
+			</div>
+
+
+
+
+
+		</form>
+	</div>
+
+</div> <!-- stage 3 -->

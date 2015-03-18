@@ -1,69 +1,199 @@
 <div ui-view class="overlay"></div>
 <div class="videos">
 	
-	<video-player video="demo"></video-player>
+	<video-player 
+		stageOne="Video 1 V1 PART 1 HD"
+		stageOneLoop="Video 1 END LOOP" 
+		stageTwo="Video 1 V1 PART 2 HD" 
+		stageTwoLoop="Video 2 END LOOP"
+		stageThree="Video 1 V1 PART 3"
+		stageThreeLoop="Video 3 WIDE END LOOP">
+	</video-player>
 
-	<div class="right-menu">
+	<div class="right-menu" ng-show="stage === 1">
 		<div class="header-bg">
 			<h1>Patient History</h1>
 		</div>
 		
 
-		<ul>
-			<li class="list-header"><i class="header-icon"></i> Presenting Complaint</li>
-			<ul class="list-content">
-				<li>34-year-old maile presents with pain and swelling in the left leg</li>
-			</ul>
-		</ul>
+		<div class="wrapper" scroller>
+			
+			<div class="scroll-content">
 
-		<ul>
-			<li class="list-header"><i class="header-icon"></i> History of presenting complaint</li>
-			<ul class="list-content">
-				<li>Fracture of the 5th metatarsal - 3 weeks ago</li>
-				<li>Fracture following road traffic accident</li>
-				<li>Wearing a moon boot, immobolizing foot for 3 weeks</li>
-			</ul>
-		</ul>
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Presenting Complaint</li>
+					<ul class="list-content">
+						<li>34-year-old maile presents with pain and swelling in the left leg</li>
+					</ul>
+				</ul>
 
-		<ul>
-			<li class="list-header"><i class="header-icon"></i> Past medical history</li>
-			<ul class="list-content">
-				<li>Usually fit and healthy, normal BMI</li>
-				<li>No history of cancer or heart problems</li>
-			</ul>
-		</ul>
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> History of presenting complaint</li>
+					<ul class="list-content">
+						<li>Fracture of the 5th metatarsal - 3 weeks ago</li>
+						<li>Fracture following road traffic accident</li>
+						<li>Wearing a moon boot, immobolizing foot for 3 weeks</li>
+					</ul>
+				</ul>
 
-		<ul>
-			<li class="list-header"><i class="header-icon"></i> Drug history</li>
-			<ul class="list-content">
-				<li>Not on any medication, no allergies</li>
-			</ul>
-		</ul>
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Past medical history</li>
+					<ul class="list-content">
+						<li>Usually fit and healthy, normal BMI</li>
+						<li>No history of cancer or heart problems</li>
+					</ul>
+				</ul>
 
-		<ul>
-			<li class="list-header"><i class="header-icon"></i> Family history</li>
-			<ul class="list-content">
-				<li>No family history of thromboembolism</li>
-			</ul>
-		</ul>
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Drug history</li>
+					<ul class="list-content">
+						<li>Not on any medication, no allergies</li>
+					</ul>
+				</ul>
 
-		<ul>
-			<li class="list-header"><i class="header-icon"></i> Social history</li>
-			<ul class="list-content">
-				<li>Non-smoker/drug user, moderate alcohol intake</li>
-				<li>Computer analyst</li>
-				<li>No recent long haul flights</li>
-				<li>Carer for elderly mother</li>
-			</ul>
-		</ul>
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Family history</li>
+					<ul class="list-content">
+						<li>No family history of thromboembolism</li>
+					</ul>
+				</ul>
 
-		<ul>
-			<li class="list-header"><i class="header-icon"></i> Review of systems</li>
-			<ul class="list-content">
-				<li>No other complaints</li>
-			</ul>
-		</ul>
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Social history</li>
+					<ul class="list-content">
+						<li>Non-smoker/drug user, moderate alcohol intake</li>
+						<li>Computer analyst</li>
+						<li>No recent long haul flights</li>
+						<li>Carer for elderly mother</li>
+					</ul>
+				</ul>
 
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Review of systems</li>
+					<ul class="list-content">
+						<li>No other complaints</li>
+					</ul>
+				</ul>
+
+			</div>
+
+		</div>
+
+		
+	</div>
+
+
+	<div class="right-menu" ng-show="stage === 2">
+		<div class="header-bg">
+			<h1>Assessment</h1>
+		</div>
+
+		<div class="wrapper" scroller>
+			<div class="scroll-content">
+				
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Physical examination </li>
+					<ul class="list-content">
+						<li>Calf tenderness and general swelling</li>
+						<li>Normal heart rate</li>
+						<li>No chest pain or dyspnoea</li>
+						<li>No rash or signs of bruising</li>
+						<li>No other concerns</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Routine blood tests</li>
+					<ul class="list-content">
+						<li>No renal impairment</li>
+						<li>Increased D-dimer</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Two-level DVT Wells’ score</li>
+					<ul class="list-content">
+						<li>Paralysis, paresis or immobilization</li>
+						<li>Pain/tenderness along deep vein system</li>
+						<li>Swollen leg</li>
+					</ul>
+				</ul>
+
+			</div>
+		</div>
+		
+
+		
+		
+	</div>
+
+	<div class="right-menu" ng-show="stage === 3">
+		<div class="header-bg">
+			<h1>Diagnostics</h1>
+		</div>
+
+		<div class="wrapper" scroller>
+				
+			<div class="scroll-content">
+				
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Thrombophilia test</li>
+					<ul class="list-content">
+						<li>Blood test to identify problems with the clotting cascade – a positive result may indicate the patient has thrombophilia, which increases the risk of VTE</li>
+						<li>Not required if provoked VTE likely</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Chest X-ray</li>
+					<ul class="list-content">
+						<li>If the patient has symptoms including chest pain or breathing difficulties, a chest X-ray may help to diagnose heart or lung problems</li>
+						<li>Not required if patient is not symptomatic for PE</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Ultrasound scan</li>
+					<ul class="list-content">
+						<li>Used to detect a clot in the veins of the leg</li>
+						<li>A Doppler ultrasound can detect how fast the blood is flowing through the leg and whether the flow is blocked or reduced</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Anticoagulation therapy</li>
+					<ul class="list-content">
+						<li>If the test or scan cannot be performed straight away, LMWH or rivaroxaban should be administered whilst awaiting test results</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Venogram</li>
+					<ul class="list-content">
+						<li>Can be used if D-dimer test and ultrasound scan are inconclusive</li>
+						<li>A contrast dye is injected into the foot and travels to the leg veins – a blood clot will appear as a dye-free ‘gap’ in the blood vessel</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> CTPA</li>
+					<ul class="list-content">
+						<li>Recommended test for diagnosing PE</li>
+						<li>CT visualization of blood vessels in the lungs using contrast dye</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Ventilation/perfusion lung scan</li>
+					<ul class="list-content">
+						<li>Assesses air and blood flow in the lungs using a radioactive gas and the injection of contrast dye, respectively</li>
+						<li>Use CTPA first</li>
+					</ul>
+				</ul>
+
+			</div>
+
+		</div>
 		
 	</div>
 

@@ -15,9 +15,14 @@
 	.overlay-message{
 		color: white;
 		width: 1024px;
-		display: table-cell;
-		vertical-align: middle;
-		height: 140px;
+		height: 100px;
+		@extend %Absolute-Center;
+		top: -90px;
+
+		p{
+			font-size: 25px;
+			margin: 13px 0;
+		}
 	}
 
 	.close{
@@ -27,5 +32,6 @@
 		@include at2x('../images/close-drawer-icon',png, 30px, 30px);
 		width: 30px;
 		height: 30px;
+		z-index: 100;
 	}
 }
