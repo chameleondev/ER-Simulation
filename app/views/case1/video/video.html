@@ -1,7 +1,7 @@
 <div ui-view class="overlay"></div>
 <div class="videos">
 	
-	<video-player 
+	<!-- <video-player 
 		stageOne="Video 1 V1 PART 1 HD"
 		stageOneLoop="Video 1 END LOOP" 
 		stageTwo="Video 1 V1 PART 2 HD" 
@@ -9,6 +9,40 @@
 		stageThree="Video 1 V1 PART 3"
 		stageThreeLoop="Video 3 WIDE END LOOP">
 	</video-player>
+ -->
+	<!-- <video media-element src="" 
+		stageOne="Video_1_V1_PART_1_HD"
+		stageOneLoop="Video_1_END_LOOP" 
+		stageTwo="Video_1_V1_PART_2_HD" 
+		stageTwoLoop="Video_2_END_LOOP"
+		stageThree="Video_1_V1_PART_3"
+		stageThreeLoop="Video_3_WIDE_END_LOOP"
+		type="video/mp4">
+	</video> -->
+
+	<video 
+		my-player
+		stageOne="Video_1_V1_PART_1_HD"
+		stageOneLoop="Video_1_END_LOOP" 
+		stageTwo="Video_1_V1_PART_2_HD" 
+		stageTwoLoop="Video_2_END_LOOP"
+		stageThree="Video_1_V1_PART_3"
+		stageThreeLoop="Video_3_WIDE_END_LOOP"
+		type="video/mp4"
+		autoplay="false"
+		preload="none">
+	</video>
+	<div class="video-controls">
+		<div class="controls">
+			<div type="button" id="play-pause" class="play"></div>
+	    	<input type="range" id="seek-bar" value="0">
+	    	<div class="progress-bar">
+	    		<div class="progress" style="width: {{progress || 0}}%"></div>
+	    	</div>
+		</div>
+	    
+	    <button class="skip-btn">SKIP VIDEO</button>
+	 </div>
 
 	<div class="right-menu" ng-show="stage === 1">
 		<div class="header-bg">
@@ -121,9 +155,6 @@
 
 			</div>
 		</div>
-		
-
-		
 		
 	</div>
 

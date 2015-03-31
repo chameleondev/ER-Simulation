@@ -11,10 +11,7 @@ angular.module('ersimulationToolApp')
     return {
       templateUrl: 'scripts/directives/video/videoPlayer.html',
       restrict: 'E',
-      controller : function($timeout){
-
-      },
-      link : function($scope, iElm, iAttrs, controller,$timeout){
+      link : function($scope, iElm, iAttrs, controller){
 
 
 

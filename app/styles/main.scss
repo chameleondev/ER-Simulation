@@ -56,7 +56,6 @@ body{
 	font-family: 'source_sans_prolight';
 	margin: 0;
 	padding: 0;
-	background: blue;
 
 	.loader{
 		position: absolute;
@@ -435,8 +434,119 @@ div,button{
 	}
 
 	vg-controls{
-		width: 1024px;
+		width: 102px;
 	}
+
+	.mejs-mediaelement{
+		transform: scale(0.9);
+  		top: -125px;
+  		left: -550px;
+	}
+
+	.mejs-overlay-play{
+		display: none !important;
+	}
+
+	.mejs-overlay-loading{
+		// top: 35%;
+ 		// left: 28%;
+ 		display: none;
+	}
+
+	.mejs-container .mejs-controls{
+		width: 1024px;
+		bottom: 312px;
+		height: 75px;
+		background: rgba(70, 137, 200, 0.5);
+		padding-left: 175px;
+
+		> div{
+			margin-top: 25px;
+		}
+
+		// .mejs-button button{
+		// 	width: 190px;
+		// 	height: 60px;
+		// 	background: $darkGrey;
+		// }
+
+		.skip-btn{
+			background: $darkGrey;
+			height: 75px;
+			width: 190px;
+			position: relative;
+			border: none;
+			left: -175px;
+			color: white;
+		}
+
+		.mejs-time-total{
+			width: 600px !important;
+
+			span{
+				height: inherit;
+			}
+		}
+
+		
+	}
+
+
+	.skip-btn{
+		background: $darkGrey;
+		height: 75px;
+		width: 190px;
+		position: relative;
+		border: none;
+		float: right;
+		color: white;
+	}
+
+	.controls{
+		  width: 670px;
+		  margin-left: 160px;
+		  float: left;
+		  margin-top: 27px;
+
+		#play-pause{
+			height: 22px;
+			width: 35px;
+			background: rgba(0,0,0,0);
+			float: left;
+			background-repeat: no-repeat;
+
+			&.play{
+				@include at2x('../images/play-icon',png, 11px, 21px);
+			}
+
+			&.pause{
+				@include at2x('../images/pause-icon',png, 12px, 21px);
+			}
+			
+
+		}
+
+		#seek-bar{
+			width: 600px;
+			height: 22px;
+			float:left;
+			opacity: 0;
+		}
+
+		.progress-bar{
+			width: 600px;
+			height: 10px;
+			margin-left: 35px;
+			margin-top: 6px;
+			background: white;
+
+			.progress{
+				background: $darkGrey;
+				height: inherit;
+			}
+		}
+	}
+
 
 	.time-container{
 		// background: white;
@@ -451,6 +561,23 @@ div,button{
 		cursor: pointer;
 		background: $darkGrey;
 		color: white;
+	}
+
+	video[my-player]{
+		height: 1080px;
+		width: 1920px;
+		position: absolute;
+		top: -125px;
+		left: -550px;
+		transform: scale(0.9);
+	}
+
+	.video-controls{
+		position: absolute;
+		bottom: 0;
+		height: 75px;
+		width: 100%;
+		background: rgba(70, 137, 200, 0.5);
 	}
 
 

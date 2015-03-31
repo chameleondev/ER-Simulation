@@ -45,6 +45,7 @@ angular.module('ersimulationToolApp')
 			$rootScope.stage++;
 			$state.go('case1.video');
 			$('.right-menu,.bottom-menu').removeClass('active');
+			$scope.$parent.progress = 0;
 			// $scope.$parent.showMenu();
 			// $timeout(function(){
 			// 	$scope.replay();
