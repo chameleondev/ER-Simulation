@@ -20,7 +20,9 @@
 		type="video/mp4">
 	</video> -->
 
-	<video 
+	<!-- <video width="100%"
+			controls
+			autoplay
 		my-player
 		webkit-playsinline
 		stageOne="Video_1_V1_PART_1_HD"
@@ -32,8 +34,24 @@
 		type="video/mp4"
 		autoplay="false"
 		>
+	</video> -->
+
+
+	<!-- <video new-player width="100%" controls src="videos/Video_1_V1_PART_1_HD.mp4" type="video/mp4"> -->
+	<video 
+	new-player 
+	width="100%" 
+	controls 
+	class="stopped"
+	type="video/mp4"
+	stageOne="demo"
+	stageOneLoop="Video_1_END_LOOP"
+	>
+
 	</video>
-	<div class="video-controls">
+
+
+	<div class="video-controls" style="display:none">
 		<div class="controls">
 			<div type="button" id="play-pause" class="play"></div>
 	    	<input type="range" id="seek-bar" value="0">

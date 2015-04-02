@@ -563,6 +563,16 @@ div,button{
 		color: white;
 	}
 
+	video[new-player]{
+		@include transition-property(all);
+		@include transition-duration(1s);
+
+		&.stopped{
+			-webkit-filter: grayscale(1);
+  			filter: grayscale(1);
+		}
+	}
+
 	video[my-player]{
 		height: 1080px;
 		width: 1920px;
