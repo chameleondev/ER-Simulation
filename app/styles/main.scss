@@ -51,6 +51,10 @@
 }
 
 
+*{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 
 body{
 	font-family: 'source_sans_prolight';
@@ -114,18 +118,17 @@ div,button{
 	width: 18px;
 	display: inline-block;
 	position: absolute;
-	top: 29px;
-	left: 19px;
+	left: 12px;
 }
 
 .next-icon{
 	@include at2x('../images/next-assess',png, 15px, 12px);
 	height: 12px;
-	width: 15px;
+	width: 8px;
 	display: inline-block;
 	position: absolute;
-	top: 31px;
-	right: 20px;
+	top: 1px;
+ 	right: 20px;
 }
 
 .skip-icon{
@@ -139,11 +142,11 @@ div,button{
 }
 
 .info-btn{
-	@include at2x('../images/info-icon',png, 64px, 48px);
-	height: 48px;
+	@include at2x('../images/info-icon',png, 64px, 50px);
+	height: 50px;
 	width: 64px;
 	background-repeat: no-repeat;
-	top: 14px;
+	top: 12px;
 	left: 18px;
 }
 
@@ -161,8 +164,44 @@ div,button{
 	height: 54px;
 	width: 35px;
 	background-repeat: no-repeat;
-	top: 11px;
+	top: 10px;
 	left: 31px;
+}
+
+.home-icon{
+	  height: inherit;
+	  width: 50px;
+	  background: $homeGreen;
+	  position: absolute;
+	  left: 190px;
+	  @include at2x('../images/home-icon',png, 21px, 19px);
+	  background-repeat: no-repeat;
+	  background-position: 15px 27px;
+}
+
+.popup{
+	  position: absolute;
+	  height: 100%;
+	  width: 100%;
+	  top: 0;
+	  left: 0;
+	  background: rgba(0, 0, 0, 0.5);
+	  z-index: 2000;
+
+	  .confirm{
+	  	@extend %absolute-center;
+	  	height: 200px;
+	  	width: 400px;
+		background: $primaryBlue;
+		text-align: center;
+		color: white;
+
+
+		h2{
+			margin-top: 55px;
+			font-weight: normal;
+		}
+	  }
 }
 
 .fade-view{
@@ -202,19 +241,19 @@ div,button{
 		@include transition-duration(1s);
 
 		&.ng-enter{
-			bottom: -768px;
+			top: 768px;
 		}
 
 		&.ng-enter-active{
-			bottom:0;
+			top:0;
 		}
 
 		&.ng-leave{
-			bottom: 0;
+			top: 0;
 		}
 
 		&.ng-leave-active{
-			bottom:-768px;
+			top:768px;
 		}
 	
 
@@ -271,6 +310,11 @@ div,button{
 		height: inherit;
 		width: 190px;
 		@include button($darkGrey,white);
+
+		.btn-container{
+			position: relative;
+			left: -10px;
+		}
 	}
 
 	.left-btn{
@@ -281,7 +325,10 @@ div,button{
 		width: 190px;
 		@include button($darkGrey,white);
 
-		
+		.btn-container{
+			position: relative;
+			left: 10px;
+		}
 	}
 
 	.middle-section{
@@ -401,6 +448,7 @@ div,button{
 }
 
 .videos{
+	position: absolute;
 
 	videogular vg-controls{
 		height: 80px;
@@ -563,13 +611,18 @@ div,button{
 		color: white;
 	}
 
+	video{
+		height: 768px;
+		width: 1024px;
+	}
+
 	video[new-player]{
 		@include transition-property(all);
 		@include transition-duration(1s);
 
 		&.stopped{
-			-webkit-filter: grayscale(1);
-  			filter: grayscale(1);
+			// -webkit-filter: grayscale(1);
+  	// 		filter: grayscale(1);
 		}
 	}
 
@@ -611,7 +664,7 @@ div,button{
 		border-top: solid 5px $primaryBlue;
 		width: 375px;
 		height: 768px;
-		background: rgba(255,255,255,0.8);
+		background: rgb(255,255,255);
 		position: absolute;
 		right: -375px;
 		top: 0;
@@ -628,13 +681,15 @@ div,button{
 		}
 
 		.wrapper{
-			height: 580px;
+			height: 550px;
 			overflow: hidden;
 			position: relative;
+			margin-top: 30px;
 		}
 
 		.scroll-content > ul{
-			padding:0 40px;
+			padding:0 25px;
+			margin:0 0 10px 0;
 		}
 
 
@@ -650,7 +705,7 @@ div,button{
 				width: 20px;
 				display: inline-block;
 				position: relative;
-				right: 15px;
+				right: 5px;
 				top: 4px;
 			}
 		}
@@ -659,6 +714,7 @@ div,button{
 			font-family: 'source_sans_proregular';
 			list-style: initial;
 			font-size: 14px;
+			list-style-type: circle;
 		}
 	}
 
@@ -748,7 +804,25 @@ div,button{
 			}
 			
 		}
-		
+
+
+		.answer-row.active.correct{
+
+			.assessment-selection{
+				background: $correctGreen;
+
+			}
+			
+		}
+
+		.answer-row.active.correct{
+
+			.assessment-selection.missed{
+				background: $missedOrange;
+
+			}
+			
+		}
 
 	}
 
@@ -780,7 +854,7 @@ div,button{
 			width: 495px;
 			background: $lightGrey;
 			color: $darkGrey;
-			padding: 5px;
+			padding: 5px 5px 5px 15px;
 			font-size: 15px;
 			@include transition-property(all);
 			@include transition-duration(0.5s);
@@ -801,7 +875,6 @@ div,button{
 }
 
 .information{
-	font-family: 'source_sans_proregular';
 	
 
 	ul{
@@ -831,7 +904,7 @@ div,button{
 
 		li{
 			color: white;
-			padding: 25px 0;
+			padding: 18px 0;
 			font-size: 28px;
 			position: relative;
 			// @include transition-property(all);
@@ -843,19 +916,18 @@ div,button{
 				opacity: 0;
 				width: 0; 
 				height: 0; 
-				border-bottom: 44px solid transparent;  /* left arrow slant */
-				border-top: 44px solid transparent; /* right arrow slant */
-				border-left: 44px solid $highlightedBlue; /* bottom, add background color here */
+				border-bottom: 36px solid transparent;  /* left arrow slant */
+				border-top: 36px solid transparent; /* right arrow slant */
+				border-left: 36px solid $highlightedBlue; /* bottom, add background color here */
 				font-size: 0;
 				line-height: 0;
 				position: absolute;
-				right: -44px;
+				right: -36px;
 				top:0;
 				z-index: 100;
 			}
 
 			&.active{
-				color: $darkGrey;
 				font-weight: bold;
 				background: $highlightedBlue;
 
@@ -882,23 +954,23 @@ div,button{
 			overflow: hidden;
 
 			&.ng-enter{
-				right: -580px;
+				// right: -580px;
 				opacity: 0;
 			}
 
 			&.ng-enter-active{
-				right: 0;
+				// right: 0;
 				opacity: 1;
 			}
 
 			&.ng-leave{
-				right: 0;
+				// right: 0;
 				position: absolute;
-				opacity: 1;
+				opacity: 0;
 			}
 
 			&.ng-leave-active{
-				right: -580px;
+				// right: -580px;
 				opacity: 0;
 			}
 
@@ -914,7 +986,7 @@ div,button{
 		}
 
 		.content{
-			width: 460px;
+			width: 515px;
 			padding: 0 60px;
 		}
 
@@ -927,8 +999,13 @@ div,button{
 				list-style: circle;
 			}
 
+			>div>li{
+				margin-bottom: 35px;	
+			}
+
+
 			li{
-				margin-bottom: 20px;
+				margin-bottom: 15px;
 			}
 		}
 
@@ -949,6 +1026,7 @@ div,button{
 				margin-left: 10px;
 				list-style: none;
 
+
 				li{
 					margin-bottom: 5px;
 					font-size: 15px;
@@ -967,6 +1045,8 @@ div,button{
 				float:right;
 				background: $lightGrey;
 				height: 400px;
+				position: relative;
+  				left: -30px;
 			}
 	
 		}

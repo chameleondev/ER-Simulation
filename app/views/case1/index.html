@@ -6,15 +6,20 @@
 
 	<span class="left-btn" >
 		<button class="left-btn" ng-show="'case1.video' | includedByState" ng-click="replayVideo()" ui-sref="case1.video">
-			<i class="replay-icon"></i> 
-			REPLAY VIDEO
+			<div class="btn-container">
+				<i class="replay-icon"></i> 
+				REPLAY VIDEO
+			</div>
 		</button>
 
 		<button class="left-btn" ng-show="'case1.assessment' | includedByState" ng-click="backToLoop()" ui-sref="case1.video">PATIENT HISTORY</button>
 	</span>
 
+	<div class="home-icon" ng-click="goHome = !goHome">
+		
+	</div>
 
-	<div class="middle-section">
+	<div class="middle-section" ng-show="stage !== 5">
 
 		<div class="button-bg"></div>
 
@@ -36,13 +41,27 @@
 		
 	</div>
 	
-	<span class="right-btn">
+	<span class="right-btn" ng-show="stage !== 5">
 		<button class="right-btn" ui-sref="case1.assessment" ng-show="'case1.video' | includedByState">
-			ASSESSMENT 
-			<i class="next-icon"></i>
+			<div class="btn-container">
+				ASSESSMENT 
+				<i class="next-icon"></i>
+			</div>
 		</button>
 		<button class="right-btn" ng-show="'case1.assessment' | includedByState" ng-click="submitForm()" >NEXT STEP</button>
 	</span>
 	
+</div>
+
+<div class="popup" ng-show="goHome">
 	
+	<div class="confirm">
+		
+		<h2>Are you sure you want to leave?</h2>
+
+		<button ui-sref="home">YES</button>
+
+		<button ng-click="goHome = !goHome">NO</button>
+	</div>
+
 </div>

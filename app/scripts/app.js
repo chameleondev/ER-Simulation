@@ -110,8 +110,8 @@ angular.module('ersimulationToolApp')
 	'venogram',
 	'ctpa',
 	'ventilation',
-	'anticoagulationOnly',
-	'anticoagulationPlus',
+	'parenteralA',
+	'parenteralB',
 	'rivaroxaban'
 	].forEach(addInformationState);
 
@@ -119,6 +119,8 @@ angular.module('ersimulationToolApp')
 
 angular.module('ersimulationToolApp')
 	.run( ['$rootScope', '$state', '$stateParams',function ($rootScope,   $state,   $stateParams) {
+	    
+		FastClick.attach(document.body);
 	    
 		$rootScope.$state = $state;
    		$rootScope.$stateParams = $stateParams;

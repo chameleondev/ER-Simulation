@@ -44,8 +44,11 @@
 	controls 
 	class="stopped"
 	type="video/mp4"
-	stageOne="demo"
-	stageOneLoop="Video_1_END_LOOP"
+	stageOne="Video_1_V1_PART_1_HD"
+	stageTwo="Video_1_V1_PART_2_HD"
+	stageThree="Video_1_V1_PART_3"
+	stageFour="Video_4_V1_HD"
+	stageFive="Video_5_V1_HD"
 	>
 
 	</video>
@@ -238,6 +241,43 @@
 					<ul class="list-content">
 						<li>Assesses air and blood flow in the lungs using a radioactive gas and the injection of contrast dye, respectively</li>
 						<li>Use CTPA first</li>
+					</ul>
+				</ul>
+
+			</div>
+
+		</div>
+		
+	</div>
+
+
+	<div class="right-menu" ng-show="stage === 4">
+		<div class="header-bg">
+			<h1>Diagnostics</h1>
+		</div>
+
+		<div class="wrapper" scroller>
+				
+			<div class="scroll-content">
+				
+				<ul>
+					<li class="list-header"><i class="header-icon"></i>Parenteral anticoagulation only</li>
+					<ul class="list-content">
+						<li>LMWH injections alone</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i>Parenteral anticoagulation plus oral anticoagulant</li>
+					<ul class="list-content">
+						<li>LMWH injection overlapping with an oral VKA (e.g. warfarin)</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i>Rivaroxaban single-drug approach</li>
+					<ul class="list-content">
+						<li>Rivaroxaban 15 mg bid for 21 days followed by 20 mg od</li>
 					</ul>
 				</ul>
 

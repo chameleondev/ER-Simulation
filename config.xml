@@ -17,6 +17,12 @@
         Chameleon Communications International
     </author>
 
+    <preference name="DisallowOverscroll" value="true" />
+
+    <preference name="webviewbounce" value="false" />
+
+    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
+
     <gap:plugin name="com.telerik.plugins.wkwebview" version="0.2.5" />
 
 </widget>

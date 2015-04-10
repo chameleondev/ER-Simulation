@@ -11,6 +11,8 @@
 	<div class="wrapper">
 		<form action="" novalidate name="assessment_form1">
 
+			<h3>Select the topics on the left to learn more about the differential diagnoses for this patient and possible next steps.</h3>
+
 			<div class="answer-row incorrect" ng-class="{'active':form.physicalExam}">
 
 				<label 
@@ -88,11 +90,11 @@
 				<i class="help"></i> 
 			</div>
 
-			<div class="answer-row" ng-class="{'active':form.ecg}">
+			<div class="answer-row incorrect" ng-class="{'active':form.ecg}">
 				
 				<label 
 				for="ecg" 
-				class="assessment-selection incorrect"
+				class="assessment-selection"
 				>
 					<input 
 					type="checkbox"
@@ -587,3 +589,79 @@
 	</div>
 
 </div> <!-- stage 3 -->
+
+
+
+<div class="assessment" ng-show="stage === 4">
+	
+	<div class="header-bg">
+		<div class="wrapper">
+			<h1>Treatment Decision</h1>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<form action="" novalidate name="assessment_form4">
+		
+			<div class="answer-row incorrect" ng-class="{'active':form.parenteralA}">
+
+				<label 
+				for="parenteralA" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="parenteralA"
+					name="parenteralA"
+					ng-model="form.parenteralA"
+					> 
+					Parenteral anticoagulation only
+
+					<i class="result"></i>
+				</label>
+
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.parenteralB}">
+
+				<label 
+				for="parenteralB" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="parenteralB"
+					name="parenteralB"
+					ng-model="form.parenteralB"
+					> 
+					Parenteral anticoagulation plus oral anticoagulant
+
+					<i class="result"></i>
+				</label>
+
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.rivaroxaban}">
+
+				<label 
+				for="rivaroxaban" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="rivaroxaban"
+					name="rivaroxaban"
+					ng-model="form.rivaroxaban"
+					> 
+					Rivaroxaban single-drug approach
+
+					<i class="result"></i>
+				</label>
+
+			</div>
+
+
+		</form>
+	</div>
+
+</div> <!-- stage 4 -->

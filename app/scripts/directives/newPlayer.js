@@ -33,6 +33,14 @@ angular.module('ersimulationToolApp')
                 vid = "videos/"+ attrs.stagethree +".mp4";
                 break;
 
+                case 4 :
+                vid = "videos/"+ attrs.stagefour +".mp4";
+                break;
+
+                case 5 :
+                vid = "videos/"+ attrs.stagefive +".mp4";
+                break;
+
                 default:
                 scope.$state.go('home');
                 break;

@@ -32,6 +32,7 @@ module.exports = function(config) {
       'bower_components/videogular-poster/vg-poster.js',
       'bower_components/tooltipster/js/jquery.tooltipster.min.js',
       'bower_components/mediaelement/build/mediaelement-and-player.js',
+      'bower_components/fastclick/lib/fastclick.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -1,8 +1,8 @@
 <div class="information">
-	<i class="close" ui-sref="^"></i>
+	<i class="close blue" ui-sref="^"></i>
 
 	<div class="left-content" ng-show="stage === 1">
-		<h1 class="header-bg">Differential Diagnosis</h1>
+		<h1 class="header-bg">Information</h1>
 
 		<ul>
 			<li ui-sref=".swollenLegs" ui-sref-active="active">
@@ -101,6 +101,29 @@
 				Ventilation/perfusion lung scan
 				<div class="arrow-right"></div>
 				
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="left-content" ng-show="stage === 4">
+		<h1 class="header-bg">Differential Diagnosis</h1>
+
+		<ul>
+			<li ui-sref=".parenteralA" ui-sref-active="active">
+				Parenteral anticoagulation only
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".parenteralB" ui-sref-active="active">
+				Parenteral anticoagulation plus oral anticoagulant
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".rivaroxaban" ui-sref-active="active">
+				Rivaroxaban single-drug approach
+				<div class="arrow-right"></div>
+			
 			</li>
 		</ul>
 

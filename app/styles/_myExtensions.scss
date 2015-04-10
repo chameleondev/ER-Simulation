@@ -1,4 +1,4 @@
-%Absolute-Center {
+%absolute-center {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
@@ -7,7 +7,7 @@
 %middleSection{
 	background: rgba($secondaryBlue,0.95);
 	z-index: 1000;
-	border-top: solid 5px $primaryBlue;
+	border-top: solid 10px $primaryBlue;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -16,7 +16,7 @@
 		color: white;
 		width: 1024px;
 		height: 100px;
-		@extend %Absolute-Center;
+		@extend %absolute-center;
 		top: -90px;
 
 		p{
@@ -33,5 +33,9 @@
 		width: 30px;
 		height: 30px;
 		z-index: 100;
+
+		&.blue{
+			@include at2x('../images/close-drawer-icon-blue',png, 30px, 30px);	
+		}
 	}
 }

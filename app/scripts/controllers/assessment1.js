@@ -39,6 +39,8 @@ angular.module('ersimulationToolApp')
 			// highlights wrong answers and selects correct ones
 			$('form .correct').addClass('active');
 			$("input").prop('disabled', true);
+
+			$('.correct .ng-pristine').parent().addClass('missed');
 			break;
 
 			case 3 :
