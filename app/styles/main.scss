@@ -170,13 +170,13 @@ div,button{
 
 .home-icon{
 	  height: inherit;
-	  width: 50px;
+	  width: 100px;
 	  background: $homeGreen;
 	  position: absolute;
 	  left: 190px;
-	  @include at2x('../images/home-icon',png, 21px, 19px);
+	  @include at2x('../images/menu-icon',png, 68px, 54px);
 	  background-repeat: no-repeat;
-	  background-position: 15px 27px;
+	  background-position: 15px 9px;
 }
 
 .popup{
@@ -200,6 +200,18 @@ div,button{
 		h2{
 			margin-top: 55px;
 			font-weight: normal;
+		}
+
+		button{
+			  border: none;
+			  width: 80px;
+			  height: 40px;
+			  margin: 0 5px;
+			  background: rgba(255, 255, 255, 0.5);
+
+			  &.no{
+			  	background: white;
+			  }
 		}
 	  }
 }
@@ -336,7 +348,7 @@ div,button{
 		margin: 0 auto;
 		width: 333px;
 		position: relative;
-		right: 3px;
+		right: 55px;
 		top: -1px;
 
 		.button-bg{
@@ -351,8 +363,8 @@ div,button{
 		}
 
 		.hint-label{
-			margin-left: 21px;
-			margin-right:10px;
+			// margin-left: 21px;
+			// margin-right:10px;
 		}
 
 		.label-bg{
@@ -888,7 +900,7 @@ div,button{
 
 
 	.left-content{
-		width: 444px;
+		width: 392px;
 		float:left;
 		text-align: center;
 
@@ -949,7 +961,7 @@ div,button{
 			@include transition-duration(1s);
 			position: relative;
 			float:left;
-			width: 580px;
+			width: 632px;
 			height: 768px;
 			overflow: hidden;
 
@@ -979,14 +991,14 @@ div,button{
 
 		
 		.header-bg{
-			width: 460px;
+			width: 512px;
 			padding: 15px 60px;
 			background: $lightGrey;
 			height: 40px;
 		}
 
 		.content{
-			width: 515px;
+			width: 550px;
 			padding: 0 60px;
 		}
 

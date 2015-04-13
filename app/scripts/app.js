@@ -142,13 +142,13 @@ angular.module('ersimulationToolApp')
 		   }
 		   else if ($state.includes('*.*.hint')) {
 		   		$('.middle-section .button-bg').css({
-		   			left : '120px',
+		   			left : '100px',
 		   			opacity :'1'
 		   		});
 		   } 
 		   else if ($state.includes('*.*.expert')) {
 		   		$('.middle-section .button-bg').css({
-		   			left : '230px',
+		   			left : '200px',
 		   			opacity :'1'
 		   		});
 		   } 
