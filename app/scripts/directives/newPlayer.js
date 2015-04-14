@@ -12,7 +12,7 @@ angular.module('ersimulationToolApp')
       restrict: 'A',
       link: function postLink(scope, element, attrs) {
 
-          var vid,skip,loopVid,mainVideo,loopVideo;
+          var vid,skip,loopVid,mainVideo,loopVideo,poster;
 
           var videoPlayer = $(element)[0];
 
@@ -23,22 +23,27 @@ angular.module('ersimulationToolApp')
 
                 case 1 :
                 vid = "videos/"+ attrs.stageone +".mp4";
+                poster = "images/"+ attrs.stageoneposter +".JPG";
                 break;
 
                 case 2 :
                 vid = "videos/"+ attrs.stagetwo +".mp4";
+                poster = "images/"+ attrs.stagetwoposter +".JPG";
                 break;
 
                 case 3 :
                 vid = "videos/"+ attrs.stagethree +".mp4";
+                poster = "images/"+ attrs.stagethreeposter +".JPG";
                 break;
 
                 case 4 :
                 vid = "videos/"+ attrs.stagefour +".mp4";
+                poster = "images/"+ attrs.stagefourposter +".JPG";
                 break;
 
                 case 5 :
                 vid = "videos/"+ attrs.stagefive +".mp4";
+                poster = "images/"+ attrs.stagefiveposter +".JPG";
                 break;
 
                 default:
@@ -47,7 +52,10 @@ angular.module('ersimulationToolApp')
 
               }
 
+              console.log(poster);
+
               videoPlayer.src = vid;
+              videoPlayer.setAttribute('poster',poster);
               videoPlayer.loop = false;
               // videoPlayer.play();
           };

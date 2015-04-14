@@ -9,9 +9,7 @@
 	</div>
 
 	<div class="wrapper">
-		<form action="" novalidate name="assessment_form1">
-
-			<h3>Select the topics on the left to learn more about the differential diagnoses for this patient and possible next steps.</h3>
+		<form action="" novalidate name="assessment_form1" class="form1">
 
 			<div class="answer-row incorrect" ng-class="{'active':form.physicalExam}">
 
@@ -30,7 +28,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="The heart and lungs should also be examined to check for breathing difficulties (indicating possible PE) and/or an abnormal heart rate"></i> 
+					<i tooltip-incorrect class="help" title="The heart and lungs should also be examined to check for breathing difficulties (indicating possible PE) and/or an abnormal heart rate"></i> 
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.fullPhysicalExam}">
@@ -49,7 +47,7 @@
 					<i class="result"></i>
 				</label>
 				
-				<i class="help"></i>
+				<i tooltip-missed class="help" title="The heart and lungs should be examined to assess heart rate and lung function. The right leg should be examined to check for any trauma, pain, redness or swelling"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.urinalysis}">
@@ -68,7 +66,7 @@
 					<i class="result"></i>
 				</label>
 				
-				<i tooltip class="help" title="This is not required if VTE suspected; could be relevant if oedema is due to renal function"></i>  
+				<i tooltip-incorrect class="help" title="This is not required if VTE suspected; could be relevant if oedema is due to renal function"></i>  
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.twoLevel}">
@@ -87,7 +85,7 @@
 					<i class="result"></i>
 				</label>
 					
-				<i class="help"></i> 
+				<i tooltip-missed class="help" title="A two-level Wells’ score should be calculated to assess if the patient has a high likelihood of DVT"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.ecg}">
@@ -106,7 +104,7 @@
 					<i  class="result" ></i>
 				</label>
 				
-				<i tooltip class="help" title="This is not required; listen to breathing and heart rate during a physical exam"></i>
+				<i tooltip-incorrect class="help" title="This is not required; listen to breathing and heart rate during a physical exam"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.noExaminations}">
@@ -125,7 +123,7 @@
 					<i class="result" ></i>
 				</label>  
 				
-				<i tooltip class="help" title="Symptoms suggest further examinations needed"></i>
+				<i tooltip-incorrect class="help" title="Symptoms suggest further examinations needed"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.recommend}">
@@ -144,7 +142,7 @@
 					<i class="result"></i>
 				</label>
 				
-				<i tooltip class="help" title="This is not required if VTE suspected; relevant following trauma to the leg"></i> 
+				<i tooltip-incorrect class="help" title="This is not required if VTE suspected; relevant following trauma to the leg"></i> 
 			</div>
 
 			<h3><i class="blood-test"></i> BLOOD TESTS</h3>
@@ -165,7 +163,7 @@
 					<i class="result"></i>
 				</label>
 				
-				<i tooltip class="help" title="This is not appropriate if VTE suspected"></i>
+				<i tooltip-incorrect class="help" title="This is not appropriate if VTE suspected"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.dDimer}">
@@ -184,7 +182,7 @@
 					<i class="result"></i>
 				</label>
 				
-				<i class="help"></i>
+				<i tooltip-missed class="help" title="A D-dimer test can be used to help rule-out DVT as a possible diagnosis"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.fasting}">
@@ -203,7 +201,7 @@
 					<i class="result"></i>
 				</label> 
 				
-				<i tooltip class="help" title="This is not appropriate if VTE suspected"></i>
+				<i tooltip-incorrect class="help" title="This is not appropriate if VTE suspected"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.renal}">
@@ -223,7 +221,7 @@
 					
 				</label>
 
-				<i class="help"></i>
+				<i tooltip-missed class="help" title="Symptoms indicate that renal function should be checked"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.level}">
@@ -243,7 +241,7 @@
 					 
 				</label> 
 
-				<i class="help"></i>			 
+				<i tooltip-missed class="help" title="Symptoms indicate that liver function should be checked"></i>		 
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.electrolytes}">
@@ -262,7 +260,7 @@
 					<i class="result"></i>
 				</label> 
 				
-				<i class="help"></i>
+				<i tooltip-missed class="help" title="Symptoms indicate that electrolytes should be checked"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.blood}">
@@ -281,7 +279,7 @@
 					<i class="result"></i>
 				</label> 
 
-				<i class="help"></i> 
+				<i tooltip-missed class="help" title="Symptoms indicate that FBC should be checked to rule out anaemia and infection"></i>
 			</div>
 
 		</form>
@@ -299,7 +297,7 @@
 	</div>
 
 	<div class="wrapper">
-		<form action="" novalidate name="assessment_form2">
+		<form action="" novalidate name="assessment_form2" class="form2">
 		
 			<div class="answer-row incorrect" ng-class="{'active':form.traumaLikely}">
 
@@ -318,7 +316,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="No evidence of further trauma"></i> 
+					<i tooltip-incorrect class="help" title="No evidence of further trauma"></i> 
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.dvtLikely}">
@@ -338,7 +336,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i class="help"></i> 
+					<i tooltip-missed class="help" title="Symptoms indicate that FBC should be checked to rule out anaemia and infection"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.cellulitis}">
@@ -358,7 +356,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="No evidence of cellulitis"></i> 
+					<i tooltip-incorrect class="help" title="No evidence of cellulitis"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.pe}">
@@ -378,7 +376,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="No chest pain or dyspnoea, normal heart rate"></i> 
+					<i tooltip-incorrect class="help" title="No chest pain or dyspnoea, normal heart rate"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.none}">
@@ -398,7 +396,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="Assessment and patient history suggest the patient has an acute condition"></i> 
+					<i tooltip-incorrect class="help" title="Assessment and patient history suggest the patient has an acute condition"></i> 
 			</div>
 
 
@@ -418,7 +416,7 @@
 	</div>
 
 	<div class="wrapper">
-		<form action="" novalidate name="assessment_form3">
+		<form action="" novalidate name="assessment_form3" class="form3">
 		
 			<div class="answer-row incorrect" ng-class="{'active':form.thrombophilia}">
 
@@ -437,7 +435,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="Provoked event suspected rather than clotting due to thrombophilia"></i> 
+					<i tooltip-incorrect class="help" title="Provoked event suspected rather than clotting due to thrombophilia"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.xray}">
@@ -457,7 +455,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="Not required for a suspected DVT"></i> 
+					<i tooltip-incorrect class="help" title="Not required for a suspected DVT"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.computerized}">
@@ -477,7 +475,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="PE unlikely"></i> 
+					<i tooltip-incorrect class="help" title="PE unlikely"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.ventilation}">
@@ -497,7 +495,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="PE unlikely"></i> 
+					<i tooltip-incorrect class="help" title="PE unlikely"></i> 
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.ultrasound}">
@@ -517,7 +515,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i class="help"></i> 
+					<i tooltip-missed class="help" title="Symptoms indicate that FBC should be checked to rule out anaemia and infection"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.venogram}">
@@ -537,7 +535,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="Use D-dimer and ultrasound first"></i> 
+					<i tooltip-incorrect class="help" title="Use D-dimer and ultrasound first"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.anticoagulant}">
@@ -558,7 +556,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="The scan can be performed straight away so anticoagulant therapy can be given following results, if required"></i> 
+					<i tooltip-incorrect class="help" title="The scan can be performed straight away so anticoagulant therapy can be given following results, if required"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.tests}">
@@ -578,7 +576,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip class="help" title="If DVT suspected, a diagnostic test is required"></i> 
+					<i tooltip-incorrect class="help" title="If DVT suspected, a diagnostic test is required"></i> 
 			</div>
 
 
@@ -601,9 +599,66 @@
 	</div>
 
 	<div class="wrapper">
+
+		<div class="end-result">
+			
+			<div class="parenteralA" ng-show="decision === 'parenteralA'">
+				<h1>Incorrect</h1>
+
+				<ul>
+					<li>This should not be the anticoagulation regimen of choice unless the patient has active cancer or has contraindications to other anticoagulants </li>
+
+					<li>Duration of therapy needs to be assessed regularly</li>
+				</ul>
+			</div>
+
+
+			<div class="parenteralB" ng-show="decision === 'parenteralB'">
+				<h1>Correct</h1>
+
+				<ul>
+					<li>Patient requires daily, dose-adjusted LMWH (and may be admitted to hospital) overlapping with oral VKA until target INR (2.0–3.0 in most patients) is reached. After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions</li>
+				</ul>
+
+				<p>Have you considered using rivaroxaban?</p>
+
+				<ul>
+					<li>Rivaroxaban may overcome some of these limitations </li>
+
+					<ul>
+						<li>no need for routine coagulation monitoring</li>
+						<li>no known dietary restrictions or food interactions</li>
+						<li>lower risk of bleeding</li>
+						<li>most patients can be treated at home (may allow earlier discharge from hospital)</li>
+						<li>once-daily regime after 3 weeks</li>
+					</ul>
+				</ul>
+			</div>
+
+
+			<div class="rivaroxaban" ng-show="decision === 'rivaroxaban'">
+				<h1>Correct</h1>
+
+				<ul>
+					<li>Patient leaves hospital on rivaroxaban 15 mg twice daily, and arrange follow-up visit at a coagulation clinic for 21 days time, when the patient is switched to 20 mg for 3 months</li>
+
+					<li>No need for routine coagulation monitoring, no known dietary restrictions or food interactions, and most patients can be treated at home (may allow earlier discharge from hospital)</li>
+
+					<li>After 21 days, the patient moves to a once-daily regime (similar to VKAs) which improves compliance and is better suited for younger, active patients</li>
+
+					<li>Lower risk of major bleeding for rivaroxaban (46% reduction) compared with LMWH/VKA therapy</li>
+				</ul>
+
+				<p>Rivaroxaban offers advantages over VKAs that<br>lead to better patient satisfaction</p>
+			</div>
+
+
+		</div>
+
+
 		<form action="" novalidate name="assessment_form4">
 		
-			<div class="answer-row incorrect" ng-class="{'active':form.parenteralA}">
+			<div class="answer-row incorrect" ng-class="{'active':decision === 'parenteralA'}">
 
 				<label 
 				for="parenteralA" 
@@ -613,7 +668,7 @@
 					type="checkbox"
 					id="parenteralA"
 					name="parenteralA"
-					ng-model="form.parenteralA"
+					ng-click="decision = 'parenteralA'"
 					> 
 					Parenteral anticoagulation only
 
@@ -622,7 +677,7 @@
 
 			</div>
 
-			<div class="answer-row incorrect" ng-class="{'active':form.parenteralB}">
+			<div class="answer-row correct" ng-class="{'active':decision === 'parenteralB'}">
 
 				<label 
 				for="parenteralB" 
@@ -632,7 +687,7 @@
 					type="checkbox"
 					id="parenteralB"
 					name="parenteralB"
-					ng-model="form.parenteralB"
+					ng-click="decision = 'parenteralB'"
 					> 
 					Parenteral anticoagulation plus oral anticoagulant
 
@@ -641,7 +696,7 @@
 
 			</div>
 
-			<div class="answer-row incorrect" ng-class="{'active':form.rivaroxaban}">
+			<div class="answer-row correct" ng-class="{'active':decision === 'rivaroxaban'}">
 
 				<label 
 				for="rivaroxaban" 
@@ -651,7 +706,7 @@
 					type="checkbox"
 					id="rivaroxaban"
 					name="rivaroxaban"
-					ng-model="form.rivaroxaban"
+					ng-click="decision = 'rivaroxaban'"
 					> 
 					Rivaroxaban single-drug approach
 

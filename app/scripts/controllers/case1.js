@@ -19,4 +19,20 @@ angular.module('ersimulationToolApp')
 		
 	};
 
+	console.log($state);
+
+	$scope.toggleMenu = function(btn,section){
+
+
+
+		if (!$state.includes('*.*.'+btn+'.**')) {
+				$state.go('case1.'+section+'.'+btn);
+
+		} else{
+			$state.go('case1.'+section)
+		};
+
+
+	};
+
   });

@@ -24,18 +24,18 @@
 		<div class="button-bg"></div>
 
 		<div class="label-bg info-label">
-			<button class="info-btn" ui-sref="case1.video.info" ng-show="'case1.video' | includedByState"></button>
-			<button class="info-btn" ui-sref="case1.assessment.info" ng-show="'case1.assessment' | includedByState"></button>
+			<button ng-click="toggleMenu('info','video')" class="info-btn"  ng-show="'case1.video' | includedByState"></button>
+			<button class="info-btn" ng-click="toggleMenu('info','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 		
 		<div class="label-bg hint-label">
-			<button class="hint-btn" ui-sref="case1.video.hint" ng-show="'case1.video' | includedByState"></button>
-			<button class="hint-btn" ui-sref="case1.assessment.hint" ng-show="'case1.assessment' | includedByState"></button>
+			<button class="hint-btn" ng-click="toggleMenu('hint','video')" ng-show="'case1.video' | includedByState"></button>
+			<button class="hint-btn" ng-click="toggleMenu('hint','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 
 		<div class="label-bg expert-label" >
-			<button class="expert-btn" ui-sref="case1.video.expert" ng-show="'case1.video' | includedByState"></button>
-			<button class="expert-btn" ui-sref="case1.assessment.expert" ng-show="'case1.assessment' | includedByState"></button>
+			<button class="expert-btn" ng-click="toggleMenu('expert','video')" ng-show="'case1.video' | includedByState"></button>
+			<button class="expert-btn" ng-click="toggleMenu('expert','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 
 		
@@ -48,7 +48,7 @@
 				<i class="next-icon"></i>
 			</div>
 		</button>
-		<button class="right-btn" ng-show="'case1.assessment' | includedByState" ng-click="submitForm()" >NEXT STEP</button>
+		<button class="right-btn" ng-show="'case1.assessment' | includedByState" ng-click="submitForm()" >SUBMIT</button>
 	</span>
 	
 </div>

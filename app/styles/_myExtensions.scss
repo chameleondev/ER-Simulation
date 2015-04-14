@@ -19,6 +19,10 @@
 		@extend %absolute-center;
 		top: -90px;
 
+		&.two-line{
+			top: -50px;
+		}
+
 		p{
 			font-size: 25px;
 			margin: 13px 0;

@@ -21,6 +21,7 @@ angular.module('ersimulationToolApp')
           var myScroll = new IScroll(element[0],{
             scrollbars: true,
             bounce : false,
+            fadeScrollbars : true
           });
 
       }

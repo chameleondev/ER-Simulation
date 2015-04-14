@@ -2,7 +2,7 @@
 	<i class="close blue" ui-sref="^"></i>
 
 	<div class="left-content" ng-show="stage === 1">
-		<h1 class="header-bg">Information</h1>
+		<h1 class="header-bg"></h1>
 
 		<ul>
 			<li ui-sref=".swollenLegs" ui-sref-active="active">
@@ -131,7 +131,15 @@
 
 
 	<div class="right-content">
-		<h1 class="header-bg"></h1>
-		<div ui-view></div>
+		<h1 class="header-bg">Information</h1>
+		<div ui-view>
+
+			<div class="content">
+				
+				<p>Select the topics on the left to learn more about the differential diagnoses for this patient and possible next steps.</p>
+
+			</div>
+			
+		</div>
 	</div>
 </div>

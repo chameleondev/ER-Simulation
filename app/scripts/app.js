@@ -151,7 +151,10 @@ angular.module('ersimulationToolApp')
 		   			left : '200px',
 		   			opacity :'1'
 		   		});
-		   } 
+		   }
+		   else if($state.includes('*.assessment')){
+		   		$('.bottom-menu').addClass('active');
+		   }
 		   else{
 		   	$('.middle-section .button-bg').css("opacity","0");
 		   }
