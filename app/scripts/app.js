@@ -37,6 +37,11 @@ angular.module('ersimulationToolApp')
 	      }
 	    })
 
+	    .state('home.terms', {
+	      url: '/',
+	      templateUrl: 'views/home/terms.html'
+	    })
+
 	    .state('case1', {
 	      url: '/',
 	      templateUrl: 'views/case1/index.html',

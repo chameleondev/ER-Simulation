@@ -42,10 +42,15 @@
 	</div>
 	
 	<span class="right-btn" ng-show="stage !== 5">
-		<button class="right-btn" ui-sref="case1.assessment" ng-show="'case1.video' | includedByState">
-			<div class="btn-container">
+		<button class="right-btn" ng-click="decisionPoint = !decisionPoint" ng-show="'case1.video' | includedByState">
+			<div class="btn-container" ng-show="stage !== 4">
 				ASSESSMENT 
 				<i class="next-icon"></i>
+			</div>
+
+			<div class="btn-container" ng-show="stage === 4">
+				TREATMENT CHOICE
+				<i class="next-icon choice"></i>
 			</div>
 		</button>
 		<button class="right-btn" ng-show="'case1.assessment' | includedByState" ng-click="submitForm()" >SUBMIT</button>
@@ -57,11 +62,27 @@
 	
 	<div class="confirm">
 		
-		<h2>Are you sure you want to leave?</h2>
+		<h2>Are you sure you want to exit?</h2>
 
 		<button ui-sref="home" class="yes">YES</button>
 
 		<button ng-click="goHome = !goHome" class="no">NO</button>
+	</div>
+
+</div>
+
+
+<div class="popup" ng-show="decisionPoint">
+	
+	<div class="confirm decision">
+		
+		<h2>DECISION POINT</h2>
+
+		<h3>Are you ready to select  a treatment option?</h3>
+
+		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes">Yes – Move to Assessment</button>
+
+		<button ng-click="decisionPoint = !decisionPoint" class="no">No – Return to Treatment Guidance</button>
 	</div>
 
 </div>

@@ -4,13 +4,17 @@
 	
 	<div class="header-bg">
 		<div class="wrapper">
-			<h1>Following the patient history - what are your next steps?</h1>
+			<h1>Following the patient history, what are your next steps?</h1>
 		</div>
 	</div>
 
 	<div class="wrapper">
+
+		<div class="end-result"></div>
+
 		<form action="" novalidate name="assessment_form1" class="form1">
 
+		<h3>Select ONE or more of the following options:</h3>
 			<div class="answer-row incorrect" ng-class="{'active':form.physicalExam}">
 
 				<label 
@@ -107,24 +111,7 @@
 				<i tooltip-incorrect class="help" title="This is not required; listen to breathing and heart rate during a physical exam"></i>
 			</div>
 
-			<div class="answer-row incorrect" ng-class="{'active':form.noExaminations}">
-				
-				<label 
-				for="no-examinations" 
-				class="assessment-selection"
-				>
-					<input 
-					type="checkbox"
-					id="no-examinations"
-					name="no_examinations"
-					ng-model="form.noExaminations"
-					> 
-					No examinations
-					<i class="result" ></i>
-				</label>  
-				
-				<i tooltip-incorrect class="help" title="Symptoms suggest further examinations needed"></i>
-			</div>
+			
 
 			<div class="answer-row incorrect" ng-class="{'active':form.recommend}">
 				
@@ -143,6 +130,25 @@
 				</label>
 				
 				<i tooltip-incorrect class="help" title="This is not required if VTE suspected; relevant following trauma to the leg"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.noExaminations}">
+				
+				<label 
+				for="no-examinations" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="no-examinations"
+					name="no_examinations"
+					ng-model="form.noExaminations"
+					> 
+					No examinations
+					<i class="result" ></i>
+				</label>  
+				
+				<i tooltip-incorrect class="help" title="Symptoms suggest further examinations needed"></i>
 			</div>
 
 			<h3><i class="blood-test"></i> BLOOD TESTS</h3>
@@ -292,12 +298,16 @@
 	
 	<div class="header-bg">
 		<div class="wrapper">
-			<h1>Following the Assessment - what are your next steps?</h1>
+			<h1 style="  font-size: 30px;">Assessment decision point: Which of the following diagnoses is most likely?</h1>
 		</div>
 	</div>
 
 	<div class="wrapper">
+		<div class="end-result"></div>
+
 		<form action="" novalidate name="assessment_form2" class="form2">
+
+			<h3>Select ONE of the following options:</h3>
 		
 			<div class="answer-row incorrect" ng-class="{'active':form.traumaLikely}">
 
@@ -310,6 +320,7 @@
 					id="trauma-likely"
 					name="trauma_likely"
 					ng-model="form.traumaLikely"
+					ng-click="form.dvtLikely = false;form.cellulitis = false;form.pe = false;form.none = false"
 					> 
 					Trauma most likely
 
@@ -330,13 +341,14 @@
 					id="dvt-likely"
 					name="dvt_likely"
 					ng-model="form.dvtLikely"
+					ng-click="form.traumaLikely = false;form.cellulitis = false;form.pe = false;form.none = false"
 					> 
 					DVT most likely
 
 					<i class="result"></i>
 				</label>
 
-					<i tooltip-missed class="help" title="Symptoms indicate that FBC should be checked to rule out anaemia and infection"></i>
+					<i tooltip-missed class="help" title="A Wells’ score of 3, elevated D-dimer and results of the physical examination indicate acute DVT is most likely"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.cellulitis}">
@@ -350,6 +362,7 @@
 					id="cellulitis"
 					name="cellulitis"
 					ng-model="form.cellulitis"
+					ng-click="form.traumaLikely = false;form.dvtLikely = false;form.pe = false;form.none = false"
 					> 
 					Cellulitis most likely
 
@@ -370,6 +383,7 @@
 					id="pe"
 					name="pe"
 					ng-model="form.pe"
+					ng-click="form.traumaLikely = false;form.dvtLikely = false;form.cellulitis = false;form.none = false"
 					> 
 					PE most likely
 
@@ -390,6 +404,7 @@
 					id="none"
 					name="none"
 					ng-model="form.none"
+					ng-click="form.traumaLikely = false;form.dvtLikely = false;form.cellulitis = false;form.pe = false"
 					>
 					None of the above
 
@@ -416,6 +431,8 @@
 	</div>
 
 	<div class="wrapper">
+		<div class="end-result"></div>
+
 		<form action="" novalidate name="assessment_form3" class="form3">
 		
 			<div class="answer-row incorrect" ng-class="{'active':form.thrombophilia}">
@@ -429,6 +446,7 @@
 					id="thrombophilia"
 					name="thrombophilia"
 					ng-model="form.thrombophilia"
+					ng-click="form.xray = false;form.computerized = false;form.ventilation = false;form.ultrasound = false;form.venogram = false;form.anticoagulant = false;form.tests = false"
 					> 
 					Thrombophilia test
 
@@ -449,6 +467,7 @@
 					id="xray"
 					name="xray"
 					ng-model="form.xray"
+					ng-click="form.thrombophilia = false;form.computerized = false;form.ventilation = false;form.ultrasound = false;form.venogram = false;form.anticoagulant = false;form.tests = false"
 					> 
 					Chest X-ray
 
@@ -469,6 +488,7 @@
 					id="computerized"
 					name="computerized"
 					ng-model="form.computerized"
+					ng-click="form.thrombophilia = false;form.xray = false;form.ventilation = false;form.ultrasound = false;form.venogram = false;form.anticoagulant = false;form.tests = false"
 					> 
 					Computerized tomography pulmonary angiogram (CTPA)
 
@@ -489,6 +509,7 @@
 					id="ventilation"
 					name="ventilation"
 					ng-model="form.ventilation"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.ultrasound = false;form.venogram = false;form.anticoagulant = false;form.tests = false"
 					> 
 					Ventilation/perfusion lung scan
 
@@ -509,13 +530,14 @@
 					id="ultrasound"
 					name="ultrasound"
 					ng-model="form.ultrasound"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.venogram = false;form.anticoagulant = false;form.tests = false"
 					>
 					Ultrasound of symptomatic leg
 
 					<i class="result"></i>
 				</label>
 
-					<i tooltip-missed class="help" title="Symptoms indicate that FBC should be checked to rule out anaemia and infection"></i>
+					<i tooltip-missed class="help" title="A patient with suspected DVT  should be sent for an ultrasound to confirm the diagnosis"></i>
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.venogram}">
@@ -529,6 +551,7 @@
 					id="venogram"
 					name="venogram"
 					ng-model="form.venogram"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.ultrasound = false;form.anticoagulant = false;form.tests = false"
 					> 
 					Venogram
 
@@ -549,6 +572,7 @@
 					id="anticoagulant"
 					name="anticoagulant"
 					ng-model="form.anticoagulant"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.ultrasound = false;form.venogram = false;form.tests = false"
 					> 
 					Start anticoagulant treatment
 
@@ -570,6 +594,7 @@
 					id="tests"
 					name="tests"
 					ng-model="form.tests"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.ultrasound = false;form.venogram = false;form.anticoagulant = false"
 					> 
 					No tests or treatment required
 

@@ -41,16 +41,16 @@
 
 
 	<div class="left-content" ng-show="stage === 2">
-		<h1 class="header-bg">Differential Diagnosis</h1>
+		<h1 class="header-bg"></h1>
 
 		<ul>
 			<li ui-sref=".physicalExam" ui-sref-active="active">
-				Physical exam
+				Examination
 				<div class="arrow-right"></div>
 
 			</li>
 			<li ui-sref=".wells" ui-sref-active="active">
-				Well's score
+				Wells'
 				<div class="arrow-right"></div>
 
 			</li>
@@ -64,7 +64,7 @@
 	</div>
 
 	<div class="left-content" ng-show="stage === 3">
-		<h1 class="header-bg">Differential Diagnosis</h1>
+		<h1 class="header-bg"></h1>
 
 		<ul>
 			<li ui-sref=".thrombophilia" ui-sref-active="active">
@@ -107,7 +107,7 @@
 	</div>
 
 	<div class="left-content" ng-show="stage === 4">
-		<h1 class="header-bg">Differential Diagnosis</h1>
+		<h1 class="header-bg"></h1>
 
 		<ul>
 			<li ui-sref=".parenteralA" ui-sref-active="active">
@@ -116,7 +116,7 @@
 
 			</li>
 			<li ui-sref=".parenteralB" ui-sref-active="active">
-				Parenteral anticoagulation plus oral anticoagulant
+				Parenteral anticoagulation + oral anticoagulant
 				<div class="arrow-right"></div>
 
 			</li>
@@ -131,12 +131,21 @@
 
 
 	<div class="right-content">
-		<h1 class="header-bg">Information</h1>
+		<h1 class="header-bg" ng-show="stage === 1">Information</h1>
+		<h1 class="header-bg" ng-show="stage === 2">Assessment Information</h1>
+		<h1 class="header-bg" ng-show="stage === 3">Diagnostics: Options</h1>
+		<h1 class="header-bg" ng-show="stage === 4">Treatment: Guidance</h1>
 		<div ui-view>
 
 			<div class="content">
 				
-				<p>Select the topics on the left to learn more about the differential diagnoses for this patient and possible next steps.</p>
+				<p ng-show="stage === 1">Select the topics on the left to learn more about the differential diagnoses for this patient and possible next steps.</p>
+
+				<p ng-show="stage === 2">Select the topics on the left to learn more about each completed assessment.</p>
+
+				<p ng-show="stage === 3">Select each clinical test on the left to learn more.</p>
+
+				<p ng-show="stage === 4">Select each treatment option on the left to learn more</p>
 
 			</div>
 			
