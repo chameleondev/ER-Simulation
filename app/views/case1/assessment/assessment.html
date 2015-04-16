@@ -14,7 +14,7 @@
 
 		<form action="" novalidate name="assessment_form1" class="form1">
 
-		<h3>Select ONE or more of the following options:</h3>
+		<h3>Select ONE OR MORE of the following options:</h3>
 			<div class="answer-row incorrect" ng-class="{'active':form.physicalExam}">
 
 				<label 
@@ -627,7 +627,7 @@
 
 		<div class="end-result">
 			
-			<div class="parenteralA" ng-show="decision === 'parenteralA'">
+			<div class="parenteralA" ng-show="decision === 'parenteralA' && showDecision">
 				<h1>Incorrect</h1>
 
 				<ul>
@@ -638,7 +638,7 @@
 			</div>
 
 
-			<div class="parenteralB" ng-show="decision === 'parenteralB'">
+			<div class="parenteralB" ng-show="decision === 'parenteralB' && showDecision">
 				<h1>Correct</h1>
 
 				<ul>
@@ -661,7 +661,7 @@
 			</div>
 
 
-			<div class="rivaroxaban" ng-show="decision === 'rivaroxaban'">
+			<div class="rivaroxaban" ng-show="decision === 'rivaroxaban' && showDecision">
 				<h1>Correct</h1>
 
 				<ul>
@@ -681,7 +681,7 @@
 		</div>
 
 
-		<form action="" novalidate name="assessment_form4">
+		<form action="" novalidate name="assessment_form4" class="form4">
 		
 			<div class="answer-row incorrect" ng-class="{'active':decision === 'parenteralA'}">
 
@@ -721,7 +721,7 @@
 
 			</div>
 
-			<div class="answer-row correct" ng-class="{'active':decision === 'rivaroxaban'}">
+			<div class="answer-row correct rivaroxaban" ng-class="{'active':decision === 'rivaroxaban'}">
 
 				<label 
 				for="rivaroxaban" 

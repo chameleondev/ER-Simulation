@@ -23,27 +23,27 @@ angular.module('ersimulationToolApp')
 
                 case 1 :
                 vid = "videos/"+ attrs.stageone +".mp4";
-                poster = "images/"+ attrs.stageoneposter +".JPG";
+                poster = "images/"+ attrs.stageoneposter +".jpg";
                 break;
 
                 case 2 :
                 vid = "videos/"+ attrs.stagetwo +".mp4";
-                poster = "images/"+ attrs.stagetwoposter +".JPG";
+                poster = "images/"+ attrs.stagetwoposter +".jpg";
                 break;
 
                 case 3 :
                 vid = "videos/"+ attrs.stagethree +".mp4";
-                poster = "images/"+ attrs.stagethreeposter +".JPG";
+                poster = "images/"+ attrs.stagethreeposter +".jpg";
                 break;
 
                 case 4 :
                 vid = "videos/"+ attrs.stagefour +".mp4";
-                poster = "images/"+ attrs.stagefourposter +".JPG";
+                poster = "images/"+ attrs.stagefourposter +".jpg";
                 break;
 
                 case 5 :
                 vid = "videos/"+ attrs.stagefive +".mp4";
-                poster = "images/"+ attrs.stagefiveposter +".JPG";
+                poster = "images/"+ attrs.stagefiveposter +".jpg";
                 break;
 
                 default:
@@ -108,7 +108,13 @@ angular.module('ersimulationToolApp')
 
           videoPlayer.onended = function(){
             console.log('ended!');
-            $('.right-menu,.bottom-menu,.video-frame').addClass('active');
+            if (scope.stage !== 5) {
+              $('.right-menu,.bottom-menu,.video-frame').addClass('active');
+            } else{
+
+              scope.$parent.caseEnd = true;
+              scope.$apply();
+            };
             videoPlayer.className = "stopped";
             // loopVideo();
           };

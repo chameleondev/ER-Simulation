@@ -13,19 +13,21 @@
         An application for elearning
     </description>
 
-    <author href="https://build.phonegap.com" email="support@phonegap.com">
+    <author href="http://www.chameleon-uk.com/" email="development@chameleon-uk.com">
         Chameleon Communications International
     </author>
 
-    <icon src="icon-76.png" gap:platform="ios" width="76" height="76" />
-    <icon src="icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+    <icon src="76_ER_Icon.png" gap:platform="ios" width="76" height="76" />
+    <icon src="152_ER_Icon.png" gap:platform="ios" width="152" height="152" />
 
     <preference name="DisallowOverscroll" value="true" />
-
+    <preference name="orientation" value="landscape" />
     <preference name="webviewbounce" value="false" />
 
-    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
+    <gap:splash src="splash.png" gap:platform="ios" width="1024" height="768" />
+    <gap:splash src="splash@2x.png" gap:platform="ios" width="2048" height="1536" />
 
+    <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
     <gap:plugin name="com.telerik.plugins.wkwebview" version="0.2.5" />
 
 </widget>
