@@ -23,28 +23,34 @@ angular.module('ersimulationToolApp')
 
                 case 1 :
                 vid = "videos/"+ attrs.stageone +".mp4";
-                poster = "images/"+ attrs.stageoneposter +".jpg";
+                poster = "videos/"+ attrs.stageoneposter +".png";
                 break;
 
                 case 2 :
                 vid = "videos/"+ attrs.stagetwo +".mp4";
-                poster = "images/"+ attrs.stagetwoposter +".jpg";
+                poster = "videos/"+ attrs.stagetwoposter +".png";
                 break;
 
                 case 3 :
                 vid = "videos/"+ attrs.stagethree +".mp4";
-                poster = "images/"+ attrs.stagethreeposter +".jpg";
+                poster = "videos/"+ attrs.stagethreeposter +".png";
                 break;
 
                 case 4 :
                 vid = "videos/"+ attrs.stagefour +".mp4";
-                poster = "images/"+ attrs.stagefourposter +".jpg";
+                poster = "videos/"+ attrs.stagefourposter +".png";
                 break;
 
                 case 5 :
                 vid = "videos/"+ attrs.stagefive +".mp4";
-                poster = "images/"+ attrs.stagefiveposter +".jpg";
+                poster = "videos/"+ attrs.stagefiveposter +".png";
                 break;
+
+                case 6 :
+                vid = "videos/"+ attrs.stagesix +".mp4";
+                poster = "videos/"+ attrs.stagesixposter +".png";
+                break;
+
 
                 default:
                 scope.$state.go('home');
@@ -108,9 +114,13 @@ angular.module('ersimulationToolApp')
 
           videoPlayer.onended = function(){
             console.log('ended!');
-            if (scope.stage !== 5) {
+            if (scope.stage < 5) {
               $('.right-menu,.bottom-menu,.video-frame').addClass('active');
-            } else{
+            } else if (scope.stage === 5){
+                scope.$parent.dispatch = true;
+                scope.$apply();
+                // $rootScope.stage++;
+            } else {
 
               scope.$parent.caseEnd = true;
               scope.$apply();

@@ -170,7 +170,7 @@ div,button{
  	right: 20px;
 
  	&.choice{
- 		right: 5px;
+ 		right: 0;
  	}
 }
 
@@ -243,7 +243,7 @@ div,button{
 
 			width: 700px;
 
-			&.end{
+			&.end h2{
 				  margin-bottom: 35px;
 			}
 
@@ -333,6 +333,8 @@ div,button{
   background: white;
 
 
+
+
 	 .overlay{
 	 	width: 1024px;
 		height: 768px;
@@ -342,18 +344,22 @@ div,button{
 
 		&.ng-enter{
 			top: 768px;
+			// @include translate(0,768px);
 		}
 
 		&.ng-enter-active{
 			top:0;
+			// @include translate(0,0);
 		}
 
 		&.ng-leave{
 			top: 0;
+			// @include translate(0,0);
 		}
 
 		&.ng-leave-active{
 			top:768px;
+			// @include translate(0,768px);
 		}
 	
 
@@ -480,6 +486,7 @@ div,button{
 		width: 84px;
 		height: 84px;
 		top: 35px;
+		left: 900px;
 	}
 
 

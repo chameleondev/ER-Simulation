@@ -128,7 +128,13 @@ angular.module('ersimulationToolApp')
 
   		if (allCorrect) {
   			if ($scope.stage !== 4) {
-  				$('.end-result').html('You have selected the correct options. Please click on the NEXT STEP to continue');
+  				if ($scope.stage === 1) {
+  					$('.end-result').html('You have selected the correct options. Please click on the NEXT STEP to continue');
+  				} else{
+  					$('.end-result').html('You have selected the correct option. Please click on the NEXT STEP to continue');
+  				};
+
+  				
   			}
 			
 			$('.right-btn button:eq(1)').html('NEXT STEP');

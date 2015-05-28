@@ -83,9 +83,26 @@
 		<h3 ng-show="stage === 3">Are you ready to select which test should confirm your diagnosis?</h3>
 		<h3 ng-show="stage === 4">Are you ready to select a treatment option?</h3>
 
-		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes">Yes – Move to Assessment</button>
+		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage !== 4">Yes – Move to Assessment</button>
+		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage === 4">Yes – Move to Treatment Choice</button>
 
-		<button ng-click="decisionPoint = !decisionPoint" class="no">No – Return to Treatment Guidance</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 1">No – Return to Patient History</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 2">No – Return to Results</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 3">No – Return to Diagnostics</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 4">No – Return to Treatment Guidance</button>
+	
+	</div>
+
+</div>
+
+<div class="popup" ng-show="dispatch">
+	
+	<div class="confirm decision end">
+		
+		<h2>Dispatch Patient</h2>
+
+		<button ng-click="dispatchPatient()" class="yes">Yes</button>
+
 	</div>
 
 </div>

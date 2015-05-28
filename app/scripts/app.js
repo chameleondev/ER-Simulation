@@ -45,7 +45,12 @@ angular.module('ersimulationToolApp')
 	    .state('case1', {
 	      url: '/',
 	      templateUrl: 'views/case1/index.html',
-	      controller : 'Case1Ctrl'
+	      controller : function($scope,$rootScope,$state){
+	      	$scope.dispatchPatient = function(){
+	      		$rootScope.stage++;
+	      		$state.reload();
+	      	}
+	      }
 	    })
 
 	    // video section
