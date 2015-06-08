@@ -35,4 +35,9 @@ angular.module('ersimulationToolApp')
 
 	};
 
+	$scope.dispatchPatient = function(){
+  		$rootScope.stage++;
+  		$state.reload();
+  	}
+
   });

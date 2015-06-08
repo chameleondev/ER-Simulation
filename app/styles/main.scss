@@ -276,6 +276,12 @@ div,button{
   			}
 		}
 
+		&.dispatch{
+			button{
+				margin-top: 80px;
+			}
+		}
+
 
 		h2{
 			margin-top: 55px;
@@ -519,7 +525,7 @@ div,button{
 		ul{
 			list-style: none;
 			padding: 0;
-			margin-top: 165px;
+			margin-top: 220px;
 		}
 
 		li{
