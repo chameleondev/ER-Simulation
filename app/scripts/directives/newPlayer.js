@@ -22,32 +22,32 @@ angular.module('ersimulationToolApp')
               switch(scope.stage){
 
                 case 1 :
-                vid = "videos/"+ attrs.stageone +".mp4";
+                vid = "videos/"+ attrs.stageone +".ogv";
                 poster = "videos/"+ attrs.stageoneposter +".png";
                 break;
 
                 case 2 :
-                vid = "videos/"+ attrs.stagetwo +".mp4";
+                vid = "videos/"+ attrs.stagetwo +".ogv";
                 poster = "videos/"+ attrs.stagetwoposter +".png";
                 break;
 
                 case 3 :
-                vid = "videos/"+ attrs.stagethree +".mp4";
+                vid = "videos/"+ attrs.stagethree +".ogv";
                 poster = "videos/"+ attrs.stagethreeposter +".png";
                 break;
 
                 case 4 :
-                vid = "videos/"+ attrs.stagefour +".mp4";
+                vid = "videos/"+ attrs.stagefour +".ogv";
                 poster = "videos/"+ attrs.stagefourposter +".png";
                 break;
 
                 case 5 :
-                vid = "videos/"+ attrs.stagefive +".mp4";
+                vid = "videos/"+ attrs.stagefive +".ogv";
                 poster = "videos/"+ attrs.stagefiveposter +".png";
                 break;
 
                 case 6 :
-                vid = "videos/"+ attrs.stagesix +".mp4";
+                vid = "videos/"+ attrs.stagesix +".ogv";
                 poster = "videos/"+ attrs.stagesixposter +".png";
                 break;
 
@@ -79,15 +79,15 @@ angular.module('ersimulationToolApp')
                     switch(scope.stage){
 
                       case 1 :
-                      loopVid = "videos/"+ attrs.stageoneloop +".mp4";
+                      loopVid = "videos/"+ attrs.stageoneloop +".ogv";
                       break;
 
                       case 2 :
-                      loopVid = "videos/"+ attrs.stagetwoloop +".mp4";
+                      loopVid = "videos/"+ attrs.stagetwoloop +".ogv";
                       break;
 
                       case 3 :
-                      loopVid = "videos/"+ attrs.stagethreeloop +".mp4";
+                      loopVid = "videos/"+ attrs.stagethreeloop +".ogv";
                       break;
 
                     }
