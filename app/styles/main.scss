@@ -1063,6 +1063,13 @@ div,button{
 				right: -36px;
 				top:0;
 				z-index: 100;
+
+				&.two-line{
+					border-bottom: 55px solid transparent;  /* left arrow slant */
+					border-top: 55px solid transparent; /* right arrow slant */
+					border-left: 55px solid $highlightedBlue; /* bottom, add background color here */
+					right: -55px;
+				}
 			}
 
 			&.active{

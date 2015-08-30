@@ -369,7 +369,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip-incorrect class="help" title="No evidence of cellulitis"></i> 
+					<i tooltip-incorrect class="help" title="Cellulitis is still possible and may mimic DVT in presentation. However, other signs of infection, such as fever, should be present"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.pe}">
@@ -530,7 +530,7 @@
 					id="ultrasound"
 					name="ultrasound"
 					ng-model="form.ultrasound"
-					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.venogram = false;form.anticoagulant = false;form.tests = false"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.venogram = false;form.anticoagulant = false;form.tests = false;form.ventilation = false;"
 					>
 					Ultrasound of symptomatic leg
 
@@ -540,7 +540,7 @@
 					<i tooltip-missed class="help" title="A patient with suspected DVT  should be sent for an ultrasound to confirm the diagnosis"></i>
 			</div>
 
-			<div class="answer-row incorrect" ng-class="{'active':form.venogram}">
+			<div class="answer-row correct" ng-class="{'active':form.venogram}">
 
 				<label 
 				for="venogram" 
@@ -551,14 +551,14 @@
 					id="venogram"
 					name="venogram"
 					ng-model="form.venogram"
-					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.ultrasound = false;form.anticoagulant = false;form.tests = false"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.ultrasound = false;form.anticoagulant = false;form.tests = false;form.ventilation = false;"
 					> 
 					Venogram
 
 					<i class="result"></i>
 				</label>
 
-					<i tooltip-incorrect class="help" title="Use D-dimer and ultrasound first"></i> 
+					<i tooltip-missed class="help" title="consider ultrasound here as venograms are less readily available and are associated with more discomfort for the patient"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.anticoagulant}">
@@ -572,7 +572,7 @@
 					id="anticoagulant"
 					name="anticoagulant"
 					ng-model="form.anticoagulant"
-					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.ultrasound = false;form.venogram = false;form.tests = false"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.ultrasound = false;form.venogram = false;form.tests = false;form.ventilation = false;"
 					> 
 					Start anticoagulant treatment
 
@@ -594,7 +594,7 @@
 					id="tests"
 					name="tests"
 					ng-model="form.tests"
-					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.thrombophilia = false;form.ultrasound = false;form.venogram = false;form.anticoagulant = false"
+					ng-click="form.thrombophilia = false;form.xray = false;form.computerized = false;form.ultrasound = false;form.venogram = false;form.anticoagulant = false;form.ventilation = false;"
 					> 
 					No tests or treatment required
 
@@ -648,14 +648,14 @@
 				<p>Have you considered using rivaroxaban?</p>
 
 				<ul>
-					<li>Rivaroxaban may overcome some of these limitations </li>
+					<li>Rivaroxaban may overcome some of these limitations</li>
 
 					<ul>
-						<li>no need for routine coagulation monitoring</li>
-						<li>no known dietary restrictions or food interactions</li>
+						<li>No need for routine coagulation monitoring</li>
+						<li>No known dietary restrictions or food interactions</li>
 						<li>lower risk of bleeding</li>
-						<li>most patients can be treated at home (may allow earlier discharge from hospital)</li>
-						<li>once-daily regimen after 3 weeks</li>
+						<li>Most patients can be treated at home (may allow earlier discharge from hospital)</li>
+						<li>Once-daily regimen after 3 weeks</li>
 					</ul>
 				</ul>
 			</div>
@@ -669,7 +669,7 @@
 
 					<li>No need for routine coagulation monitoring, no known dietary restrictions or food interactions, and most patients can be treated at home (may allow earlier discharge from hospital)</li>
 
-					<li>After 21 days the patient moves to a OD regime (similar to VKAs) which improves compliance and is better suited for younger, active patients</li>
+					<li>After 21 days, the patient moves to a once-daily regime (similar to VKAs) which improves compliance and is better suited for younger, active patients</li>
 
 					<li>Lower risk of major bleeding for rivaroxaban (46% reduction) compared with LMWH/VKA therapy</li>
 				</ul>
