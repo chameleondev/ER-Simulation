@@ -1,0 +1,227 @@
+<div ui-view class="overlay"></div>
+<div class="videos">
+
+
+	<!-- EXTENSION IS ADDED IN THE DIRECTIVE -->
+	<video 
+	new-player 
+	width="100%" 
+	controls 
+	class="stopped"
+	type="video/mp4"
+	stageOne="Video1_2"
+	stageOnePoster="Video1_2"
+	stageTwo="Video2_2"
+	stageTwoPoster="Video2_2"
+	stageThree=""
+	stageThreePoster=""
+	stageFour="Video3_2"
+	stageFourPoster="Video3_2"
+	stageFive="Video4_2"
+	stageFivePoster="Video4_2"
+	stageSix="Video5_2"
+	stageSixPoster="Video5_2"
+	>
+
+	</video>
+
+
+	<div class="video-controls" style="display:none">
+		<div class="controls">
+			<div type="button" id="play-pause" class="play"></div>
+	    	<input type="range" id="seek-bar" value="0">
+	    	<div class="progress-bar">
+	    		<div class="progress" style="width: {{progress || 0}}%"></div>
+	    	</div>
+		</div>
+	    
+	    <button class="skip-btn">SKIP VIDEO</button>
+	 </div>
+
+	<div class="right-menu" ng-show="stage === 1">
+		<div class="header-bg">
+			<h1>Patient History</h1>
+		</div>
+		
+
+		<div class="wrapper" scroller>
+			
+			<div class="scroll-content">
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Presenting complaint</li>
+					<ul class="list-content">
+						<li>42-year-old female presents to the emergency department with acute breathlessness</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> History of presenting complaint</li>
+					<ul class="list-content">
+						<li>Breathlessness in last week</li>
+						<li>Has become worse prior to admission</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Past medical history</li>
+					<ul class="list-content">
+						<li>Generally healthy with raised BMI of 28</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Drug history</li>
+					<ul class="list-content">
+						<li>Hay fever tablets (loratadine)</li>
+						<li>No COC/hormonal therapy</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Family history</li>
+					<ul class="list-content">
+						<li>No family history of thromboembolism or heart disease</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Social history</li>
+					<ul class="list-content">
+						<li>Bank manager</li>
+						<li>Two daughters aged 9 and 11</li>
+						<li>Non-smoker/drug user, moderate alcohol intake</li>
+						<li>No recent surgery or long periods of immobilization</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Review of systems</li>
+					<ul class="list-content">
+						<li>No other complaints</li>
+						<li>Not pregnant (consider test if concerned)</li>
+					</ul>
+				</ul>
+
+			</div>
+
+		</div>
+
+		
+	</div>
+
+
+	<div class="right-menu" ng-show="stage === 2">
+		<div class="header-bg">
+			<h1>Assessment: Initial Results</h1>
+		</div>
+
+		<div class="wrapper" scroller>
+			<div class="scroll-content">
+				
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Physical examination </li>
+					<ul class="list-content">
+						<li>No swelling, redness or tenderness in the legs</li>
+						<li>Raised heart rate (132 beats/minute)</li>
+						<li>No chest pain and lungs sound clear</li>
+						<li>No other concerns, haemodynamically stable</li>
+						<li>No fever/high temperature</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Two-level PE Wells’ score</li>
+					<ul class="list-content">
+						<li>PE likely</li>
+						<li>Heart rate >100 beats/min (1.5 points)</li>
+						<li>Alternative diagnoses less likely than PE  (3 points)</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> ECG results</li>
+					<ul class="list-content">
+						<li>No evidence of MI or AF</li>
+					</ul>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Awaiting blood test results</li>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Awaiting chest X-ray</li>
+				</ul>
+
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="right-menu" ng-show="stage === 3">
+		<div class="header-bg">
+			<h1>Diagnostics</h1>
+		</div>
+
+		<div class="wrapper" scroller>
+				
+			<div class="scroll-content">
+				
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Diagnosing Idiopathic PE</li>
+					<ul class="list-content">
+						<li>If acute idiopathic PE is suspected – how can you confirm the diagnosis?</li>
+					</ul>
+				</ul>
+
+			</div>
+
+		</div>
+		
+	</div>
+
+
+	<div class="right-menu" ng-show="stage === 4">
+		<div class="header-bg">
+			<h1>Diagnostics: Results</h1>
+		</div>
+
+		<div class="wrapper" scroller>
+				
+			<div class="scroll-content">
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> The patient has a sPESI score of 1 (high pulse rate)</li>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Troponin levels and CTPA do not indicate any right ventricular dysfunction</li>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Breathlessness and an elevated heart rate are the only signs and symptoms of PE</li>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> The patient is otherwise well</li>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> The patient received one dose of LMWH while awaiting confirmation of the diagnosis and was admitted overnight to the observation ward </li>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> Patient clinically stable; tachycardia resolved; sPESI score now 0</li>
+				</ul>
+
+				<ul>
+					<li class="list-header"><i class="header-icon"></i> What are your next steps?</li>
+				</ul>
+			</div>
+
+		</div>
+		
+	</div>
+
+</div>

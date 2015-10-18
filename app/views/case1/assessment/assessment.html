@@ -434,6 +434,8 @@
 		<div class="end-result"></div>
 
 		<form action="" novalidate name="assessment_form3" class="form3">
+
+		<h3>Select ONE of the following options:</h3>
 		
 			<div class="answer-row incorrect" ng-class="{'active':form.thrombophilia}">
 
@@ -537,7 +539,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip-missed class="help" title="A patient with suspected DVT  should be sent for an ultrasound to confirm the diagnosis"></i>
+					<i tooltip-missed class="help" title="An ultrasound is used to diagnose a suspected DVT"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.venogram}">
@@ -558,7 +560,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip-missed class="help" title="consider ultrasound here as venograms are less readily available and are associated with more discomfort for the patient"></i> 
+					<i tooltip-missed class="help" title="Consider ultrasound here as venograms are less readily available and are associated with more discomfort for the patient"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.anticoagulant}">
@@ -638,26 +640,34 @@
 			</div>
 
 
-			<div class="parenteralB" ng-show="decision === 'parenteralB' && showDecision">
-				<h1>Correct</h1>
+			<div class="parenteralB" ng-show="decision === 'parenteralB' && showDecision" scroller scrollheight="550px">
+				<div>
+					<div style="padding:10px">
+						<h1>Correct</h1>
 
-				<ul>
-					<li>Patient requires daily, dose-adjusted LMWH (and may be admitted to hospital) overlapping with oral VKA until target INR (2.0–3.0 in most patients) is reached. After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions</li>
-				</ul>
+						<ul>
+							<li>Patient requires daily, dose-adjusted LMWH (and may be admitted to hospital) overlapping with oral VKA until target INR (2.0–3.0 in most patients) is reached. After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions</li>
 
-				<p>Have you considered using rivaroxaban?</p>
+							<li>It is also possible to switch to dabigatran instead of a VKA, but only after 5–10 days of parenteral anticoagulation with e.g. LMWH</li>
+						</ul>
 
-				<ul>
-					<li>Rivaroxaban may overcome some of these limitations</li>
+						<p>Have you considered using a NOAC licensed for single-drug DVT treatment?</p>
 
-					<ul>
-						<li>No need for routine coagulation monitoring</li>
-						<li>No known dietary restrictions or food interactions</li>
-						<li>lower risk of bleeding</li>
-						<li>Most patients can be treated at home (may allow earlier discharge from hospital)</li>
-						<li>Once-daily regimen after 3 weeks</li>
-					</ul>
-				</ul>
+						<ul>
+							<li>Rivaroxaban and apixaban can be used from the start of treatment without the need for initial LMWH</li>
+							<li>Rivaroxaban, for example, may overcome some of the limitations of the LMWH/VKA dual-drug approach:</li>
+
+							<ul>
+								<li>No need for initial injections or routine coagulation monitoring</li>
+								<li>No known dietary restrictions or food interactions</li>
+								<li>Lower risk of major bleeding (Prins MH et al. Thromb J 2013;11:21)</li>
+								<li>Most patients can be treated at home (may allow earlier discharge from hospital), (van Bellen B et al. Curr Med Res Opin 2014;30:829–837)</li>
+								<li>Once-daily regimen after 21 days </li>
+							</ul>
+						</ul>
+					</div>
+					
+				</div>
 			</div>
 
 
@@ -665,16 +675,16 @@
 				<h1>Correct</h1>
 
 				<ul>
-					<li>Patient leaves hospital on rivaroxaban 15 mg BID and a follow-up visit is arranged at a coagulation clinic for 21 days' time, at which stage the patient will switch to 20 mg OD for 3 months</li>
+					<li>Patient leaves hospital on e.g. rivaroxaban 15 mg twice daily and a follow-up visit is arranged at a coagulation clinic for 21 days' time, at which stage the patient will switch to 20 mg once daily for 3 months</li>
 
-					<li>No need for routine coagulation monitoring, no known dietary restrictions or food interactions, and most patients can be treated at home (may allow earlier discharge from hospital)</li>
+					<li>No need for routine coagulation monitoring, no known dietary restrictions or food interactions, and most patients can be treated at home (may allow earlier discharge from hospital) (van Bellen B et al. Curr Med Res Opin 2014;30:829–837)</li>
 
-					<li>After 21 days, the patient moves to a once-daily regime (similar to VKAs) which improves compliance and is better suited for younger, active patients</li>
+					<li>If using rivaroxaban, after 21 days, the patient moves to a once-daily regimen (similar to VKAs) which improves compliance and is better suited for younger, active patients</li>
 
-					<li>Lower risk of major bleeding for rivaroxaban (46% reduction) compared with LMWH/VKA therapy</li>
+					<li>Lower risk of major bleeding for rivaroxaban (46% reduction) compared with LMWH/VKA therapy (Prins MH et al. Thromb J 2013;11:21)</li>
 				</ul>
 
-				<p>Rivaroxaban offers advantages over VKAs that<br>lead to better patient satisfaction</p>
+				<p>Rivaroxaban offers advantages over VKAs that<br>lead to better patient satisfaction (Bamber L et al. Thromb Haemost 2013;110:732–741)</p>
 			</div>
 
 
@@ -682,6 +692,8 @@
 
 
 		<form action="" novalidate name="assessment_form4" class="form4">
+
+		<h3>Select ONE of the following options:</h3>
 		
 			<div class="answer-row incorrect" ng-class="{'active':decision === 'parenteralA'}">
 
@@ -721,7 +733,7 @@
 
 			</div>
 
-			<div class="answer-row correct rivaroxaban" ng-class="{'active':decision === 'rivaroxaban'}">
+			<div class="answer-row correct proceed" ng-class="{'active':decision === 'rivaroxaban'}">
 
 				<label 
 				for="rivaroxaban" 
@@ -733,7 +745,7 @@
 					name="rivaroxaban"
 					ng-click="decision = 'rivaroxaban'"
 					> 
-					Rivaroxaban single-drug approach
+					NOAC single-drug approach
 
 					<i class="result"></i>
 				</label>

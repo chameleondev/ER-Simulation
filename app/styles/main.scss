@@ -145,7 +145,7 @@ div,button{
 
 
 .header-bg{
-	height: 40px;
+	// height: 40px;
 	padding: 15px 0;
 	background: $labelGrey;
 }
@@ -211,12 +211,32 @@ div,button{
 	left: 31px;
 }
 
+.references-btn{
+	@include at2x('../images/expert-icon',png, 35px, 54px);
+	height: 54px;
+	width: 35px;
+	background-repeat: no-repeat;
+	top: 10px;
+	left: 31px;
+}
+
 .home-icon{
 	  height: inherit;
 	  width: 100px;
-	  background: $homeGreen;
+	  background: $homeBlue;
 	  position: absolute;
 	  left: 190px;
+	  @include at2x('../images/home-icon',png, 68px, 54px);
+	  background-repeat: no-repeat;
+	  background-position: 15px 9px;
+}
+
+.menu-icon{
+	height: inherit;
+	  width: 100px;
+	  background: $homeBlue;
+	  position: absolute;
+	  left: 290px;
 	  @include at2x('../images/menu-icon',png, 68px, 54px);
 	  background-repeat: no-repeat;
 	  background-position: 15px 9px;
@@ -229,7 +249,7 @@ div,button{
 	  top: 0;
 	  left: 0;
 	  background: rgba(0, 0, 0, 0.5);
-	  z-index: 2000;
+	  z-index: 9999999999;
 
 	  .confirm{
 	  	@extend %absolute-center;
@@ -346,7 +366,7 @@ div,button{
 		height: 768px;
 		position: absolute;
 	 	@include transition-property(all);
-		@include transition-duration(1s);
+		@include transition-duration(1s);	
 
 		&.ng-enter{
 			top: 768px;
@@ -375,21 +395,108 @@ div,button{
 			height: 758px;
 		}
 
-		  .hint{
-		  	@extend %middleSection;
-		  	width: 1024px;
+		.hint{
+			@extend %middleSection;
+			width: 1024px;
 			height: 215px;
 			text-align: center;
 			line-height: 20px;
-		  }
+		}
 
-		  .expert{
-		  	@extend %middleSection;
-		  	width: 1024px;
+		.expert{
+			@extend %middleSection;
+			width: 1024px;
 			height: 215px;
 			text-align: center;
 			line-height: 20px;
-		  }
+		}
+
+		.references{
+		  	@extend %middleSection;
+		  	width: 1024px;
+			height: 758px;
+		}
+
+	 }
+
+	 .overlay-secondary{
+	 	width: 1024px;
+		height: 768px;
+		position: absolute;
+		top: 768px;
+		text-align: center;
+		color: white;
+	 	@include transition-property(all);
+		@include transition-duration(1s);
+
+		&.active{
+			top:0;
+		}
+
+		.assessment-overlay{
+			@extend %middleSection;
+			width: 1024px;
+			height: 215px;
+
+			h2{
+				  margin-top: 0;
+				  font-size: 30px;
+				  font-weight: normal;
+				  margin-bottom: 0px;
+			}
+
+
+			button{
+				margin-top: 10px;
+				width: 300px;
+				margin: 0 15px;
+				border: none;
+				margin: 0 5px;
+				background: rgba(255, 255, 255, 0.5);
+				font-family: 'source_sans_prolight';
+				font-size: 18px;
+
+				&.no{
+				 background: white;
+				} 
+			}
+		}
+
+		.mainMenu-overlay{
+			@extend %middleSection;
+			width: 1024px;
+			height: 758px;
+
+			.wrapper{
+				width: 790px;
+				margin:0 auto;
+
+				.vid-img{
+					width: 250px;
+					height: 200px;
+					background-color:red;
+				}
+
+				.col{
+					width: 250px;
+					float: left;
+				}
+
+				.col2{
+					margin:0 20px;
+				}
+
+				p{
+					text-align: left;
+				}
+			}
+		}
+
+		.references-overlay{
+			@extend %middleSection;
+			width: 1024px;
+			height: 758px;
+		}
 
 	 }
 
@@ -405,7 +512,7 @@ div,button{
 	bottom: -75px;
 	left: 0;
 	background: $primaryBlue;
-	z-index: 1000;
+	z-index: 999999;
 	overflow: hidden;
 	@include transition-property(all);
 	@include transition-duration(1s);
@@ -446,9 +553,9 @@ div,button{
 	.middle-section{
 		height: inherit;
 		margin: 0 auto;
-		width: 333px;
+		width: 433px;
 		position: relative;
-		right: 55px;
+		right: -95px;
 		top: -1px;
 
 		.button-bg{
@@ -530,11 +637,23 @@ div,button{
 
 		li{
 			background:$primaryBlue;
-			padding: 20px;
+			height: 75px;
 			margin-bottom: 30px;
 			color: white;
 			font-size: 30px;
 			position: relative;
+
+			.case-title{
+				float: left;
+			    padding: 19px;
+			    background-color: $homeBlue;
+			}
+
+			.case-description{
+				font-size: 14px;
+			    padding: 20px;
+			    float: left;
+			}
 
 			.case-icon{
 				@include at2x('../images/case-icon',png, 26px, 26px);
@@ -809,7 +928,7 @@ div,button{
 		.list-header{
 			list-style: none;
 			color: $primaryBlue;
-			font-family: 'source_sans_prosemibold';
+			font-family: 'source_sans_proregular';
 			font-size: 18px;
 
 			.header-icon{
@@ -875,7 +994,7 @@ div,button{
 	.end-result{
 		  float: right;
 		  width: 380px;
-		  margin-top: 27px;
+		  margin-top: 50px;
 		  color: $secondaryBlue;
 
 		  p{
@@ -1012,7 +1131,26 @@ div,button{
 
 }
 
+.info-table{
+		border-collapse:collapse;
+		background: $lightGrey;
+	
+		th{
+			background : $highlightedBlue;
+			color: white;
+			padding:10px;
+			font-size: 24px;
+			text-align: left;
+		}
+
+		td{
+			padding: 10px;
+		}
+	}
+
 .information{
+
+
 	
 
 	ul{
@@ -1033,6 +1171,7 @@ div,button{
 		.header-bg{
 			position: relative;
 			z-index: 100;
+			height: 40px;
 		}
 
 		ul{
@@ -1263,6 +1402,47 @@ div,button{
   				margin-top: 10px;
 			}
 	
+		}
+	}
+}
+
+.popup-icon {
+	position: absolute;
+	top: 500px;
+}
+
+.swiper-container{
+	height:600px;
+	width:700px;
+	background:$secondaryBlue;
+	color:white;
+	@extend %absolute-center;
+
+	.swiper-content{
+		padding: 20px;
+	}
+
+	.close{
+		position: absolute;
+		top: 20px;
+		left: 650px;
+		z-index: 1000;
+		@include at2x('../images/close-drawer-icon',png, 30px, 30px);
+		width: 30px;
+		height: 30px;
+	}
+
+	h1{
+		 color: white;
+	}
+}
+
+.case-end{
+	.confirm{
+		height:600px;
+
+		ul{
+			text-align: left;
 		}
 	}
 }

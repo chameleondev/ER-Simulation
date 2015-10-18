@@ -1,0 +1,150 @@
+<div class="information">
+	<i class="close blue" ui-sref="^"></i>
+
+	<div class="left-content" ng-show="stage === 1">
+		<h1 class="header-bg"></h1>
+
+		<ul>
+			<li ui-sref=".breathlessness" ui-sref-active="active">
+				Breathlessness
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".investigations" ui-sref-active="active">
+				Investigations
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".blood" ui-sref-active="active">
+				Blood Tests
+				<div class="arrow-right"></div>
+			
+			</li>
+			<li ui-sref=".vte" ui-sref-active="active">
+				VTE
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".pe" ui-sref-active="active">
+				PE
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".others" ui-sref-active="active">
+				Differential Diagnoses
+				<div class="arrow-right"></div>
+
+			</li>
+		</ul>
+
+	</div>
+
+
+	<div class="left-content" ng-show="stage === 2">
+		<h1 class="header-bg"></h1>
+
+		<ul>
+			<li ui-sref=".physicalExam" ui-sref-active="active">
+				Physical examination
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".wells" ui-sref-active="active">
+				Wells' score
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".dimerTest" ui-sref-active="active">
+				D-dimer test
+				<div class="arrow-right"></div>
+			
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="left-content" ng-show="stage === 3">
+		<h1 class="header-bg"></h1>
+
+		<ul>
+			<li ui-sref=".thrombophilia" ui-sref-active="active">
+				Thrombophilia test
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".ultrasound" ui-sref-active="active">
+				Compression Duplex Doppler/Ultrasound scan
+				<div class="arrow-right two-line"></div>
+			
+			</li>
+			<li ui-sref=".anticoagulationTherapy" ui-sref-active="active">
+				Anticoagulation therapy
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".ctpa" ui-sref-active="active">
+				CTPA
+				<div class="arrow-right"></div>
+				
+			</li>
+			<li ui-sref=".ventilation" ui-sref-active="active">
+				Ventilation/perfusion lung scan
+				<div class="arrow-right"></div>
+				
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="left-content" ng-show="stage === 4">
+		<h1 class="header-bg"></h1>
+
+		<ul>
+			<li ui-sref=".option1" ui-sref-active="active">
+				Option 1
+				<div class="arrow-right"></div>
+
+			</li>
+			<li ui-sref=".option2" ui-sref-active="active">
+				Option 2
+				<div class="arrow-right">
+				</div>
+
+			</li>
+			<li ui-sref=".option3" ui-sref-active="active">
+				Option 3
+				<div class="arrow-right"></div>
+			
+			</li>
+			<li ui-sref=".option4" ui-sref-active="active">
+				Option 4
+				<div class="arrow-right"></div>
+			
+			</li>
+		</ul>
+
+	</div>
+
+
+	<div class="right-content">
+		<h1 class="header-bg" ng-show="stage === 1">Information</h1>
+		<h1 class="header-bg" ng-show="stage === 2">Assessment Information</h1>
+		<h1 class="header-bg" ng-show="stage === 3">Diagnostics: Options</h1>
+		<h1 class="header-bg" ng-show="stage === 4">Treatment: Guidance</h1>
+		<div ui-view>
+
+			<div class="content">
+				
+				<p ng-show="stage === 1">Select the topics on the left to learn more about the differential diagnoses for this patient and possible next steps.</p>
+
+				<p ng-show="stage === 2">Select the topics on the left to learn more about each completed assessment.</p>
+
+				<p ng-show="stage === 3">Select each clinical test on the left to learn more.</p>
+
+				<p ng-show="stage === 4">Select each treatment option on the left to learn more</p>
+
+			</div>
+			
+		</div>
+	</div>
+</div>

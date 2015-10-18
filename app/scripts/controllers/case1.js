@@ -10,6 +10,7 @@
 angular.module('ersimulationToolApp')
   .controller('Case1Ctrl', function ($scope,$timeout,$rootScope,$state) {
 
+
   	window.scope = $scope;
 
 	$scope.showMenu = function(){
@@ -34,6 +35,10 @@ angular.module('ersimulationToolApp')
 
 
 	};
+
+    $scope.changeStage = function(newStage){
+        $rootScope.stage = newStage;
+    }
 
 	$scope.dispatchPatient = function(){
   		$rootScope.stage++;

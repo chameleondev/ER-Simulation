@@ -15,9 +15,8 @@
 		<button class="left-btn" ng-show="'case1.assessment' | includedByState" ng-click="backToLoop()" ui-sref="case1.video">PATIENT HISTORY</button>
 	</span>
 
-	<div class="home-icon" ng-click="goHome = !goHome">
-		
-	</div>
+	<div class="home-icon" ng-click="goHome = !goHome"></div>
+	<div class="menu-icon" ng-click="mainMenu = !mainMenu"></div>
 
 	<div class="middle-section" ng-show="stage !== 5">
 
@@ -38,6 +37,11 @@
 			<button class="expert-btn" ng-click="toggleMenu('expert','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 
+		<div class="label-bg references-label" >
+			<button class="references-btn" ng-click="toggleMenu('references','video')" ng-show="'case1.video' | includedByState"></button>
+			<button class="references-btn" ng-click="toggleMenu('references','assessment')" ng-show="'case1.assessment' | includedByState"></button>
+		</div>
+
 		
 	</div>
 	
@@ -53,7 +57,7 @@
 				<i class="next-icon choice"></i>
 			</div>
 		</button>
-		<button class="right-btn" ng-show="'case1.assessment' | includedByState" ng-click="submitForm()" >SUBMIT</button>
+		<button class="right-btn" ng-show="'case1.assessment' | includedByState" ng-click="submitForm('case1')" >SUBMIT</button>
 	</span>
 	
 </div>
@@ -72,7 +76,7 @@
 </div>
 
 
-<div class="popup" ng-show="decisionPoint">
+<!-- <div class="popup" ng-show="decisionPoint">
 	
 	<div class="confirm decision">
 		
@@ -93,6 +97,69 @@
 	
 	</div>
 
+</div> -->
+
+<div class="overlay-secondary" ng-class="{'active' : decisionPoint}">
+	<div class="assessment-overlay">
+
+		<h2>DECISION POINT</h2>
+
+		<h3 ng-show="stage === 1">Are you ready to select the next steps for this patient?</h3>
+		<h3 ng-show="stage === 2">Are you ready to select the most likely diagnosis?</h3>
+		<h3 ng-show="stage === 3">Are you ready to select which test should confirm your diagnosis?</h3>
+		<h3 ng-show="stage === 4">Are you ready to select a treatment option?</h3>
+
+		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage !== 4">Yes – Move to Assessment</button>
+		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage === 4">Yes – Move to Treatment Choice</button>
+
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 1">No – Return to Patient History</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 2">No – Return to Results</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 3">No – Return to Diagnostics</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 4">No – Return to Treatment Guidance</button>
+
+	</div>
+</div>
+
+<div class="overlay-secondary" ng-class="{'active' : mainMenu}">
+	<div class="mainMenu-overlay">
+
+		<i class="close" ng-click="mainMenu = !mainMenu"></i>
+
+		<div class="wrapper">
+			<h2>Case 1</h2>
+
+			<div class="col1 col" ng-show="stage > 1">
+				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(1)" ui-sref-opts="{reload: true}"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aperiam repellendus molestiae nostrum libero, vero tempore eveniet explicabo qui architecto quasi veniam! Nihil voluptatum, numquam, dolorum quidem provident ad eaque.</p>
+			</div>
+			<div class="col2 col" ng-show="stage > 2">
+				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(2)" ui-sref-opts="{reload: true}"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur provident asperiores optio deleniti architecto, odit in? Provident cumque eos reiciendis nam, voluptatibus velit laudantium soluta odio, minima, asperiores dicta enim.</p>
+			</div>
+			<div class="col3 col" ng-show="stage > 3">
+				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(3)" ui-sref-opts="{reload: true}"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus at ducimus distinctio perspiciatis, modi, dolorem culpa voluptatem aut neque sapiente voluptatum eligendi asperiores iusto veniam nam, esse ipsa voluptatibus aliquam.</p>
+			</div>
+		</div>
+
+		
+
+	</div>
+</div>
+
+<div class="overlay-secondary" ng-class="{'active' : references}">
+	<div class="references-overlay">
+
+		<i class="close" ng-click="references = !references"></i>
+
+		<div class="wrapper">
+			<h2>references</h2>
+
+		</div>
+
+		
+
+	</div>
 </div>
 
 <div class="popup" ng-show="dispatch">
@@ -108,11 +175,33 @@
 </div>
 
 
-<div class="popup" ng-show="caseEnd">
+<div class="popup case-end" ng-show="caseEnd">
 	
 	<div class="confirm decision end">
 		
-		<h2>End of Case 1</h2>
+		<h2>What’s Next?</h2>
+
+		<p>Follow-up and patient education</p>
+
+		<ul>
+			<li>Before the patient is discharged, advice should be given, including:
+				<ul>
+					<li>Current dosing, frequency, duration and any dose changes needed</li>
+					<li>Signs and symptoms of recurrent VTE and bleeding events</li>
+					<li>When to seek medical advice (provide telephone number or contact details)</li>
+				</ul>
+			</li>
+			<li>Notify the patient’s primary care team of the diagnosis and treatment</li>
+			<li>If using rivaroxaban, organize and notify patient of follow-up appointment in 21 days – patient education will be repeated at this time</li>
+			<li>Treatment review every 3 months</li>
+			<li>Consultant appointment booked for 6 weeks to 3 months’ time</li>
+			<li>
+				<a href="http://www.er.xarelto.com" target="_blank">Link to the ER website</a>
+			</li>
+			<li>
+				<a href="certificates/certificate.pdf" download>Link to module certificate and printing options</a>
+			</li>
+		</ul>
 
 		<button ui-sref="home" class="yes">Main menu</button>
 

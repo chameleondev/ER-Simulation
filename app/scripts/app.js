@@ -13,11 +13,11 @@ angular
     'ngAnimate',
     'ngTouch',
     'ui.router',
-    'ngSanitize',
-	'com.2fdevs.videogular',
-	'com.2fdevs.videogular.plugins.controls',
+    'ngSanitize'
+	// 'com.2fdevs.videogular',
+	// 'com.2fdevs.videogular.plugins.controls',
 	// 'com.2fdevs.videogular.plugins.overlayplay',
-	'com.2fdevs.videogular.plugins.poster'
+	// 'com.2fdevs.videogular.plugins.poster'
   ]);
 
 
@@ -48,6 +48,12 @@ angular.module('ersimulationToolApp')
 	      controller : 'Case1Ctrl'
 	    })
 
+	    .state('case2', {
+	      url: '/',
+	      templateUrl: 'views/case2/index.html',
+	      controller : 'Case2Ctrl'
+	    })
+
 	    // video section
 
 	    .state('case1.video', {
@@ -64,6 +70,30 @@ angular.module('ersimulationToolApp')
 
 	    .state('case1.video.expert', {
 	      templateUrl: 'views/case1/expert.html'
+	    })
+
+	    .state('case1.video.references', {
+	      templateUrl: 'views/case1/references.html'
+	    })
+
+	    .state('case2.video', {
+	      templateUrl: 'views/case2/video/video.html'
+	    })
+
+	    .state('case2.video.info', {
+	      templateUrl: 'views/case2/information.html'
+	    })
+
+	    .state('case2.video.hint', {
+	      templateUrl: 'views/case2/hint.html'
+	    })
+
+	    .state('case2.video.expert', {
+	      templateUrl: 'views/case2/expert.html'
+	    })
+
+	    .state('case2.video.references', {
+	      templateUrl: 'views/case2/references.html'
 	    })
 
 
@@ -84,40 +114,85 @@ angular.module('ersimulationToolApp')
 
 	    .state('case1.assessment.expert', {
 	      templateUrl: 'views/case1/expert.html'
+	    })
+
+	    .state('case1.assessment.references', {
+	      templateUrl: 'views/case1/references.html'
+	    })
+
+	    .state('case2.assessment', {
+	      templateUrl: 'views/case2/assessment/assessment.html',
+	      controller : 'assessment2Ctrl'
+	    })
+
+	    .state('case2.assessment.info', {
+	      templateUrl: 'views/case2/information.html'
+	    })
+
+	    .state('case2.assessment.hint', {
+	      templateUrl: 'views/case2/hint.html'
+	    })
+
+	    .state('case2.assessment.expert', {
+	      templateUrl: 'views/case2/expert.html'
+	    })
+
+	    .state('case2.assessment.references', {
+	      templateUrl: 'views/case2/references.html'
 	    });
 
 	//function for adding a child information state to a state
-	function addInformationState (stateName) {
+	function addInformationState (val) {
 	  $stateProvider
-	  .state('case1.video.info.'+stateName, {
-	    templateUrl: 'views/case1/info/'+stateName+'.html'
+	  .state(val.num +'.video.info.'+val.name, {
+	    templateUrl: 'views/'+ val.num +'/info/'+val.name+'.html'
 	  })
 
-	  .state('case1.assessment.info.'+stateName, {
-	    templateUrl: 'views/case1/info/'+stateName+'.html'
+	  .state(val.num +'.assessment.info.'+val.name, {
+	    templateUrl: 'views/'+ val.num +'/info/'+val.name+'.html'
 	  });
 	}
 
 	[
-	'swollenLegs',
-	'trauma',
-	'cellulitis',
-	'vte',
-	'others',
-	'investigations',
-	'physicalExam',
-	'wells',
-	'dimerTest',
-	'thrombophilia',
-	'xray',
-	'ultrasound',
-	'anticoagulationTherapy',
-	'venogram',
-	'ctpa',
-	'ventilation',
-	'parenteralA',
-	'parenteralB',
-	'rivaroxaban'
+	{ num : 'case1', name : 'swollenLegs'},
+	{ num : 'case1', name : 'trauma'},
+	{ num : 'case1', name : 'cellulitis'},
+	{ num : 'case1', name : 'vte'},
+	{ num : 'case1', name : 'others'},
+	{ num : 'case1', name : 'investigations'},
+	{ num : 'case1', name : 'physicalExam'},
+	{ num : 'case1', name : 'wells'},
+	{ num : 'case1', name : 'dimerTest'},
+	{ num : 'case1', name : 'thrombophilia'},
+	{ num : 'case1', name : 'xray'},
+	{ num : 'case1', name : 'ultrasound'},
+	{ num : 'case1', name : 'anticoagulationTherapy'},
+	{ num : 'case1', name : 'venogram'},
+	{ num : 'case1', name : 'ctpa'},
+	{ num : 'case1', name : 'ventilation'},
+	{ num : 'case1', name : 'parenteralA'},
+	{ num : 'case1', name : 'parenteralB'},
+	{ num : 'case1', name : 'rivaroxaban'},
+	{ num : 'case2', name : 'breathlessness'},
+	{ num : 'case2', name : 'investigations'},
+	{ num : 'case2', name : 'blood'},
+	{ num : 'case2', name : 'vte'},
+	{ num : 'case2', name : 'pe'},
+	{ num : 'case2', name : 'others'},
+	{ num : 'case2', name : 'physicalExam'},
+	{ num : 'case2', name : 'wells'},
+	{ num : 'case2', name : 'dimerTest'},
+	{ num : 'case2', name : 'thrombophilia'},
+	// { num : 'case2', name : 'xray'},
+	{ num : 'case2', name : 'ultrasound'},
+	{ num : 'case2', name : 'anticoagulationTherapy'},
+	// { num : 'case2', name : 'venogram'},
+	{ num : 'case2', name : 'ctpa'},
+	{ num : 'case2', name : 'ventilation'},
+	{ num : 'case2', name : 'option1'},
+	{ num : 'case2', name : 'option2'},
+	{ num : 'case2', name : 'option3'},
+	{ num : 'case2', name : 'option4'}
 	].forEach(addInformationState);
 
 	});
@@ -154,6 +229,12 @@ angular.module('ersimulationToolApp')
 		   else if ($state.includes('*.*.expert')) {
 		   		$('.middle-section .button-bg').css({
 		   			left : '200px',
+		   			opacity :'1'
+		   		});
+		   }
+		   else if ($state.includes('*.*.references')) {
+		   		$('.middle-section .button-bg').css({
+		   			left : '300px',
 		   			opacity :'1'
 		   		});
 		   }

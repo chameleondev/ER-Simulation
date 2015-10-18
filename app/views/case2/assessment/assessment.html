@@ -1,0 +1,898 @@
+<div ui-view class="overlay"></div>
+
+<div class="assessment" ng-show="stage === 1">
+	
+	<div class="header-bg">
+		<div class="wrapper">
+			<h1>Following the patient history, what are your next steps?</h1>
+		</div>
+	</div>
+
+	<div class="wrapper">
+
+		<div class="end-result"></div>
+
+		<form action="" novalidate name="assessment_form1" class="form1">
+
+		<h3>Select ONE OR MORE of the following options:</h3>
+			<div class="answer-row incorrect" ng-class="{'active':form.heartExam}">
+
+				<label 
+				for="heart-exam" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="heart-exam"
+					name="heart_exam"
+					ng-model="form.heartExam"
+					> 
+					Examination of the heart and breathing rate only
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="The legs should also be examined for redness/swelling that may indicate DVT"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.fullPhysicalExam}">
+				
+				<label 
+				for="full-physical-exam" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="full-physical-exam"
+					name="full_physical_exam"
+					ng-model="form.fullPhysicalExam"
+					> 
+					Full physical exam
+					<i class="result"></i>
+				</label>
+				
+				<i tooltip-missed class="help" title="Correct answer"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.xray}">
+				
+				<label 
+				for="xray" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="xray"
+					name="xray"
+					ng-model="form.xray"
+					> 
+					Chest X-ray
+					<i class="result"></i>
+				</label>
+				
+				<i tooltip-missed class="help" title="Correct answer"></i>  
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.duplex}">
+				
+				<label 
+				for="duplex" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="duplex"
+					name="duplex"
+					ng-model="form.duplex"
+					> 
+					Duplex Doppler venography ultrasound
+					<i class="result"></i>
+				</label>
+					
+				<i tooltip-missed class="help" title="If patient has shortness of breath and/or swollen leg, consider scanning for DVT"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.ecg}">
+				
+				<label 
+				for="ecg" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="ecg"
+					name="ecg"
+					ng-model="form.ecg"
+					> 
+					ECG
+					<i  class="result" ></i>
+				</label>
+				
+				<i tooltip-missed class="help" title="Correct answer"></i>
+			</div>
+
+			
+
+			<div class="answer-row incorrect" ng-class="{'active':form.amylase}">
+				
+				<label 
+				for="amylase" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="amylase"
+					name="amylase"
+					ng-model="form.amylase"
+					> 
+					Amylase
+					<i class="result"></i>
+				</label>
+				
+				<i tooltip-incorrect class="help" title="This is not appropriate if VTE is suspected"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.ddimmer}">
+				
+				<label 
+				for="ddimer" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="ddimer"
+					name="ddimmer"
+					ng-model="form.ddimmer"
+					> 
+					D-dimer
+					<i class="result" ></i>
+				</label>  
+				
+				<i tooltip-missed class="help" title="Correct answer"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.troponin}">
+				
+				<label 
+				for="troponin" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="troponin"
+					name="troponin"
+					ng-model="form.troponin"
+					> 
+					Troponin
+					<i class="result"></i>
+				</label>
+				
+				<i tooltip-missed class="help" title="Correct answer"></i>
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.lipase}">
+				
+				<label 
+				for="lipase" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="lipase"
+					name="lipase"
+					ng-model="form.lipase"
+					> 
+					Lipase
+					<i class="result"></i>
+				</label>
+				
+				<i tooltip-incorrect class="help" title="This is not appropriate if VTE is suspected"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.renal}">
+				
+				<label 
+				for="renal" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="renal"
+					name="renal"
+					ng-model="form.renal"
+					> 
+					Renal function
+					<i class="result"></i>
+				</label> 
+				
+				<i tooltip-missed class="help" title="Correct answer"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.liver}">
+				
+				<label 
+				for="liver" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="liver"
+					name="liver"
+					ng-model="form.liver"
+					> 
+					Liver function
+					<i class="result"></i>
+					
+				</label>
+
+				<i tooltip-missed class="help" title="Correct answer"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.electrolytes}">
+				
+				<label 
+				for="electrolytes" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="electrolytes"
+					name="electrolytes"
+					ng-model="form.electrolytes"
+					> 
+					Electrolytes
+					<i class="result"></i>
+					 
+				</label> 
+
+				<i tooltip-missed class="help" title="Correct answer"></i>		 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.blood}">
+				
+				<label 
+				for="blood" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="blood"
+					name="blood"
+					ng-model="form.blood"
+					> 
+					Full blood count
+					<i class="result"></i>
+				</label> 
+
+				<i tooltip-missed class="help" title="Correct answer"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.wells}">
+				
+				<label 
+				for="wells" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="wells"
+					name="wells"
+					ng-model="form.wells"
+					> 
+					Two-level PE Wells’ score
+					<i class="result"></i>
+				</label> 
+
+				<i tooltip-missed class="help" title="Correct answer"></i>
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.peak}">
+				
+				<label 
+				for="peak" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="peak"
+					name="peak"
+					ng-model="form.peak"
+					> 
+					Peak expiratory flow rate
+					<i class="result"></i>
+				</label> 
+
+				<i tooltip-incorrect class="help" title="Symptoms do not suggest lung obstruction"></i>
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.investigations}">
+				
+				<label 
+				for="investigations" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="investigations"
+					name="investigations"
+					ng-model="form.investigations"
+					> 
+					No investigations
+					<i class="result"></i>
+				</label> 
+
+				<i tooltip-incorrect class="help" title="Symptoms suggest further examinations needed"></i>
+			</div>
+
+		</form>
+	</div>
+
+</div> <!-- stage 1 -->
+
+
+<div class="assessment" ng-show="stage === 2">
+	
+	<div class="header-bg">
+		<div class="wrapper">
+			<h1 style="  font-size: 30px;">Assessment decision point: Which of the following diagnoses is most likely?</h1>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div class="end-result"></div>
+
+		<form action="" novalidate name="assessment_form2" class="form2">
+
+			<h3>Select ONE of the following options:</h3>
+		
+			<div class="answer-row incorrect" ng-class="{'active':form.mi}">
+
+				<label 
+				for="mi" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="mi"
+					name="mi"
+					ng-model="form.mi"
+					ng-click="form.pneumothorax = false;form.pe = false;form.pneumonia = false;form.none = false"
+					> 
+					MI most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="No evidence from ECG; await troponin level; other diagnosis more likely"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.pneumothorax}">
+
+				<label 
+				for="pneumothorax" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="pneumothorax"
+					name="pneumothorax"
+					ng-model="form.pneumothorax"
+					ng-click="form.mi = false;form.pe = false;form.pneumonia = false;form.none = false"
+					> 
+					Pneumothorax most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="Lungs sound clear and patient has no pain in this area; await chest X-ray results but other diagnosis more likely"></i>
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.pe}">
+
+				<label 
+				for="pe" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="pe"
+					name="pe"
+					ng-model="form.pe"
+					ng-click="form.mi = false;form.pneumothorax = false;form.pneumonia = false;form.none = false"
+					> 
+					PE most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-missed class="help" title="Correct answer – Wells’ score of >4, increased heart rate and breathlessness with no other symptoms indicate acute PE"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.pneumonia}">
+
+				<label 
+				for="pneumonia" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="pneumonia"
+					name="pneumonia"
+					ng-model="form.pneumonia"
+					ng-click="form.mi = false;form.pneumothorax = false;form.pe = false;form.none = false"
+					> 
+					Pneumonia most likely
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="Lungs sound clear and patient does not have a fever; other diagnosis more likely"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.none}">
+
+				<label 
+				for="none" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="none"
+					name="none"
+					ng-model="form.none"
+					ng-click="form.mi = false;form.pneumothorax = false;form.pe = false;form.pneumonia = false"
+					>
+					None of the above
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="Assessment and patient history suggest the patient has an acute condition"></i> 
+			</div>
+
+
+
+		</form>
+	</div>
+
+</div> <!-- stage 2 -->
+
+
+<div class="assessment" ng-show="stage === 3">
+	
+	<div class="header-bg">
+		<div class="wrapper">
+			<h1>The patient has a suspected PE - which TWO steps should be considered immediately?</h1>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div class="end-result"></div>
+
+		<form action="" novalidate name="assessment_form3" class="form3">
+
+			<h3>Select TWO of the following options:</h3>
+		
+			<div class="answer-row incorrect" ng-class="{'active':form.thrombophilia}">
+
+				<label 
+				for="thrombophilia" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="thrombophilia"
+					name="thrombophilia"
+					ng-model="form.thrombophilia"
+					ng-disabled="selectedAnswers() === 2 && !form.thrombophilia"
+					> 
+					Thrombophilia test
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="Could identify provoking factor for suspected PE but not recommended routinely in the acute setting"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.ultrasound}">
+
+				<label 
+				for="ultrasound" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="ultrasound"
+					name="ultrasound"
+					ng-model="form.ultrasound"
+					ng-disabled="selectedAnswers() === 2 && !form.ultrasound"
+					> 
+					Ultrasound scan of lower limbs
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="No clinical evidence of DVT"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.computerized}">
+
+				<label 
+				for="computerized" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="computerized"
+					name="computerized"
+					ng-model="form.computerized"
+					ng-disabled="selectedAnswers() === 2 && !form.computerized"
+					> 
+					Computerized tomography pulmonary angiogram (CTPA)
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-missed class="help" title="Correct – CTPA is the imaging technique of choice to confirm a diagnosis of PE; an immediate CTPA should be arranged"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.ventilation}">
+
+				<label 
+				for="ventilation" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="ventilation"
+					name="ventilation"
+					ng-model="form.ventilation"
+					ng-disabled="selectedAnswers() === 2 && !form.ventilation"
+					> 
+					Ventilation/perfusion lung scan
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="Less likely to give a definitive PE diagnosis compared with CTPA"></i> 
+			</div>
+
+			<div class="answer-row correct" ng-class="{'active':form.anticoagulant}">
+
+				<label 
+				for="anticoagulant" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="anticoagulant"
+					name="anticoagulant"
+					ng-model="form.anticoagulant"
+					ng-disabled="selectedAnswers() === 2 && !form.anticoagulant"
+					>
+					Start anticoagulant treatment
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-missed class="help" title="Correct – patients suspected of having a PE should receive anticoagulation whilst diagnosis is confirmed, especially if CTPA cannot be performed immediately"></i>
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.assess}">
+
+				<label 
+				for="assess" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="assess"
+					name="assess"
+					ng-model="form.assess"
+					ng-disabled="selectedAnswers() === 2 && !form.assess"
+					> 
+					Assess prognosis using a clinical scoring system
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="The simplified pulmonary embolism severity index (sPESI) score can be used to assess the severity of PE and guide treatment decisions once PE is confirmed"></i> 
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':form.noTests}">
+
+				<label 
+				for="no-tests" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="no-tests"
+					name="no_tests"
+					ng-model="form.noTests"
+					ng-disabled="selectedAnswers() === 2 && !form.noTests"
+					> 
+					No tests or treatment required
+
+
+					<i class="result"></i>
+				</label>
+
+					<i tooltip-incorrect class="help" title="If PE suspected, a diagnostic test is required"></i> 
+			</div>
+
+			<div class="popup" ng-show="showSwiper">
+			<div class="swiper-container" swiper>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+					<div class="swiper-content">
+						<h1>Diagnosis: Results</h1>
+
+						<ul>
+							<li>Blood test results
+								<ul>
+									<li>D-dimer elevated; VTE should not be ruled out</li>
+									<li>Troponin levels do not indicate MI or acute coronary syndrome</li>
+								</ul>
+							</li>
+
+							<li>Chest X-ray
+								<ul>
+									<li>Imaging shows no pneumothorax; confirms no pneumonia</li>
+								</ul>
+							</li>
+
+							<li>CTPA 
+								<ul>
+									<li>Imaging confirms a bilateral PE with no evidence of right heart strain</li>
+								</ul>
+							</li>
+
+						</ul>
+					</div>
+					</div>
+					<div class="swiper-slide">
+					<div class="swiper-content">
+						<h1>Prognosis and Treatment: Guidance</h1>
+
+						<p>Risk assessment: PE severity</p>
+
+						<table class="table-info">
+							<tr>
+								<th>Simplified PESI score (sPESI)</th>
+								<th></th>
+							</tr>
+							<tr>
+								<th>Parameter</th>
+								<th>Points</th>
+							</tr>
+							<tr>
+								<td>Age</td>
+								<td>1 (if age >80 years)</td>
+							</tr>
+							<tr>
+								<td>Cancer</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Chronic heart failure or chronic pulmonary disease</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Pulse rate ≥110 bpm</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Systolic blood pressure &lt;100 mm Hg</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>Arterial oxyhaemoglobin saturation &lt;90%</td>
+								<td>1</td>
+							</tr>
+						</table>
+
+						<p>0 points = 30-day mortality risk 1.0% (95% CI 0.0–2.1%) <br>
+							≥1 point = 30-day mortality rate 10.9% (95% CI 8.5–13.2%)</p>
+
+						<p>ESC 2014 PE guideline classification:</p>
+
+						<ul>
+							<li>sPESI=0 (PESI class I–II): Low risk</li>
+							<li>sPESI≥1 (PESI class III–IV): Intermediate risk</li>
+							<ul>
+								<li>RV enlargement AND positive lab markers (MI or heart failure): Intermediate-high risk</li>
+								<li>RV enlargement OR positive lab markers OR both tests negative: Intermediate-low ris</li>
+							</ul>
+							<li>Shocked/hypotensive patient: High risk</li>
+						</ul>
+					</div>
+					</div>
+				</div>
+				<i ng-click="showSwiper = false" class="close"></i>
+			</div>
+			</div>
+		</form>
+	</div>
+
+</div> <!-- stage 3 -->
+
+
+
+<div class="assessment" ng-show="stage === 4">
+	
+	<div class="header-bg">
+		<div class="wrapper">
+			<h1>Treatment Decision</h1>
+		</div>
+	</div>
+
+	<div class="wrapper">
+
+		<div class="end-result">
+			
+			<div class="oac" ng-show="decision === 'oac' && showDecision">
+				<h1>Correct</h1>
+
+				<ul>
+					<li>This patient has a low/intermediate severity PE and is, therefore, a candidate for early discharge</li>
+
+					<li>In this case rivaroxaban has been chosen as the NOAC of choice – no requirement for routine coagulation monitoring and no known food interactions make home treatment straightforward</li>
+
+					<li>The patient leaves hospital that day on rivaroxaban 15 mg twice daily</li>
+
+					<li>A follow-up visit is arranged at the PE Clinic for 21 days time, when the patient is switched to 20 mg rivaroxaban once daily for 3 months
+						<ul>
+							<li>The once-daily regimen (similar to VKAs) improves compliance and is better suited for younger, active patients</li>
+							<li>The risk of major bleeding associated with NOACs is lower than with warfarin</li>
+						</ul>
+					</li>
+
+					<li>The switch to rivaroxaban is simple – the  patient takes their first dose of rivaroxaban at home 24 hours after their last dose of LMWH</li>
+				</ul>
+			</div>
+
+
+			<div class="lmwha" ng-show="decision === 'lmwha' && showDecision">
+				<h1>Incorrect</h1>
+
+				<ul>
+					<li>This should not be the anticoagulation regimen of choice unless the patient has active cancer, has contraindications to other anticoagulants or is pregnant</li>
+
+					<li>Duration of therapy needs to be assessed regularly</li>
+				</ul>
+			</div>
+
+
+			<div class="rivaroxaban" ng-show="decision === 'lmwhb' && showDecision">
+				<h1>Correct</h1>
+
+				<ul>
+					<li>The patient could be treated with daily, dose-adjusted LMWH overlapping with oral VKA, and they would need to remain in hospital until their INR was stable (this usually takes around 5 days)</li>
+
+					<li>After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions</li>
+
+					<li>However, in this case, the patient has a low/intermediate severity PE with no comorbidities and would be a candidate for early discharge with a NOAC. The following benefits may be observed with this approach:
+						
+						<ul>
+							<li>Reduced length of hospital stay (van Bellen B et al. Curr Med Res Opin 2014;30:829–837)</li>
+							<li>Reduced impact on patient’s quality of life – no need for routine coagulation monitoring, no known dietary restrictions or food interactions, can go home sooner and see her children</li>
+							<li>Lower risk of bleeding (EINSTEIN-PE Investigators. N Engl J Med 2012;366:1287–1297)</li>
+						</ul>
+
+					</li>
+				</ul>
+
+			</div>
+
+			<div class="rivaroxaban" ng-show="decision === 'observation' && showDecision">
+				<h1>Correct</h1>
+
+				<ul>
+					<li>The patient is switched to a NOAC, rivaroxaban in this case, for 3 months
+						<ul>
+							<li>E.g. patients can easily be switched from LMWH to rivaroxaban by taking their first rivaroxaban dose 24 hours after their last dose of LMWH </li>
+						</ul>
+					</li>
+
+					<li>Although this patient has a low/intermediate severity PE and appears stable, if you have any concerns about your patients health, they should remain in hospital for observation</li>
+
+					<li>Switching early to a NOAC still provides the benefits of no injections, no need for routine coagulation monitoring and no known food interactions</li>
+
+					<li>At discharge, a follow-up visit should be arranged for 21 days after rivaroxaban was started
+						<ul>
+							<li>An oral regimen with no monitoring may improve patient satisfaction (Prins MH et al. Thromb Res 2015;135:281–288)</li>
+							<li>For rivaroxaban, a dose change should occur at the 21 day appointment (15 mg bid to 20 mg od)</li>
+						</ul>
+					</li>
+				</ul>
+				
+			</div>
+
+
+		</div>
+
+
+		<form action="" novalidate name="assessment_form4" class="form4">
+		
+			<div class="answer-row correct" ng-class="{'active':decision === 'oac'}">
+
+				<label 
+				for="oac" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="oac"
+					name="oac"
+					ng-click="decision = 'oac'"
+					> 
+					Switch to a NOAC and discharge the patient after 24 hours
+
+					<i class="result"></i>
+				</label>
+
+			</div>
+
+			<div class="answer-row incorrect" ng-class="{'active':decision === 'lmwha'}">
+
+				<label 
+				for="lmwha" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="lmwha"
+					name="lmwha"
+					ng-click="decision = 'lmwha'"
+					> 
+					Continue LMWH alone and discharge the patient
+
+					<i class="result"></i>
+				</label>
+
+			</div>
+
+			<div class="answer-row correct proceed" ng-class="{'active':decision === 'lmwhb'}">
+
+				<label 
+				for="lmwhb" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="lmwhb"
+					name="lmwhb"
+					ng-click="decision = 'lmwhb'"
+					> 
+					Continue LMWH, start oral VKA and discharge the patient
+
+					<i class="result"></i>
+				</label>
+
+			</div>
+
+			<div class="answer-row correct proceed" ng-class="{'active':decision === 'observation'}">
+
+				<label 
+				for="observation" 
+				class="assessment-selection"
+				>
+					<input 
+					type="checkbox"
+					id="observation"
+					name="observation"
+					ng-click="decision = 'observation'"
+					> 
+					Switch to NOAC but keep the patient in hospital for a few days for further observation
+
+					<i class="result"></i>
+				</label>
+
+			</div>
+
+
+		</form>
+	</div>
+
+</div> <!-- stage 4 -->

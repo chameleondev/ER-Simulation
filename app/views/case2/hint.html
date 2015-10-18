@@ -1,0 +1,44 @@
+<div class="hint">
+	<i class="close" ui-sref="^"></i>
+
+	<div class="overlay-message" ng-show="stage === 1">
+		<p>What do these symptoms suggest?</p>
+
+		<p>Is the breathlessness accompanied by other symptoms such as chest pain or dizziness?</p>
+
+		<p>Is the patient tachycardic?</p>
+	</div>
+
+	<div class="overlay-message" ng-show="stage === 2">
+		<p>What are the differential diagnoses?</p>
+
+		<p>Can you rule them out?</p>
+
+		<p>What does a Wells’ score of >4 indicate?</p>
+	</div>
+
+	<div class="overlay-message two-line" ng-show="stage === 3">
+		<p>What diagnostic test can confirm a PE?</p>
+
+		<p>Can the level of severity be assessed?</p>
+	</div>
+
+	<div class="overlay-message two-line" ng-show="stage === 4">
+		<div scroller scrollheight="110px">
+		<div class="scroll-content" style="height:180px">
+			<p>What is the relevance of the sPESI score?</p>
+
+			<p>Should you discuss the patient’s treatment plan with a consultant?</p>
+
+			<p>How soon can the patient be discharged?</p>	
+
+			<p>How will each treatment affect the patient’s quality of life?</p>
+
+			<p>Monitoring requirements?</p>
+		</div>
+		
+		</div>
+		
+	</div>
+
+</div>

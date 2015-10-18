@@ -10,6 +10,8 @@
 angular.module('ersimulationToolApp')
   .controller('assessment1Ctrl', function ($scope,$timeout,$rootScope,$state) {
 
+  	$('.right-btn button:eq(1)').html('SUBMIT');
+  	
   	window.scope = $scope;
 
   	
@@ -21,10 +23,10 @@ angular.module('ersimulationToolApp')
 
 
   	// function to end assessment
-  	var endAssessment = function(){
+  	var endAssessment = function(projCase){
 
 			$rootScope.stage++;
-			$state.go('case1.video');
+			$state.go(projCase +'.video');
 			$('.right-menu,.bottom-menu').removeClass('active');	
   	};
 
@@ -90,7 +92,7 @@ angular.module('ersimulationToolApp')
 
 				$scope.showDecision = true;
 
-				if($('.form4 .correct.active.rivaroxaban').length === 1){
+				if($('.form4 .correct.active.proceed').length === 1){
 					allCorrect = true;
 				}
 			break;
@@ -129,7 +131,7 @@ angular.module('ersimulationToolApp')
   		if (allCorrect) {
   			if ($scope.stage !== 4) {
   				if ($scope.stage === 1) {
-  					$('.end-result').html('You have selected the correct options. Please click on the NEXT STEP to continue');
+  					$('.end-result').html('You selected all of the correct steps – Well done');
   				} else{
   					$('.end-result').html('You have selected the correct option. Please click on the NEXT STEP to continue');
   				};
@@ -145,10 +147,10 @@ angular.module('ersimulationToolApp')
 
   	};
 
-  	$rootScope.submitForm = function(){
+  	$rootScope.submitForm = function(projCase){
 
   		if (allCorrect) {
-  			endAssessment();
+  			endAssessment(projCase);
   		};
 
   		// how many times you have submitted the form
@@ -184,7 +186,7 @@ angular.module('ersimulationToolApp')
 
 				case 4 :
 				$rootScope.stage++;
-				$state.go('case1.video');
+				$state.go(projCase +'.video');
 				$('.right-menu,.bottom-menu').removeClass('active');
 				break;
 			}
