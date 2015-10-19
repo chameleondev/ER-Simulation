@@ -620,9 +620,94 @@
 
 					<i tooltip-incorrect class="help" title="If PE suspected, a diagnostic test is required"></i> 
 			</div>
-
+			
 			<div class="popup" ng-show="showSwiper">
-			<div class="swiper-container" swiper>
+			<div class="blocker-popup">
+			<div  scroller scrollheight="540" class="blocker-content">
+			<div>
+				<i ng-click="showSwiper = false" class="close"></i>
+				
+				<h1>Diagnostics: Results</h1>
+
+				<ul>
+					<li>Blood test results
+						<ul>
+							<li>D-dimer elevated; VTE should not be ruled out</li>
+							<li>Troponin levels do not indicate MI or acute coronary syndrome</li>
+						</ul>
+					</li>
+
+					<li>Chest X-ray
+						<ul>
+							<li>Imaging shows no pneumothorax; confirms no pneumonia</li>
+						</ul>
+					</li>
+
+					<li>CTPA 
+						<ul>
+							<li>Imaging confirms a bilateral PE with no evidence of right heart strain</li>
+						</ul>
+					</li>
+
+				</ul>
+
+				<h1>Prognosis and Treatment: Guidance</h1>
+
+				<p>Risk assessment: PE severity</p>
+
+				<table class="table-info">
+					<tr>
+						<th>Simplified PESI score (sPESI)</th>
+						<th></th>
+					</tr>
+					<tr>
+						<th>Parameter</th>
+						<th>Points</th>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td>1 (if age >80 years)</td>
+					</tr>
+					<tr>
+						<td>Cancer</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Chronic heart failure or chronic pulmonary disease</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Pulse rate ≥110 bpm</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Systolic blood pressure &lt;100 mm Hg</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Arterial oxyhaemoglobin saturation &lt;90%</td>
+						<td>1</td>
+					</tr>
+				</table>
+
+				<p>0 points = 30-day mortality risk 1.0% (95% CI 0.0–2.1%) <br>
+					≥1 point = 30-day mortality rate 10.9% (95% CI 8.5–13.2%)</p>
+
+				<p>ESC 2014 PE guideline classification:</p>
+
+				<ul>
+					<li>sPESI=0 (PESI class I–II): Low risk</li>
+					<li>sPESI≥1 (PESI class III–IV): Intermediate risk</li>
+					<ul>
+						<li>RV enlargement AND positive lab markers (MI or heart failure): Intermediate-high risk</li>
+						<li>RV enlargement OR positive lab markers OR both tests negative: Intermediate-low ris</li>
+					</ul>
+					<li>Shocked/hypotensive patient: High risk</li>
+				</ul>
+			</div>
+			</div>
+			
+			<!-- <div class="swiper-container" swiper>
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 					<div class="swiper-content">
@@ -710,6 +795,7 @@
 					</div>
 				</div>
 				<i ng-click="showSwiper = false" class="close"></i>
+			</div> -->
 			</div>
 			</div>
 		</form>
@@ -886,7 +972,7 @@
 					> 
 					Switch to NOAC but keep the patient in hospital for a few days for further observation
 
-					<i class="result"></i>
+					<i class="result two-line"></i>
 				</label>
 
 			</div>

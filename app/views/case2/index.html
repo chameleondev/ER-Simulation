@@ -76,7 +76,7 @@
 </div>
 
 
-<div class="popup" ng-show="decisionPoint">
+<!-- <div class="popup" ng-show="decisionPoint">
 	
 	<div class="confirm decision">
 		
@@ -97,6 +97,27 @@
 	
 	</div>
 
+</div> -->
+
+<div class="overlay-secondary" ng-class="{'active' : decisionPoint}">
+	<div class="assessment-overlay">
+
+		<h2>DECISION POINT</h2>
+
+		<h3 ng-show="stage === 1">Are you ready to select the next steps for this patient?</h3>
+		<h3 ng-show="stage === 2">Are you ready to select the most likely diagnosis?</h3>
+		<h3 ng-show="stage === 3">Are you ready to select which test should confirm your diagnosis?</h3>
+		<h3 ng-show="stage === 4">Are you ready to select a treatment option?</h3>
+
+		<button ui-sref="case2.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage !== 4">Yes – Move to Assessment</button>
+		<button ui-sref="case2.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage === 4">Yes – Move to Treatment Choice</button>
+
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 1">No – Return to Patient History</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 2">No – Return to Results</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 3">No – Return to Diagnostics</button>
+		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 4">No – Return to Treatment Guidance</button>
+
+	</div>
 </div>
 
 <div class="overlay-secondary" ng-class="{'active' : mainMenu}">

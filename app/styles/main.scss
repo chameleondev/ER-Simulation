@@ -103,6 +103,9 @@ div,button{
 
 }
 
+.pull-left{
+	float:left;
+}
 
 .my-custom-theme-missed {
 	border: 2px solid $missedOrange;
@@ -212,9 +215,9 @@ div,button{
 }
 
 .references-btn{
-	@include at2x('../images/expert-icon',png, 35px, 54px);
-	height: 54px;
-	width: 35px;
+	@include at2x('../images/references-icon',png, 34px, 24px);
+	height: 24px;
+	width: 34px;
 	background-repeat: no-repeat;
 	top: 10px;
 	left: 31px;
@@ -226,7 +229,7 @@ div,button{
 	  background: $homeBlue;
 	  position: absolute;
 	  left: 190px;
-	  @include at2x('../images/home-icon',png, 68px, 54px);
+	  @include at2x('../images/home-icon',png, 18px, 24px);
 	  background-repeat: no-repeat;
 	  background-position: 15px 9px;
 }
@@ -940,6 +943,14 @@ div,button{
 				right: 5px;
 				top: 4px;
 			}
+
+			p{
+				float: left;
+				width: 300px;
+				margin:0;
+				position:relative;
+				top:3px;
+			}
 		}
 
 		.list-content li{
@@ -1123,6 +1134,10 @@ div,button{
 				@include at2x('../images/selection-icon',png, 16px, 16px);
 				width: 16px;
 				height: 16px;
+
+				&.two-line{
+					top: 15px;
+				}
 			}
 		}
 
@@ -1434,6 +1449,32 @@ div,button{
 
 	h1{
 		 color: white;
+	}
+}
+
+.blocker-popup{
+	height:600px;
+	width:700px;
+	background:$secondaryBlue;
+	color:white;
+	@extend %absolute-center;
+
+	.blocker-content{
+		padding: 20px;
+	}
+
+	h1{
+		 color: white;
+	}
+
+	.close{
+		position: absolute;
+		top: -5px;
+		left: 625px;
+		z-index: 1000;
+		@include at2x('../images/close-drawer-icon',png, 30px, 30px);
+		width: 30px;
+		height: 30px;
 	}
 }
 
