@@ -237,12 +237,12 @@ angular.module('ersimulationToolApp')
 		   			left : '300px',
 		   			opacity :'1'
 		   		});
-		   }
-		   else if($state.includes('*.assessment')){
-		   		$('.bottom-menu').addClass('active');
-		   }
-		   else{
+		   } else{
 		   	$('.middle-section .button-bg').css("opacity","0");
+		   }
+
+		   if($state.includes('*.assessment')){
+		   		$('.bottom-menu').addClass('active');
 		   }
 
 		})

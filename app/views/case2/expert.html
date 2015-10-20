@@ -1,4 +1,4 @@
-<div class="expert">
+<div class="expert" ng-class="{stage4case2: stage===4}">
 	<i class="close" ui-sref="^"></i>
 
 	<div class="overlay-message" ng-show="stage === 1">
@@ -19,18 +19,11 @@
 
 	<div class="overlay-message two-line" ng-show="stage === 4">
 
-	<div scroller scrollheight="110px">
-
-		<div style="height:170px;width:700px;margin:0 auto">
 			<p>Would you classify this patient as high, intermediate-high, intermediate-low or low risk?</p>
 
 			<p>Do you need to alter the treatment they are receiving?</p>
 
-			<p>Consider the risks versus benefits, days in hospital/discharge, monitoring requirements, social history of patient,  method of administration and compliance challenges</p>
-		</div>
-		
-	</div>
-		
+			<p>Consider the risks versus benefits, days in hospital/discharge, monitoring requirements, social history of patient,  method of administration and compliance challenges</p>		
 
 	</div>			
 </div>

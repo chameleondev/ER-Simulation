@@ -215,12 +215,12 @@ div,button{
 }
 
 .references-btn{
-	@include at2x('../images/references-icon',png, 34px, 24px);
-	height: 24px;
-	width: 34px;
+	@include at2x('../images/ref-icon',png, 64px, 50px);
+	height: 50px;
+	width: 64px;
 	background-repeat: no-repeat;
-	top: 10px;
-	left: 31px;
+	top: 11px;
+	left: 19px;
 }
 
 .home-icon{
@@ -229,9 +229,9 @@ div,button{
 	  background: $homeBlue;
 	  position: absolute;
 	  left: 190px;
-	  @include at2x('../images/home-icon',png, 18px, 24px);
+	  @include at2x('../images/home-icon',png, 34px, 56px);
 	  background-repeat: no-repeat;
-	  background-position: 15px 9px;
+	  background-position: 33px 7px;
 }
 
 .menu-icon{
@@ -266,8 +266,75 @@ div,button{
 
 			width: 700px;
 
-			&.end h2{
-				  margin-bottom: 35px;
+			&.end {
+				width: 1024px;
+				height: 768px;
+
+				.wrapper{
+					width: 625px;
+					margin:0 auto;
+					@extend %absolute-center;
+
+					button{
+						margin:0 5px;
+					}
+
+					p{
+						margin: 0 0 10px 0;
+					}
+
+					.right-list{	
+						list-style: disc;
+						padding: 0 20px;
+
+						>li{
+							list-style: none;
+							margin-bottom: 12px;
+						}
+
+						li{
+							ul>li{
+								  margin-bottom: 4px;
+							}
+						}
+
+						>li:before{
+							content: '\f105';
+							font-family: 'FontAwesome';
+							float: left;
+							margin-left: -1.2em;
+							color: #fff;
+						}
+
+						ul{
+							padding-left: 20px;
+							list-style: circle;
+						}
+
+						.ul-title{
+							margin-bottom:10px;
+						}
+
+						>div>li:before{
+							content: '\f105';
+							font-family: 'FontAwesome';
+							float: left;
+							margin-left: -1.2em;
+							color: $highlightedBlue;
+						}
+
+						>div>li{
+							margin-bottom: 12px;
+							list-style: none;
+							padding-right: 45px;
+						}
+
+					}
+				}
+
+				h2{
+					margin-top: 75px;
+				}
 			}
 
 			h2{
@@ -404,6 +471,21 @@ div,button{
 			height: 215px;
 			text-align: center;
 			line-height: 20px;
+
+			&.stage1case2{
+				.overlay-message{
+					height: 130px;
+				}
+			}
+
+			&.stage4case2{
+				height :320px;
+
+				.overlay-message{
+					height: 195px;
+    				top: -80px;
+				}
+			}
 		}
 
 		.expert{
@@ -412,6 +494,31 @@ div,button{
 			height: 215px;
 			text-align: center;
 			line-height: 20px;
+
+			&.stage4case2{
+				height :320px;
+
+				.overlay-message{
+					height: 215px;
+    				top: -70px;
+				}
+
+			}
+
+			&.stage4case1{
+				.overlay-message{
+					height: 125px;   				
+				}
+			}
+
+			&.stage2case1{
+				height :270px;
+
+				.overlay-message{
+					height :130px;
+				}
+
+			}
 		}
 
 		.references{
@@ -419,6 +526,7 @@ div,button{
 		  	width: 1024px;
 			height: 758px;
 		}
+
 
 	 }
 
@@ -1005,8 +1113,15 @@ div,button{
 	.end-result{
 		  float: right;
 		  width: 380px;
-		  margin-top: 50px;
 		  color: $secondaryBlue;
+
+		  &.case1{
+			margin-top: 42px;
+		  }
+
+		  &.case2{
+			margin-top: 10px;
+		  }
 
 		  p{
 		  	text-align: center;
@@ -1015,6 +1130,54 @@ div,button{
 		  li{
 		  	color: black;
 		  }
+
+		.right-list{	
+			list-style: disc;
+			padding: 0 20px;
+
+			>li{
+				list-style: none;
+				margin-bottom: 12px;
+			}
+
+			li{
+				ul>li{
+					  margin-bottom: 4px;
+				}
+			}
+
+			>li:before{
+				content: '\f105';
+				font-family: 'FontAwesome';
+				float: left;
+				margin-left: -1.2em;
+				color: $highlightedBlue;
+			}
+
+			ul{
+				padding-left: 20px;
+				list-style: circle;
+			}
+
+			.ul-title{
+				margin-bottom:10px;
+			}
+
+			>div>li:before{
+				content: '\f105';
+				font-family: 'FontAwesome';
+				float: left;
+				margin-left: -1.2em;
+				color: $highlightedBlue;
+			}
+
+			>div>li{
+				margin-bottom: 12px;
+				list-style: none;
+				padding-right: 45px;
+			}
+
+		}
 	}
 
 	form{

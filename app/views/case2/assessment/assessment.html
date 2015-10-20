@@ -10,7 +10,7 @@
 
 	<div class="wrapper">
 
-		<div class="end-result"></div>
+		<div class="end-result case2"></div>
 
 		<form action="" novalidate name="assessment_form1" class="form1">
 
@@ -339,7 +339,7 @@
 	</div>
 
 	<div class="wrapper">
-		<div class="end-result"></div>
+		<div class="end-result case2"></div>
 
 		<form action="" novalidate name="assessment_form2" class="form2">
 
@@ -467,7 +467,7 @@
 	</div>
 
 	<div class="wrapper">
-		<div class="end-result"></div>
+		<div class="end-result case2"></div>
 
 		<form action="" novalidate name="assessment_form3" class="form3">
 
@@ -815,19 +815,19 @@
 
 	<div class="wrapper">
 
-		<div class="end-result">
+		<div class="end-result case2">
 			
 			<div class="oac" ng-show="decision === 'oac' && showDecision">
 				<h1>Correct</h1>
 
-				<ul>
+				<ul class="right-list">
 					<li>This patient has a low/intermediate severity PE and is, therefore, a candidate for early discharge</li>
 
 					<li>In this case rivaroxaban has been chosen as the NOAC of choice – no requirement for routine coagulation monitoring and no known food interactions make home treatment straightforward</li>
 
 					<li>The patient leaves hospital that day on rivaroxaban 15 mg twice daily</li>
 
-					<li>A follow-up visit is arranged at the PE Clinic for 21 days time, when the patient is switched to 20 mg rivaroxaban once daily for 3 months
+					<li><div class="ul-title">A follow-up visit is arranged at the PE Clinic for 21 days time, when the patient is switched to 20 mg rivaroxaban once daily for 3 months</div>
 						<ul>
 							<li>The once-daily regimen (similar to VKAs) improves compliance and is better suited for younger, active patients</li>
 							<li>The risk of major bleeding associated with NOACs is lower than with warfarin</li>
@@ -842,7 +842,7 @@
 			<div class="lmwha" ng-show="decision === 'lmwha' && showDecision">
 				<h1>Incorrect</h1>
 
-				<ul>
+				<ul class="right-list">
 					<li>This should not be the anticoagulation regimen of choice unless the patient has active cancer, has contraindications to other anticoagulants or is pregnant</li>
 
 					<li>Duration of therapy needs to be assessed regularly</li>
@@ -853,12 +853,12 @@
 			<div class="rivaroxaban" ng-show="decision === 'lmwhb' && showDecision">
 				<h1>Correct</h1>
 
-				<ul>
+				<ul class="right-list">
 					<li>The patient could be treated with daily, dose-adjusted LMWH overlapping with oral VKA, and they would need to remain in hospital until their INR was stable (this usually takes around 5 days)</li>
 
 					<li>After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions</li>
 
-					<li>However, in this case, the patient has a low/intermediate severity PE with no comorbidities and would be a candidate for early discharge with a NOAC. The following benefits may be observed with this approach:
+					<li><div class="ul-title">However, in this case, the patient has a low/intermediate severity PE with no comorbidities and would be a candidate for early discharge with a NOAC. The following benefits may be observed with this approach:</div>
 						
 						<ul>
 							<li>Reduced length of hospital stay (van Bellen B et al. Curr Med Res Opin 2014;30:829–837)</li>
@@ -874,7 +874,7 @@
 			<div class="rivaroxaban" ng-show="decision === 'observation' && showDecision">
 				<h1>Correct</h1>
 
-				<ul>
+				<ul class="right-list">
 					<li>The patient is switched to a NOAC, rivaroxaban in this case, for 3 months
 						<ul>
 							<li>E.g. patients can easily be switched from LMWH to rivaroxaban by taking their first rivaroxaban dose 24 hours after their last dose of LMWH </li>
@@ -885,7 +885,7 @@
 
 					<li>Switching early to a NOAC still provides the benefits of no injections, no need for routine coagulation monitoring and no known food interactions</li>
 
-					<li>At discharge, a follow-up visit should be arranged for 21 days after rivaroxaban was started
+					<li><div class="ul-title">At discharge, a follow-up visit should be arranged for 21 days after rivaroxaban was started</div>
 						<ul>
 							<li>An oral regimen with no monitoring may improve patient satisfaction (Prins MH et al. Thromb Res 2015;135:281–288)</li>
 							<li>For rivaroxaban, a dose change should occur at the 21 day appointment (15 mg bid to 20 mg od)</li>

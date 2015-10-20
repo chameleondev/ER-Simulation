@@ -10,7 +10,7 @@
 
 	<div class="wrapper">
 
-		<div class="end-result"></div>
+		<div class="end-result case1"></div>
 
 		<form action="" novalidate name="assessment_form1" class="form1">
 
@@ -303,7 +303,7 @@
 	</div>
 
 	<div class="wrapper">
-		<div class="end-result"></div>
+		<div class="end-result case1"></div>
 
 		<form action="" novalidate name="assessment_form2" class="form2">
 
@@ -431,7 +431,7 @@
 	</div>
 
 	<div class="wrapper">
-		<div class="end-result"></div>
+		<div class="end-result case1"></div>
 
 		<form action="" novalidate name="assessment_form3" class="form3">
 
@@ -627,12 +627,12 @@
 
 	<div class="wrapper">
 
-		<div class="end-result">
+		<div class="end-result case1">
 			
 			<div class="parenteralA" ng-show="decision === 'parenteralA' && showDecision">
 				<h1>Incorrect</h1>
 
-				<ul>
+				<ul class="right-list">
 					<li>This should not be the anticoagulation regimen of choice unless the patient has active cancer or has contraindications to other anticoagulants </li>
 
 					<li>Duration of therapy needs to be assessed regularly</li>
@@ -645,7 +645,7 @@
 					<div style="padding:10px">
 						<h1>Correct</h1>
 
-						<ul>
+						<ul class="right-list">
 							<li>Patient requires daily, dose-adjusted LMWH (and may be admitted to hospital) overlapping with oral VKA until target INR (2.0–3.0 in most patients) is reached. After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions</li>
 
 							<li>It is also possible to switch to dabigatran instead of a VKA, but only after 5–10 days of parenteral anticoagulation with e.g. LMWH</li>
@@ -653,7 +653,7 @@
 
 						<p>Have you considered using a NOAC licensed for single-drug DVT treatment?</p>
 
-						<ul>
+						<ul class="right-list">
 							<li>Rivaroxaban and apixaban can be used from the start of treatment without the need for initial LMWH</li>
 							<li>Rivaroxaban, for example, may overcome some of the limitations of the LMWH/VKA dual-drug approach:</li>
 
@@ -674,7 +674,7 @@
 			<div class="rivaroxaban" ng-show="decision === 'rivaroxaban' && showDecision">
 				<h1>Correct</h1>
 
-				<ul>
+				<ul class="right-list">
 					<li>Patient leaves hospital on e.g. rivaroxaban 15 mg twice daily and a follow-up visit is arranged at a coagulation clinic for 21 days' time, at which stage the patient will switch to 20 mg once daily for 3 months</li>
 
 					<li>No need for routine coagulation monitoring, no known dietary restrictions or food interactions, and most patients can be treated at home (may allow earlier discharge from hospital) (van Bellen B et al. Curr Med Res Opin 2014;30:829–837)</li>

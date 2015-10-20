@@ -1,4 +1,4 @@
-<div class="hint">
+<div class="hint" ng-class="{stage1case2: stage===1,stage4case2: stage===4}">
 	<i class="close" ui-sref="^"></i>
 
 	<div class="overlay-message" ng-show="stage === 1">
@@ -23,9 +23,8 @@
 		<p>Can the level of severity be assessed?</p>
 	</div>
 
-	<div class="overlay-message two-line" ng-show="stage === 4">
-		<div scroller scrollheight="110px">
-		<div class="scroll-content" style="height:180px">
+	<div class="overlay-message" ng-show="stage === 4">
+
 			<p>What is the relevance of the sPESI score?</p>
 
 			<p>Should you discuss the patient’s treatment plan with a consultant?</p>
@@ -35,9 +34,6 @@
 			<p>How will each treatment affect the patient’s quality of life?</p>
 
 			<p>Monitoring requirements?</p>
-		</div>
-		
-		</div>
 		
 	</div>
 
