@@ -277,10 +277,16 @@ div,button{
 
 					button{
 						margin:0 5px;
+						background: $homeBlue;
+
+						a{
+							color: #fff;
+							text-decoration: none;
+						}
 					}
 
 					p{
-						margin: 0 0 10px 0;
+						margin: 0 0 65px 0;
 					}
 
 					.right-list{	

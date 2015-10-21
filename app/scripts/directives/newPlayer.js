@@ -129,7 +129,7 @@ angular.module('ersimulationToolApp')
                 scope.$apply();
                 // $rootScope.stage++;
             } else {
-
+              $('.right-menu,.bottom-menu,.video-frame').addClass('active');
               scope.$parent.caseEnd = true;
               scope.$apply();
             };

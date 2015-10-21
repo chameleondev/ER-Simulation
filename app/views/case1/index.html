@@ -140,6 +140,10 @@
 				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(3)" ui-sref-opts="{reload: true}"></div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus at ducimus distinctio perspiciatis, modi, dolorem culpa voluptatem aut neque sapiente voluptatum eligendi asperiores iusto veniam nam, esse ipsa voluptatibus aliquam.</p>
 			</div>
+			<div class="col3 col" ng-show="stage > 4">
+				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(4)" ui-sref-opts="{reload: true}"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus at ducimus distinctio perspiciatis, modi, dolorem culpa voluptatem aut neque sapiente voluptatum eligendi asperiores iusto veniam nam, esse ipsa voluptatibus aliquam.</p>
+			</div>
 		</div>
 
 		
@@ -195,17 +199,16 @@
 			<li>If using rivaroxaban, organize and notify patient of follow-up appointment in 21 days – patient education will be repeated at this time</li>
 			<li>Treatment review every 3 months</li>
 			<li>Consultant appointment booked for 6 weeks to 3 months’ time</li>
-			<li>
-				<a href="http://www.er.xarelto.com" target="_blank">Link to the ER website</a>
-			</li>
-			<li>
-				<a href="certificates/certificate.pdf" download>Link to module certificate and printing options</a>
-			</li>
 		</ul>
 
-		<button ui-sref="home" class="yes">Main menu</button>
+		<button>
+			<a href="http://www.er.xarelto.com" target="_blank">ER website</a>
+		</button>
 
-		<button ng-click="caseEnd = !caseEnd" class="no">Replay video</button>
+		<!-- <button ng-click="caseEnd = !caseEnd" class="no"> -->
+		<button>
+			<a href="certificates/certificate.pdf" download>Module Certificate</a>
+		</button>
 		</div>
 	</div>
 
