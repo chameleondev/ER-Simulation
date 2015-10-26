@@ -4,7 +4,7 @@
 
 <div class="bottom-menu">
 
-	<span class="left-btn" >
+	<span class="left-btn" ng-show="stage < 5">
 		<button class="left-btn" ng-show="'case1.video' | includedByState" ng-click="replayVideo()" ui-sref="case1.video">
 			<div class="btn-container">
 				<i class="replay-icon"></i> 
@@ -18,26 +18,26 @@
 	<div class="home-icon" ng-click="goHome = !goHome"></div>
 	<div class="menu-icon" ng-click="mainMenu = !mainMenu"></div>
 
-	<div class="middle-section" ng-show="stage !== 5">
+	<div class="middle-section">
 
 		<div class="button-bg"></div>
 
-		<div class="label-bg info-label">
+		<div class="label-bg info-label " ng-class="{'invisible' : stage > 4}">
 			<button ng-click="toggleMenu('info','video')" class="info-btn"  ng-show="'case1.video' | includedByState"></button>
 			<button class="info-btn" ng-click="toggleMenu('info','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 		
-		<div class="label-bg hint-label">
+		<div class="label-bg hint-label " ng-class="{'invisible' : stage > 4}">
 			<button class="hint-btn" ng-click="toggleMenu('hint','video')" ng-show="'case1.video' | includedByState"></button>
 			<button class="hint-btn" ng-click="toggleMenu('hint','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 
-		<div class="label-bg expert-label" >
+		<div class="label-bg expert-label" ng-class="{'invisible' : stage > 4}">
 			<button class="expert-btn" ng-click="toggleMenu('expert','video')" ng-show="'case1.video' | includedByState"></button>
 			<button class="expert-btn" ng-click="toggleMenu('expert','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
 
-		<div class="label-bg references-label" >
+		<div class="label-bg references-label">
 			<button class="references-btn" ng-click="toggleMenu('references','video')" ng-show="'case1.video' | includedByState"></button>
 			<button class="references-btn" ng-click="toggleMenu('references','assessment')" ng-show="'case1.assessment' | includedByState"></button>
 		</div>
@@ -45,7 +45,7 @@
 		
 	</div>
 	
-	<span class="right-btn" ng-show="stage !== 5">
+	<span class="right-btn" ng-show="stage < 5">
 		<button class="right-btn" ng-click="decisionPoint = !decisionPoint" ng-show="'case1.video' | includedByState">
 			<div class="btn-container" ng-show="stage !== 4">
 				ASSESSMENT 
@@ -128,6 +128,29 @@
 		<div class="wrapper">
 			<h2>Case 1</h2>
 
+			<div ng-show="stage===1">
+				<div class="contents confirm decision end">
+					<div class="wrapper">
+						<ul class="right-list">
+							<li>Learning objective: to understand and apply guideline-approved diagnostic steps and treatment of a presentation of a painful and swollen leg</li>
+							<li>
+								Contents
+								<ul>
+									<li>Patient history</li>
+									<li>Examinations</li>
+									<li>Assessment: initial results</li>
+									<li>Diagnostics: options</li>
+									<li>Diagnostics: results</li>
+									<li>Treatment: guidance</li>
+									<li>Treatment: decision</li>
+									<li>Follow-up and patient education</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
 			<div class="col1 col" ng-show="stage > 1">
 				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(1)" ui-sref-opts="{reload: true}"></div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aperiam repellendus molestiae nostrum libero, vero tempore eveniet explicabo qui architecto quasi veniam! Nihil voluptatum, numquam, dolorum quidem provident ad eaque.</p>
@@ -207,7 +230,6 @@
 			<a href="http://www.er.xarelto.com" target="_blank">ER website</a>
 		</button>
 
-		<!-- <button ng-click="caseEnd = !caseEnd" class="no"> -->
 		<button>
 			<a href="certificates/certificate.pdf" download>Module Certificate</a>
 		</button>

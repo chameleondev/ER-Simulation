@@ -54,14 +54,6 @@ angular.module('ersimulationToolApp')
 	      controller : 'Case2Ctrl'
 	    })
 
-	    .state('case1.contents', {
-	      templateUrl: 'views/home/contents1.html'
-	    })
-
-	    .state('case2.contents', {
-	      templateUrl: 'views/home/contents2.html'
-	    })
-
 	    // video section
 
 	    .state('case1.video', {
