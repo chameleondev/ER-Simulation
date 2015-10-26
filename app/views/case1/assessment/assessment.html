@@ -27,7 +27,7 @@
 					name="physical_exam"
 					ng-model="form.physicalExam"
 					> 
-					Physical exam of the leg only
+					Physical examination of the leg only
 
 					<i class="result"></i>
 				</label>
@@ -108,7 +108,7 @@
 					<i  class="result" ></i>
 				</label>
 				
-				<i tooltip-incorrect class="help" title="This is not required; listen to breathing and heart rate during a physical exam"></i>
+				<i tooltip-incorrect class="help" title="This is not required; listen to breathing and heart rate during a physical examination"></i>
 			</div>
 
 			
@@ -222,7 +222,7 @@
 					name="renal"
 					ng-model="form.renal"
 					> 
-					Renal function
+					Renal function and electrolytes 
 					<i class="result"></i>
 					
 				</label>
@@ -250,7 +250,7 @@
 				<i tooltip-missed class="help" title="Symptoms indicate that liver function should be checked"></i>		 
 			</div>
 
-			<div class="answer-row correct" ng-class="{'active':form.electrolytes}">
+			<!-- <div class="answer-row correct" ng-class="{'active':form.electrolytes}">
 				
 				<label 
 				for="electrolytes" 
@@ -267,7 +267,7 @@
 				</label> 
 				
 				<i tooltip-missed class="help" title="Symptoms indicate that electrolytes should be checked"></i>
-			</div>
+			</div> -->
 
 			<div class="answer-row correct" ng-class="{'active':form.blood}">
 				
@@ -426,7 +426,7 @@
 	
 	<div class="header-bg">
 		<div class="wrapper">
-			<h1>Following the Assessment - what are your next steps?</h1>
+			<h1>Following the assessment - what are your next steps?</h1>
 		</div>
 	</div>
 
@@ -633,9 +633,9 @@
 				<h1>Incorrect</h1>
 
 				<ul class="right-list">
-					<li>This should not be the anticoagulation regimen of choice unless the patient has active cancer or has contraindications to other anticoagulants </li>
+					<li>This should not be the anticoagulation regimen of choice unless the patient has active cancer or has contraindications to other anticoagulants <sup>1</sup></li>
 
-					<li>Duration of therapy needs to be assessed regularly</li>
+					<li>Duration of therapy needs to be assessed regularly <sup>1</sup></li>
 				</ul>
 			</div>
 
@@ -648,21 +648,21 @@
 						<ul class="right-list">
 							<li>Patient requires daily, dose-adjusted LMWH (and may be admitted to hospital) overlapping with oral VKA until target INR (2.0–3.0 in most patients) is reached. After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions</li>
 
-							<li>It is also possible to switch to dabigatran instead of a VKA, but only after 5–10 days of parenteral anticoagulation with e.g. LMWH</li>
+							<li>It is also possible to switch to dabigatran instead of a VKA, but only after 5–10 days of parenteral anticoagulation with e.g. LMWH <sup>1,2</sup></li>
 						</ul>
 
 						<p>Have you considered using a NOAC licensed for single-drug DVT treatment?</p>
 
 						<ul class="right-list">
-							<li>Rivaroxaban and apixaban can be used from the start of treatment without the need for initial LMWH</li>
+							<li>Rivaroxaban and apixaban can be used from the start of treatment without the need for initial LMWH <sup>3&ndash;6</sup></li>
 							<li>Rivaroxaban, for example, may overcome some of the limitations of the LMWH/VKA dual-drug approach:</li>
 
 							<ul>
-								<li>No need for initial injections or routine coagulation monitoring</li>
-								<li>No known dietary restrictions or food interactions</li>
-								<li>Lower risk of major bleeding (Prins MH et al. Thromb J 2013;11:21)</li>
-								<li>Most patients can be treated at home (may allow earlier discharge from hospital), (van Bellen B et al. Curr Med Res Opin 2014;30:829–837)</li>
-								<li>Once-daily regimen after 21 days </li>
+								<li>No need for initial injections or routine coagulation monitoring <sup>3,4</sup></li>
+								<li>No known dietary restrictions or food interactions <sup>3,4</sup></li>
+								<li>Lower risk of major bleeding <sup>7</sup></li>
+								<li>Most patients can be treated at home (may allow earlier discharge from hospital) <sup>8</sup></li>
+								<li>Once-daily regimen after 21 days <sup>3,4</sup></li>
 							</ul>
 						</ul>
 					</div>
@@ -675,16 +675,16 @@
 				<h1>Correct</h1>
 
 				<ul class="right-list">
-					<li>Patient leaves hospital on e.g. rivaroxaban 15 mg twice daily and a follow-up visit is arranged at a coagulation clinic for 21 days' time, at which stage the patient will switch to 20 mg once daily for 3 months</li>
+					<li>Patient leaves hospital on e.g. rivaroxaban 15 mg twice daily and a follow-up visit is arranged at a coagulation clinic for 21 days' time, at which stage the patient will switch to 20 mg once daily for 3 months <sup>1,2</sup></li>
 
-					<li>No need for routine coagulation monitoring, no known dietary restrictions or food interactions, and most patients can be treated at home (may allow earlier discharge from hospital) (van Bellen B et al. Curr Med Res Opin 2014;30:829–837)</li>
+					<li>No need for routine coagulation monitoring, no known dietary restrictions or food interactions, and most patients can be treated at home (may allow earlier discharge from hospital) <sup>1,3</sup></li>
 
-					<li>If using rivaroxaban, after 21 days, the patient moves to a once-daily regimen (similar to VKAs) which improves compliance and is better suited for younger, active patients</li>
+					<li>If using rivaroxaban, after 21 days, the patient moves to a once-daily regimen (similar to VKAs) which may improve compliance and is better suited for younger, active patients <sup>1,2</sup></li>
 
-					<li>Lower risk of major bleeding for rivaroxaban (46% reduction) compared with LMWH/VKA therapy (Prins MH et al. Thromb J 2013;11:21)</li>
+					<li>Lower risk of major bleeding for rivaroxaban (46% reduction) compared with LMWH/VKA therapy <sup>4</sup></li>
 				</ul>
 
-				<p>Rivaroxaban offers advantages over VKAs that<br>lead to better patient satisfaction (Bamber L et al. Thromb Haemost 2013;110:732–741)</p>
+				<p>Rivaroxaban offers advantages over VKAs that<br>lead to better patient satisfaction <sup>5</sup></p>
 			</div>
 
 

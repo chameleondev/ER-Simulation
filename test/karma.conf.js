@@ -29,11 +29,6 @@ module.exports = function(config) {
       'bower_components/Swiper/dist/js/swiper.js',
       'bower_components/tooltipster/js/jquery.tooltipster.min.js',
       'bower_components/ui-router/release/angular-ui-router.js',
-      'bower_components/videogular/videogular.js',
-      'bower_components/videogular-buffering/vg-buffering.js',
-      'bower_components/videogular-controls/vg-controls.js',
-      'bower_components/videogular-overlay-play/vg-overlay-play.js',
-      'bower_components/videogular-poster/vg-poster.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

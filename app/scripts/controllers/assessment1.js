@@ -66,7 +66,7 @@ angular.module('ersimulationToolApp')
 			case 1 :
 				$scope.assessment_form1.$setSubmitted();
 
-				if($('.form1 .correct.active:not(.missed)').length === 7 && $('.form1 .incorrect.active').length === 0 ){
+				if($('.form1 .correct.active:not(.missed)').length === 6 && $('.form1 .incorrect.active').length === 0 ){
 					allCorrect = true;
 				}
 			break;
