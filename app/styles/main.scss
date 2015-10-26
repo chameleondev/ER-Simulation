@@ -276,7 +276,7 @@ div,button{
 					@extend %absolute-center;
 
 					button{
-						margin:0 5px;
+						margin:50px 5px 0;
 						background: $homeBlue;
 
 						a{
@@ -1126,7 +1126,11 @@ div,button{
 		  }
 
 		  &.case2{
-			margin-top: 10px;
+			margin-top: 42px;
+
+			&.last{
+				margin-top: 10px;
+			}
 		  }
 
 		  p{
@@ -1630,6 +1634,54 @@ div,button{
 
 	.blocker-content{
 		padding: 20px;
+
+		.right-list{	
+			list-style: disc;
+			padding: 0 20px;
+
+			>li{
+				list-style: none;
+				margin-bottom: 12px;
+			}
+
+			li{
+				ul>li{
+					  margin-bottom: 4px;
+				}
+			}
+
+			>li:before{
+				content: '\f105';
+				font-family: 'FontAwesome';
+				float: left;
+				margin-left: -1.2em;
+				color: #fff;
+			}
+
+			ul{
+				padding-left: 20px;
+				list-style: circle;
+			}
+
+			.ul-title{
+				margin-bottom:10px;
+			}
+
+			>div>li:before{
+				content: '\f105';
+				font-family: 'FontAwesome';
+				float: left;
+				margin-left: -1.2em;
+				color: $highlightedBlue;
+			}
+
+			>div>li{
+				margin-bottom: 12px;
+				list-style: none;
+				padding-right: 45px;
+			}
+
+		} 
 	}
 
 	h1{
@@ -1654,5 +1706,25 @@ div,button{
 		ul{
 			text-align: left;
 		}
+	}
+}
+
+.contents{
+
+	&.confirm{
+		text-align: left;
+	}
+	.close{
+		position: absolute;
+		top: 20px;
+		left: 970px;
+		z-index: 1000;
+		@include at2x('../images/close-drawer-icon',png, 30px, 30px);
+		width: 30px;
+		height: 30px;
+	}
+
+	.right-list{
+		margin-top: 185px;
 	}
 }
