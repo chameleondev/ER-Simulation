@@ -604,9 +604,16 @@ div,button{
 				margin:0 auto;
 
 				.vid-img{
-					width: 250px;
-					height: 200px;
-					background-color:red;
+					width: 235px;
+					height: 176px;
+					@include at2x('../images/video-icon',jpg, 235px, 176px);
+					@include transition-property(all);
+					@include transition-duration(1s);
+
+
+					&:hover{
+						opacity: 0.5;
+					}
 				}
 
 				.col{

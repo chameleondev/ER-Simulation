@@ -108,6 +108,8 @@ angular.module('ersimulationToolApp')
 			case 1 :
 				if (count === 3) {
 					$('.end-result').html('You have selected <b>'+$('.form1 .correct.active:not(.missed)').length+' step/s</b> correctly<br> The steps you missed are coloured orange and any incorrect steps are coloured red');
+				} else if ($('.form1 .incorrect.active').length > 0 ){
+					$('.end-result').html('You have selected <b>'+$('.form1 .correct.active:not(.missed)').length+' step/s</b> correctly<br> But also '+$('.form1 .incorrect.active').length+' step/s incorrectly');
 				} else{
 					$('.end-result').html('You have selected <b>'+$('.form1 .correct.active:not(.missed)').length+' step/s</b> correctly<br> There are still one or more further steps to find');
 				}
