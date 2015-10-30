@@ -20,6 +20,17 @@ angular.module('ersimulationToolApp')
 
 
           mainVideo = function(){
+              // cancel current file requests, 
+              // this prevents videos being stalled 
+              // as there is a maximum number of concurrent requests
+              if(window.stop !== undefined)
+              {
+                   window.stop();
+              }
+              else if(document.execCommand !== undefined)
+              {
+                   document.execCommand("Stop", false);
+              }
 
               switch(scope.stage){
 

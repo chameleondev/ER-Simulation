@@ -81,6 +81,15 @@ h1{
 	font-weight: normal;
 }
 
+h3 sup{
+	font-size: 12px;
+}
+
+sup{
+	line-height: 0;
+}
+
+
 div,button{
 	outline: none;
 }
@@ -543,8 +552,14 @@ div,button{
 			font-size: 25px;
 
 			>div{
-				width: 800px;
+				width: 980px;
 				margin: 30px auto;
+
+				ol{
+					width: 800px;
+					margin: 0 auto;
+					font-size: 18px;
+				}
 			}
 		}
 
