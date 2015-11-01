@@ -88,7 +88,7 @@ angular.module('ersimulationToolApp')
 			case 1 :
 				$scope.assessment_form1.$setSubmitted();
 
-				if($('.form1 .correct.active:not(.missed)').length === 11 && $('.form1 .incorrect.active').length === 0 ){
+				if($('.form1 .correct.active:not(.missed)').length === 10 && $('.form1 .incorrect.active').length === 0 ){
 					allCorrect = true;
 				}
 			break;
@@ -143,7 +143,12 @@ angular.module('ersimulationToolApp')
 			break;
 
 			case 3 :
-				$('.end-result').html('Incorrect - Try again');
+				if($('.form3 .correct.active:not(.missed)').length = 1){
+					$('.end-result').html('Correct, one more answer to find - Try again');
+				} else {
+					$('.end-result').html('Incorrect - Try again');
+				}
+				
 			break;
 
 		}

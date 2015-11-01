@@ -128,44 +128,39 @@
 		<div class="wrapper">
 			<h2>Case 1</h2>
 
-			<div ng-show="stage===1">
-				<div class="contents confirm decision end">
-					<div class="wrapper">
-						<ul class="right-list">
-							<li>Learning objective: to understand and apply guideline-approved diagnostic steps and treatment of a presentation of a painful and swollen leg</li>
-							<li>
-								Contents
-								<ul>
-									<li>Patient history</li>
-									<li>Examinations</li>
-									<li>Assessment: initial results</li>
-									<li>Diagnostics: options</li>
-									<li>Diagnostics: results</li>
-									<li>Treatment: guidance</li>
-									<li>Treatment: decision</li>
-									<li>Follow-up and patient education</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
+			
+			<div class="contents confirm decision end">
+				<div class="wrapper">
+					<ul class="right-list">
+						<li>Learning objective: to understand and apply guideline-approved diagnostic steps and treatment of a presentation of a painful and swollen leg</li>
+					</ul>
 				</div>
 			</div>
+			
 
 			<div class="col1 col" ng-show="stage > 1">
 				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(1)" ui-sref-opts="{reload: true}"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aperiam repellendus molestiae nostrum libero, vero tempore eveniet explicabo qui architecto quasi veniam!</p>
+				<p>Patient History</p>
 			</div>
 			<div class="col2 col" ng-show="stage > 2">
 				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(2)" ui-sref-opts="{reload: true}"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aperiam repellendus molestiae nostrum libero, vero tempore eveniet explicabo qui architecto quasi veniam!</p>
+				<p>Assessment: Results</p>
 			</div>
 			<div class="col3 col" ng-show="stage > 3">
 				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(3)" ui-sref-opts="{reload: true}"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aperiam repellendus molestiae nostrum libero, vero tempore eveniet explicabo qui architecto quasi veniam!</p>
+				<p>Diagnostics</p>
 			</div>
-			<div class="col3 col" ng-show="stage > 4">
+			<div class="col1 col" ng-show="stage > 4">
 				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(4)" ui-sref-opts="{reload: true}"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aperiam repellendus molestiae nostrum libero, vero tempore eveniet explicabo qui architecto quasi veniam!</p>
+				<p>Diagnostics: Results</p>
+			</div>
+			<div class="col2 col" ng-show="stage > 5">
+				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(5)" ui-sref-opts="{reload: true}"></div>
+				<p>Treatment: guidance</p>
+			</div>
+			<div class="col3 col" ng-show="stage > 6">
+				<div class="vid-img" ui-sref="case1.video" ng-click="changeStage(6)" ui-sref-opts="{reload: true}"></div>
+				<p>Follow-up and patient education</p>
 			</div>
 		</div>
 
