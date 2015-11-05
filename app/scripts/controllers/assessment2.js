@@ -45,7 +45,8 @@ angular.module('ersimulationToolApp')
 
   	// function to end assessment
   	var endAssessment = function(projCase){
-
+			var currentStage = $rootScope.stage;
+			$rootScope.completed[projCase]['stage'+currentStage] = true;
 			$rootScope.stage++;
 			$state.go(projCase +'.video');
 			$('.right-menu,.bottom-menu').removeClass('active');	
@@ -114,7 +115,9 @@ angular.module('ersimulationToolApp')
 
 				$scope.showDecision = true;
 
-				if($('.form4 .correct.active.proceed').length === 1){
+				$('.form4 .correct.active').addClass('selected')
+
+				if($('.form4 .correct.selected').length === 3){
 					allCorrect = true;
 				}
 			break;
@@ -231,9 +234,7 @@ angular.module('ersimulationToolApp')
 				if ($rootScope.stage === 3) {
 
 					if ($scope.popupShown) {
-						$rootScope.stage++;
-						$state.go(projCase +'.video');
-						$('.right-menu,.bottom-menu').removeClass('active');
+						endAssessment(projCase);
 					}else{
 						$scope.showSwiper = true;
 						$scope.popupShown = true;
@@ -241,9 +242,7 @@ angular.module('ersimulationToolApp')
 					}
 
 				} else {
-					$rootScope.stage++;
-					$state.go(projCase +'.video');
-					$('.right-menu,.bottom-menu').removeClass('active');
+					endAssessment(projCase);
 				}
 				
 				break;

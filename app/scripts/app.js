@@ -33,7 +33,28 @@ angular.module('ersimulationToolApp')
 	      url: '/',
 	      templateUrl: 'views/home/index.html',
 	      controller : function($rootScope){
+
+	      	window.rootsc = $rootScope;
 	      	$rootScope.stage = 1;
+
+	      	$rootScope.completed = {
+	      		case1 : {
+	      			stage1 : false,
+	      			stage2 : false,
+	      			stage3 : false,
+	      			stage4 : false,
+	      			stage5 : false,
+	      			stage6 : false
+	      		},
+	      		case2 : {
+	      			stage1 : false,
+	      			stage2 : false,
+	      			stage3 : false,
+	      			stage4 : false,
+	      			stage5 : false,
+	      			stage6 : false
+	      		}
+	      	}
 	      }
 	    })
 

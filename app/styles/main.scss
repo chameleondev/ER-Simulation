@@ -619,12 +619,73 @@ div,button{
 				margin:0 auto;
 
 				.vid-img{
-					width: 235px;
-					height: 176px;
-					@include at2x('../images/video-icon',jpg, 235px, 176px);
+					width: 234px;
+					height: 175px;
+					// @include at2x('../images/video-icon',jpg, 235px, 176px);
 					@include transition-property(all);
 					@include transition-duration(1s);
 
+					.disabled{
+						height: 100%;
+					    background: black;
+					    opacity: 0.8;
+					}
+
+					&.case1{
+
+						&.stage1{
+							@include at2x('../images/video-thumbs/case1/Video1',jpg, 234px, 175px);
+						}
+
+						&.stage2{
+							@include at2x('../images/video-thumbs/case1/Video2',jpg, 234px, 175px);
+						}
+
+						&.stage3{
+							@include at2x('../images/video-thumbs/case1/Video3',jpg, 234px, 175px);
+						}
+
+						&.stage4{
+							@include at2x('../images/video-thumbs/case1/Video4',jpg, 234px, 175px);
+						}
+
+						&.stage5{
+							@include at2x('../images/video-thumbs/case1/Video5',jpg, 234px, 175px);
+						}
+
+						&.stage6{
+							@include at2x('../images/video-thumbs/case1/Video6',jpg, 234px, 175px);
+						}
+
+					}
+
+					&.case2{
+
+						&.stage1{
+							@include at2x('../images/video-thumbs/case2/Video1',jpg, 234px, 175px);
+						}
+
+						&.stage2{
+							@include at2x('../images/video-thumbs/case2/Video2',jpg, 234px, 175px);
+						}
+
+						&.stage3{
+							@include at2x('../images/video-thumbs/case2/Video3',jpg, 234px, 175px);
+						}
+
+						&.stage4{
+							@include at2x('../images/video-thumbs/case2/Video4',jpg, 234px, 175px);
+						}
+
+						&.stage5{
+							@include at2x('../images/video-thumbs/case2/Video5',jpg, 234px, 175px);
+						}
+
+						&.stage6{
+							@include at2x('../images/video-thumbs/case2/Video6',jpg, 234px, 175px);
+						}
+
+					}
 
 					&:hover{
 						opacity: 0.5;

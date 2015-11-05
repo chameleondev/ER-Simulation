@@ -35,6 +35,10 @@ angular.module('ersimulationToolApp')
 
 	};
 
+	$scope.changeStage = function(newStage){
+        $rootScope.stage = newStage;
+    };
+
 	$scope.dispatchPatient = function(){
   		$rootScope.stage++;
   		$state.reload();
