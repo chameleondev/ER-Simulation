@@ -98,6 +98,26 @@ div,button{
 	visibility:hidden;
 }
 
+.fa-play-circle{
+	font-size: 60px;
+    opacity: 0.7;
+    position: absolute;
+    top: 55px;
+    left: 95px;
+}
+
+.contents-title{
+	color:$secondaryBlue;
+	background:$labelGrey;
+	margin:0;
+	padding:15px 0;
+}
+
+.contents-subtitle{
+	font-size:22px;
+	margin-bottom:38px;
+}
+
 /* This is how you would create a theme called "my-custom-theme": */
 
 .my-custom-theme-incorrect {
@@ -551,6 +571,30 @@ div,button{
 			color: white;
 			font-size: 25px;
 
+			&.c1-s1{
+				height: 625px;
+			}
+
+			&.c1-s2{
+				height: 425px;
+			}
+
+			&.c1-s3{
+				height: 625px;
+			}
+
+			&.c2-s1{
+				height: 560px;
+			}
+
+			&.c2-s2{
+				height: 325px;
+			}
+
+			&.c2-s3{
+				height: 710px;
+			}
+
 			>div{
 				width: 980px;
 				margin: 30px auto;
@@ -621,6 +665,7 @@ div,button{
 				.vid-img{
 					width: 234px;
 					height: 175px;
+					position: relative;
 					// @include at2x('../images/video-icon',jpg, 235px, 176px);
 					@include transition-property(all);
 					@include transition-duration(1s);

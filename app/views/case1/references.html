@@ -1,4 +1,10 @@
-<div class="references">
+<div class="references" 
+ng-class="{
+'c1-s1' : stage===1,
+'c1-s2' : stage===2,
+'c1-s3' : stage===3
+}"
+>
     <i class="close" ui-sref="^"></i>
 	
 	<div scroller scrollheight="600" ng-show="stage===1">
