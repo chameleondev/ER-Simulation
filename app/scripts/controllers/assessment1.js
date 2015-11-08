@@ -85,6 +85,8 @@ angular.module('ersimulationToolApp')
 
 				if($('.form3 .correct.active:not(.missed)').length === 1 && $('.form3 .incorrect.active').length === 0){
 					allCorrect = true;
+					$('.correct:not(.active)').addClass('active missed');
+					$('form .warning').addClass('active');
 				}
 			break;
 
@@ -181,7 +183,7 @@ angular.module('ersimulationToolApp')
 				case 3 :
 				submit();
 				// highlights wrong answers and selects correct ones
-				$('form .correct').addClass('active');
+				$('form .correct,form .warning').addClass('active');
 				$("input").prop('disabled', true);
 				$('.correct .ng-pristine').parent().parent().addClass('missed');
 				$('.right-btn button:eq(1)').html('NEXT STEP')

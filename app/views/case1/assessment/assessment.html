@@ -540,6 +540,8 @@
 				</label>
 
 					<i tooltip-missed class="help" title="An ultrasound is used to diagnose a suspected DVT"></i>
+
+					<i tooltip-missed class="help2" title="if ultrasound is not available or results are inconclusive"></i>
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.venogram}">
@@ -561,9 +563,11 @@
 				</label>
 
 					<i tooltip-missed class="help" title="Consider ultrasound here as venograms are less readily available and are associated with more discomfort for the patient"></i> 
+
+					<i tooltip-missed class="help2" title="if ultrasound is not available or results are inconclusive"></i> 
 			</div>
 
-			<div class="answer-row incorrect" ng-class="{'active':form.anticoagulant}">
+			<div class="answer-row incorrect warning" ng-class="{'active':form.anticoagulant}">
 
 				<label 
 				for="anticoagulant" 
@@ -582,7 +586,7 @@
 					<i class="result"></i>
 				</label>
 
-					<i tooltip-incorrect class="help" title="The scan can be performed straight away so anticoagulant therapy can be given following results, if required"></i> 
+					<i tooltip-missed class="help2" title="If there is a delay in the availability of diagnostic imaging, and DVT is suspected, immediate initiation of anticoagulation should be considered"></i> 
 			</div>
 
 			<div class="answer-row incorrect" ng-class="{'active':form.tests}">

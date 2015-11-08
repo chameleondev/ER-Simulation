@@ -240,6 +240,9 @@ angular.module('ersimulationToolApp')
 		$rootScope.$on('$stateChangeSuccess', 
 		function(event, toState, toParams, fromState, fromParams){ 
 		   console.log(toState.name);
+		   // console.log(toState);
+
+		   // $rootScope.currentState = toState.name;
 
 		   
 
