@@ -45,25 +45,4 @@ angular.module('ersimulationToolApp')
   		$state.reload();
   	};
 
-  	// $scope.closeTab = function(){
-  	// 	// var str = 'this.those.that',
-  	// 	var str = $rootScope.currentState,
-	  //   delimiter = '.',
-	  //   tokens = str.split(delimiter);
-	  //   switch(tokens.length){
-	  //   	case 3 :
-	  //   	tokens.splice(-1,1);
-	  //   	break;
-	  //   	case 4 :
-	  //   	tokens.splice(-2,2);
-	  //   	break;
-	    	
-	  //   };
-	    
-	  //   var result = tokens.join(delimiter);
-	  //   console.log(result);
-
-  	// 	$state.go(result);
-  	// }
-
   });

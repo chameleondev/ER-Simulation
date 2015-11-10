@@ -16,7 +16,9 @@
 	</span>
 
 	<div class="home-icon" ng-click="goHome = !goHome"></div>
-	<div class="menu-icon" ng-click="mainMenu = !mainMenu;closeTab()"></div>
+	<!-- <div class="menu-icon" ng-click="mainMenu = !mainMenu;closeTab()"></div> -->
+	<div class="menu-icon" ng-click="toggleMenu('menu','video')" ng-show="'case1.video' | includedByState"></div>
+	<div class="menu-icon" ng-click="toggleMenu('menu','assessment')" ng-show="'case1.assessment' | includedByState"></div>
 
 	<div class="middle-section">
 
@@ -46,7 +48,7 @@
 	</div>
 	
 	<span class="right-btn" ng-show="stage < 5">
-		<button class="right-btn" ng-click="decisionPoint = !decisionPoint;closeTab()" ng-show="'case1.video' | includedByState">
+		<button class="right-btn" ng-click="toggleMenu('decision','video')" ng-show="'case1.video' | includedByState">
 			<div class="btn-container" ng-show="stage !== 4">
 				ASSESSMENT 
 				<i class="next-icon"></i>
@@ -75,105 +77,6 @@
 
 </div>
 
-
-<div class="overlay-secondary" ng-class="{'active' : decisionPoint}">
-	<div class="assessment-overlay">
-
-		<h2>DECISION POINT</h2>
-
-		<h3 ng-show="stage === 1">Are you ready to select the next steps for this patient?</h3>
-		<h3 ng-show="stage === 2">Are you ready to select the most likely diagnosis?</h3>
-		<h3 ng-show="stage === 3">Are you ready to select which test should confirm your diagnosis?</h3>
-		<h3 ng-show="stage === 4">Are you ready to select a treatment option?</h3>
-
-		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage !== 4">Yes – Move to Assessment</button>
-		<button ui-sref="case1.assessment" ng-click="decisionPoint = !decisionPoint" class="yes" ng-show="stage === 4">Yes – Move to Treatment Choice</button>
-
-		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 1">No – Return to Patient History</button>
-		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 2">No – Return to Results</button>
-		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 3">No – Return to Diagnostics</button>
-		<button ng-click="decisionPoint = !decisionPoint" class="no" ng-show="stage === 4">No – Return to Treatment Guidance</button>
-
-	</div>
-</div>
-
-<div class="overlay-secondary" ng-class="{'active' : mainMenu}">
-	<div class="mainMenu-overlay">
-
-		<i class="close" ng-click="mainMenu = !mainMenu"></i>
-
-		<h1 class="contents-title">Case 1</h1>
-
-		<div class="wrapper">
-
-			
-			<div class="contents confirm decision end">
-				
-				<p class="contents-subtitle">
-					Learning objective <br>
-					To understand and apply guideline-approved diagnostic steps and treatment of a presentation of a painful and swollen leg
-				</p>
-					
-			</div>
-			
-
-			<div class="col1 col" ng-show="completed.case1.stage1">
-				<div class="vid-img case1 stage1" ui-sref="case1.video" ng-click="changeStage(1)" ui-sref-opts="{reload: true}">
-					<i class="fa fa-play-circle"></i>
-				</div>
-				<p>Patient History</p>
-			</div>
-			<div class="col2 col" ng-show="completed.case1.stage2">
-				<div class="vid-img case1 stage2" ui-sref="case1.video" ng-click="changeStage(2)" ui-sref-opts="{reload: true}">
-					<i class="fa fa-play-circle"></i>
-				</div>
-				<p>Assessment: Results</p>
-			</div>
-			<div class="col3 col" ng-show="completed.case1.stage3">
-				<div class="vid-img case1 stage3" ui-sref="case1.video" ng-click="changeStage(3)" ui-sref-opts="{reload: true}">
-					<i class="fa fa-play-circle"></i>
-				</div>
-				<p>Diagnostics</p>
-			</div>
-			<div class="col1 col" ng-show="completed.case1.stage4">
-				<div class="vid-img case1 stage4" ui-sref="case1.video" ng-click="changeStage(4)" ui-sref-opts="{reload: true}">
-					<i class="fa fa-play-circle"></i>
-				</div>
-				<p>Diagnostics: Results</p>
-			</div>
-			<div class="col2 col" ng-show="completed.case1.stage5">
-				<div class="vid-img case1 stage5" ui-sref="case1.video" ng-click="changeStage(5)" ui-sref-opts="{reload: true}">
-					<i class="fa fa-play-circle"></i>
-				</div>
-				<p>Treatment: guidance</p>
-			</div>
-			<div class="col3 col" ng-show="completed.case1.stage6">
-				<div class="vid-img case1 stage6" ui-sref="case1.video" ng-click="changeStage(6)" ui-sref-opts="{reload: true}">
-					<i class="fa fa-play-circle"></i>
-				</div>
-				<p>Follow-up and patient education</p>
-			</div>
-		</div>
-
-		
-
-	</div>
-</div>
-
-<div class="overlay-secondary" ng-class="{'active' : references}">
-	<div class="references-overlay">
-
-		<i class="close" ng-click="references = !references"></i>
-
-		<div class="wrapper">
-			<h2>references</h2>
-
-		</div>
-
-		
-
-	</div>
-</div>
 
 <div class="popup" ng-show="dispatch">
 	

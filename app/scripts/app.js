@@ -20,6 +20,27 @@ angular
 	// 'com.2fdevs.videogular.plugins.poster'
   ]);
 
+  angular.module('ersimulationToolApp').run(function($rootScope){
+  		$rootScope.completed = {
+      		case1 : {
+      			stage1 : false,
+      			stage2 : false,
+      			stage3 : false,
+      			stage4 : false,
+      			stage5 : false,
+      			stage6 : false
+      		},
+      		case2 : {
+      			stage1 : false,
+      			stage2 : false,
+      			stage3 : false,
+      			stage4 : false,
+      			stage5 : false,
+      			stage6 : false
+      		}
+      	}
+  })
+
 
 angular.module('ersimulationToolApp')
 	.config(function($stateProvider, $urlRouterProvider){
@@ -36,25 +57,6 @@ angular.module('ersimulationToolApp')
 
 	      	window.rootsc = $rootScope;
 	      	$rootScope.stage = 1;
-
-	      	$rootScope.completed = {
-	      		case1 : {
-	      			stage1 : false,
-	      			stage2 : false,
-	      			stage3 : false,
-	      			stage4 : false,
-	      			stage5 : false,
-	      			stage6 : false
-	      		},
-	      		case2 : {
-	      			stage1 : false,
-	      			stage2 : false,
-	      			stage3 : false,
-	      			stage4 : false,
-	      			stage5 : false,
-	      			stage6 : false
-	      		}
-	      	}
 	      }
 	    })
 
@@ -105,6 +107,14 @@ angular.module('ersimulationToolApp')
 	      templateUrl: 'views/case1/references.html'
 	    })
 
+	    .state('case1.video.menu', {
+	      templateUrl: 'views/case1/menu.html'
+	    })
+
+	    .state('case1.video.decision', {
+	      templateUrl: 'views/case1/decision.html'
+	    })
+ 
 	    .state('case2.video', {
 	      templateUrl: 'views/case2/video/video.html'
 	    })
@@ -123,6 +133,14 @@ angular.module('ersimulationToolApp')
 
 	    .state('case2.video.references', {
 	      templateUrl: 'views/case2/references.html'
+	    })
+
+	    .state('case2.video.menu', {
+	      templateUrl: 'views/case2/menu.html'
+	    })
+
+	    .state('case2.video.decision', {
+	      templateUrl: 'views/case2/decision.html'
 	    })
 
 
@@ -149,6 +167,14 @@ angular.module('ersimulationToolApp')
 	      templateUrl: 'views/case1/references.html'
 	    })
 
+	    .state('case1.assessment.menu', {
+	      templateUrl: 'views/case1/menu.html'
+	    })
+
+	    .state('case1.assessment.decision', {
+	      templateUrl: 'views/case1/decision.html'
+	    })
+
 	    .state('case2.assessment', {
 	      templateUrl: 'views/case2/assessment/assessment.html',
 	      controller : 'assessment2Ctrl'
@@ -168,6 +194,14 @@ angular.module('ersimulationToolApp')
 
 	    .state('case2.assessment.references', {
 	      templateUrl: 'views/case2/references.html'
+	    })
+
+	    .state('case2.assessment.menu', {
+	      templateUrl: 'views/case2/menu.html'
+	    })
+
+	    .state('case2.assessment.decision', {
+	      templateUrl: 'views/case2/decision.html'
 	    });
 
 	//function for adding a child information state to a state

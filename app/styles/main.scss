@@ -500,7 +500,139 @@ div,button{
 			top:768px;
 			// @include translate(0,768px);
 		}
-	
+
+		.main-menu{
+		  	@extend %middleSection;
+		  	width: 1024px;
+			height: 758px;
+			text-align: center;
+			color: white;
+
+			.wrapper{
+				width: 790px;
+				margin:0 auto;
+
+				.vid-img{
+					width: 234px;
+					height: 175px;
+					position: relative;
+					// @include at2x('../images/video-icon',jpg, 235px, 176px);
+					@include transition-property(all);
+					@include transition-duration(1s);
+
+					.disabled{
+						height: 100%;
+					    background: black;
+					    opacity: 0.8;
+					}
+
+					&.case1{
+
+						&.stage1{
+							@include at2x('../images/case1-thumb-Video1',jpg, 234px, 175px);
+						}
+
+						&.stage2{
+							@include at2x('../images/case1-thumb-Video2',jpg, 234px, 175px);
+						}
+
+						&.stage3{
+							@include at2x('../images/case1-thumb-Video3',jpg, 234px, 175px);
+						}
+
+						&.stage4{
+							@include at2x('../images/case1-thumb-Video4',jpg, 234px, 175px);
+						}
+
+						&.stage5{
+							@include at2x('../images/case1-thumb-Video5',jpg, 234px, 175px);
+						}
+
+						&.stage6{
+							@include at2x('../images/case1-thumb-Video6',jpg, 234px, 175px);
+						}
+
+					}
+
+					&.case2{
+
+						&.stage1{
+							@include at2x('../images/case2-thumb-Video1',jpg, 234px, 175px);
+						}
+
+						&.stage2{
+							@include at2x('../images/case2-thumb-Video2',jpg, 234px, 175px);
+						}
+
+						&.stage3{
+							@include at2x('../images/case2-thumb-Video3',jpg, 234px, 175px);
+						}
+
+						&.stage4{
+							@include at2x('../images/case2-thumb-Video4',jpg, 234px, 175px);
+						}
+
+						&.stage5{
+							@include at2x('../images/case2-thumb-Video5',jpg, 234px, 175px);
+						}
+
+						&.stage6{
+							@include at2x('../images/case2-thumb-Video6',jpg, 234px, 175px);
+						}
+
+					}
+
+					&:hover{
+						opacity: 0.5;
+					}
+				}
+
+				.col{
+					width: 250px;
+					height: 235px;
+					float: left;
+				}
+
+				.col2{
+					margin:0 20px;
+				}
+
+				p{
+					text-align: left;
+				}
+			}
+		}
+		
+		.decision-state{
+			@extend %middleSection;
+			width: 1024px;
+			height: 215px;
+			text-align: center;
+			color: white;
+
+			h2{
+				  margin-top: 0;
+				  font-size: 30px;
+				  font-weight: normal;
+				  margin-bottom: 0px;
+			}
+
+
+			button{
+				margin-top: 10px;
+				width: 300px;
+				margin: 0 15px;
+				border: none;
+				margin: 0 5px;
+				background: rgba(255, 255, 255, 0.5);
+				font-family: 'source_sans_prolight';
+				font-size: 18px;
+
+				&.no{
+				 background: white;
+				} 
+			}
+		}
 
 	 	.information{
 		  	@extend %middleSection;
@@ -739,7 +871,7 @@ div,button{
 
 				.col{
 					width: 250px;
-					height: 300px;
+					height: 235px;
 					float: left;
 				}
 

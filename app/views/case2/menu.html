@@ -1,0 +1,60 @@
+<div class="main-menu">
+
+	<i class="close" ui-sref="^"></i>
+
+	<h1 class="contents-title">Case 2</h1>
+
+	<div class="wrapper">
+
+		
+		<div class="contents confirm decision end">
+			
+			<p class="contents-subtitle">
+				Learning objective <br>
+				To understand and apply guideline-approved diagnostic steps and treatment of a presentation of a painful and swollen leg
+			</p>
+				
+		</div>
+		
+
+		<div class="col1 col" ng-show="completed.case2.stage1">
+			<div class="vid-img case2 stage1" ui-sref="case2.video" ng-click="changeStage(1)" ui-sref-opts="{reload: true}">
+				<i class="fa fa-play-circle"></i>
+			</div>
+			<p>Patient History</p>
+		</div>
+		<div class="col2 col" ng-show="completed.case2.stage2">
+			<div class="vid-img case2 stage2" ui-sref="case2.video" ng-click="changeStage(2)" ui-sref-opts="{reload: true}">
+				<i class="fa fa-play-circle"></i>
+			</div>
+			<p>Assessment: Results</p>
+		</div>
+		<div class="col3 col" ng-show="completed.case2.stage2">
+			<div class="vid-img case2 stage3" ui-sref="case2.video" ng-click="changeStage(3)" ui-sref-opts="{reload: true}">
+				<i class="fa fa-play-circle"></i>
+			</div>
+			<p>Diagnostics</p>
+		</div>
+		<div class="col1 col" ng-show="completed.case2.stage3">
+			<div class="vid-img case2 stage4" ui-sref="case2.video" ng-click="changeStage(4)" ui-sref-opts="{reload: true}">
+				<i class="fa fa-play-circle"></i>
+			</div>
+			<p>Diagnostics: Results</p>
+		</div>
+		<div class="col2 col" ng-show="completed.case2.stage4">
+			<div class="vid-img case2 stage5" ui-sref="case2.video" ng-click="changeStage(5)" ui-sref-opts="{reload: true}">
+				<i class="fa fa-play-circle"></i>
+			</div>
+			<p>Treatment: guidance</p>
+		</div>
+		<div class="col3 col" ng-show="completed.case2.stage5">
+			<div class="vid-img case2 stage6" ui-sref="case2.video" ng-click="changeStage(6)" ui-sref-opts="{reload: true}">
+				<i class="fa fa-play-circle"></i>
+			</div>
+			<p>Follow-up and patient education</p>
+		</div>
+	</div>
+
+	
+
+</div>
