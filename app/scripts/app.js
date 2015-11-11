@@ -39,7 +39,7 @@ angular
       			stage6 : false
       		}
       	}
-  })
+  });
 
 
 angular.module('ersimulationToolApp')
