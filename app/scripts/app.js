@@ -298,6 +298,12 @@ angular.module('ersimulationToolApp')
 		   			opacity :'1'
 		   		});
 		   }
+		   else if ($state.includes('*.*.references') && ($rootScope.stage === 6)) {
+		   		$('.middle-section .button-bg').css({
+		   			left : '0',
+		   			opacity :'1'
+		   		});
+		   }
 		   else if ($state.includes('*.*.references')) {
 		   		$('.middle-section .button-bg').css({
 		   			left : '300px',

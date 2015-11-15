@@ -15,26 +15,26 @@
 		<button class="left-btn" ng-show="'case2.assessment' | includedByState" ng-click="backToLoop()" ui-sref="case2.video">PATIENT HISTORY</button>
 	</span>
 
-	<div class="home-icon" ng-click="goHome = !goHome"></div>
+	<div class="home-icon" ng-class="{'no-bg-color': stage === 6}" ng-click="goHome = !goHome"></div>
 	<!-- <div class="menu-icon" ng-click="mainMenu = !mainMenu"></div> -->
-	<div class="menu-icon" ng-click="toggleMenu('menu','video')" ng-show="'case2.video' | includedByState"></div>
+	<div class="menu-icon" ng-class="{'no-bg-color': stage === 6}" ng-click="toggleMenu('menu','video')" ng-show="'case2.video' | includedByState"></div>
 	<div class="menu-icon" ng-click="toggleMenu('menu','assessment')" ng-show="'case2.assessment' | includedByState"></div>
 
 	<div class="middle-section" ng-show="stage !== 5">
 
 		<div class="button-bg"></div>
 
-		<div class="label-bg info-label" ng-class="{'invisible' : stage > 4}">
+		<div class="label-bg info-label" ng-show="stage < 6">
 			<button ng-click="toggleMenu('info','video')" class="info-btn"  ng-show="'case2.video' | includedByState"></button>
 			<button class="info-btn" ng-click="toggleMenu('info','assessment')" ng-show="'case2.assessment' | includedByState"></button>
 		</div>
 		
-		<div class="label-bg hint-label" ng-class="{'invisible' : stage > 4}">
+		<div class="label-bg hint-label" ng-show="stage < 6">
 			<button class="hint-btn" ng-click="toggleMenu('hint','video')" ng-show="'case2.video' | includedByState"></button>
 			<button class="hint-btn" ng-click="toggleMenu('hint','assessment')" ng-show="'case2.assessment' | includedByState"></button>
 		</div>
 
-		<div class="label-bg expert-label" ng-class="{'invisible' : stage > 4}">
+		<div class="label-bg expert-label" ng-show="stage < 6">
 			<button class="expert-btn" ng-click="toggleMenu('expert','video')" ng-show="'case2.video' | includedByState"></button>
 			<button class="expert-btn" ng-click="toggleMenu('expert','assessment')" ng-show="'case2.assessment' | includedByState"></button>
 		</div>
@@ -175,11 +175,17 @@
 		</ul>
 
 		<button>
-			<a href="http://www.er.xarelto.com" target="_blank"> <span class="fa fa-share-square"></span> ER website</a>
+			<a href="http://www.er.xarelto.com" target="_blank"> 
+				<span class="fa fa-share-square"></span> 
+				<span>ER website</span>
+			</a>
 		</button> 
 
 		<button>
-			<a href="certificates/certificate.pdf" download> <span class="fa fa-file-text"></span> Module Certificate</a>
+			<a href="certificates/certificate.pdf" download> 
+				<span class="fa fa-file-text"></span> 
+				<span>Module Certificate</span>
+			</a>
 		</button>
 		</div>
 	</div>

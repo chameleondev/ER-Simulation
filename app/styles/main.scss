@@ -102,8 +102,8 @@ div,button{
 	font-size: 60px;
     opacity: 0.7;
     position: absolute;
-    top: 55px;
-    left: 95px;
+    top: 58px;
+    left: 90px;
 }
 
 .contents-title{
@@ -116,6 +116,10 @@ div,button{
 .contents-subtitle{
 	font-size:22px;
 	margin-bottom:38px;
+}
+
+.no-bg-color{
+	background-color:rgba(0,0,0,0) !important;
 }
 
 /* This is how you would create a theme called "my-custom-theme": */
@@ -289,6 +293,10 @@ div,button{
 
 	  &.case-end{
 	  	z-index: 999;
+
+	  	.fa{
+	  		margin-right:7px;
+	  	}
 	  }
 
 	  .confirm{
@@ -306,6 +314,7 @@ div,button{
 			&.end {
 				width: 1024px;
 				height: 768px;
+				background:rgba($secondaryBlue,0.95);
 
 				.wrapper{
 					width: 625px;
@@ -1046,6 +1055,10 @@ div,button{
 				font-size: 14px;
 			    padding: 20px;
 			    float: left;
+
+			    &.case2 {
+			    	padding-top:29px;
+			    }
 			}
 
 			.case-icon{
@@ -1407,10 +1420,6 @@ div,button{
 			&.last{
 				margin-top: 10px;
 			}
-		  }
-
-		  p{
-		  	text-align: center;
 		  }
 
 		  li{
