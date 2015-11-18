@@ -146,8 +146,12 @@ angular.module('ersimulationToolApp')
 			break;
 
 			case 3 :
-				if($('.form3 .correct.active:not(.missed)').length = 1){
-					$('.end-result').html('Correct, one more answer to find - Try again');
+				if($('.form3 .correct.active:not(.missed)').length === 1){
+					if (count === 3) {
+						$('.end-result').html('You have selected one correct answer');
+					} else {
+						$('.end-result').html('Correct, one more answer to find - Try again');
+					}
 				} else {
 					$('.end-result').html('Incorrect - Try again');
 				}

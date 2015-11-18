@@ -1541,6 +1541,15 @@ div,button{
 				right: -35px;
 				bottom: 3px;
 			}
+
+			.incorrect-help2{
+				@include at2x('../images/help-icon-warn',png, 22px, 22px);
+				width: 22px;
+				height: 22px;
+				position: absolute;
+				right: -35px;
+				bottom: 3px;
+			}
 			
 		}
 
