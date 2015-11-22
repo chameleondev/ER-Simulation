@@ -126,7 +126,7 @@ angular.module('ersimulationToolApp')
 			break;
 
 			case 3 :
-				$('.end-result').html('Incorrect - Try again');
+				$('.end-result').html('There is still an answer to find');
 			break;
 
 		}

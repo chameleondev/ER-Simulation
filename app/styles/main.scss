@@ -1523,6 +1523,11 @@ div,button{
 			}
 
 			&.warning{
+
+				.assessment-selection{
+					background: $missedOrange;
+				}
+				
 				.help,.help2{
 					@include at2x('../images/help-icon-warn',png, 22px, 22px);
 					width: 22px;
