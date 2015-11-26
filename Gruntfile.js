@@ -372,7 +372,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            '*.{ico,png,txt,xml}',
+            '*.{ico,png,txt,xml,json}',
             '.htaccess',
             '*.html',
             'views/**/*.html',
@@ -424,7 +424,15 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
-    }
+    },
+
+    nwjs: {
+      options: {
+          platforms: ['linux'],
+          buildDir: './executable', // Where the build version of my NW.js app is saved
+      },
+      src: ['./dist'] // Your NW.js app
+    },
   });
 
 

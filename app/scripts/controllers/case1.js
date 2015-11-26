@@ -8,10 +8,25 @@
  * Controller of the ersimulationToolApp
  */
 angular.module('ersimulationToolApp')
-  .controller('Case1Ctrl', function ($scope,$timeout,$rootScope,$state) {
+  .controller('Case1Ctrl', function ($scope,$timeout,$rootScope,$state,Nw) {
 
+  	// if(is_nwjs()){
+  	// 	alert('nw js!');
+  	// 	$scope.osType = Nw.osType();
+  	// }
+  	
 
   	window.scope = $scope;
+
+  	$scope.form = {};
+
+  	scope.createCerificate = function(uri, name){
+  		$scope.cert = !$scope.cert;
+  		var link = document.createElement("a");
+	    link.download = name;
+	    link.href = uri;
+	    link.click();
+  	};
 
 	$scope.showMenu = function(){
 		$timeout(function(){

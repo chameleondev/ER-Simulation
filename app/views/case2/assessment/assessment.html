@@ -540,7 +540,7 @@
 					<i tooltip-missed class="help" title="Correct – CTPA is the imaging technique of choice to confirm a diagnosis of PE; an immediate CTPA should be arranged"></i> 
 			</div>
 
-			<div class="answer-row incorrect" ng-class="{'active':form.ventilation}">
+			<div class="answer-row incorrect warning" ng-class="{'active':form.ventilation}">
 
 				<label 
 				for="ventilation" 
@@ -560,7 +560,7 @@
 
 					<!-- <i tooltip-incorrect class="help" title="Less likely to give a definitive PE diagnosis compared with CTPA"></i>  -->
 
-					<i tooltip-missed class="incorrect-help2" title="Less likely to give a definitive PE diagnosis compared with CTPA"></i> 
+					<i tooltip-missed class="incorrect-help2" title="Less likely to give a definitive diagnosis than CTPA but may be used in patients for whom CTPA is inappropriate, e.g. allergy to contrast dye"></i> 
 			</div>
 
 			<div class="answer-row correct" ng-class="{'active':form.anticoagulant}">
@@ -657,7 +657,7 @@
 
 				</ul>
 
-				<img src="images/ct-scan.png" alt="">
+				<div class="ct-scan"></div>
 
 				<h1>Prognosis and Treatment: Guidance</h1>
 

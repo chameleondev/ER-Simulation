@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * @ngdoc overview
  * @name ersimulationToolApp
@@ -8,6 +7,11 @@
  *
  * Main module of the application.
  */
+
+ // console.log(process.pid);
+// var gui = nw.require(nw.gui);
+// gui.Window.get().showDevTools(); 
+
 angular
   .module('ersimulationToolApp', [
     'ngAnimate',

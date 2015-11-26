@@ -124,12 +124,27 @@
 		</button> 
 
 		<button>
-			<a href="certificates/certificate.pdf" download> 
+			<a ng-click="cert = !cert"> 
 				<span class="fa fa-file-text"></span> 
 				<span>Module Certificate</span>
 			</a>
 		</button>
 		</div>
+	</div>
+
+</div>
+
+<div class="popup priority" ng-show="cert">
+	
+	<div class="confirm decision cert">
+		
+		
+		<form name="certificateForm" ng-submit="createCerificate('certificates/ER_Certificate.pdf','certificate')">
+			<input type="text" name="name" placeholder="name" ng-model="form.name" />
+			<input type="text" name="reference" placeholder="reference" ng-model="form.reference" />
+			<input type="submit" value="submit"/>	
+		</form>
+
 	</div>
 
 </div>

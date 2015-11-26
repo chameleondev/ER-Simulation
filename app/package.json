@@ -1,4 +1,5 @@
 {
+  "node-main": "index.js",
   "main": "index.html",
   "name": "ER-Simulation Training Tool",
   "description": "Training tool for DVT",
