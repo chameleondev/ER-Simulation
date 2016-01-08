@@ -1,5 +1,4 @@
 {
-  "node-main": "index.js",
   "main": "index.html",
   "name": "ER-Simulation Training Tool",
   "description": "Training tool for DVT",
@@ -14,8 +13,9 @@
     "height": 768,
     "min_width" : 1024,
     "min_height" : 768,
-    "position": "mouse",
-    "resizable" : false
+    "position": "center",
+    "fullscreen": true,
+    "resizable" : true
   },
   "webkit": {
     "plugin": true

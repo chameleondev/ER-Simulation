@@ -3,7 +3,6 @@
 @import 'myMixins';
 @import 'myExtensions';
 
-
 @font-face {
     font-family: 'source_sans_prolight';
     src: url('../fonts/SourceSansPro-Light-webfont.eot');
@@ -60,6 +59,7 @@ body{
 	font-family: 'source_sans_prolight';
 	margin: 0;
 	padding: 0;
+	background:black;
 
 	.loader{
 		position: absolute;
@@ -94,6 +94,10 @@ div,button{
 	outline: none;
 }
 
+.absolute-center{
+	@extend %absolute-center;
+}
+
 .invisible{
 	visibility:hidden;
 }
@@ -104,6 +108,11 @@ div,button{
     position: absolute;
     top: 58px;
     left: 90px;
+}
+
+.fa-sort-desc{
+	position: relative;
+    top: -7px;
 }
 
 .contents-title{
@@ -326,7 +335,49 @@ div,button{
 
 		&.decision{
 
+			&.cert{
+				width: 500px;
+				height: 450px;
+
+				.message{
+					position: relative;
+    				top: -120px;
+				}
+
+				input[type='submit']{
+					background: $homeBlue;
+				    border: none;
+				    color: white;
+				    width: 338px;
+				    height: 50px;
+				}
+
+				form{
+				    padding: 110px 0;
+				    width: 340px;
+				    margin: 0 auto;
+
+				    label{
+				        display: block;
+					    float: left;
+					    font-size: 18px;
+				    }
+				}
+
+				.close{
+					position: absolute;
+					top: 20px;
+					left: 450px;
+					z-index: 1000;
+					@include at2x('../images/close-drawer-icon',png, 30px, 30px);
+					width: 30px;
+					height: 30px;
+				}
+			}
+
 			width: 700px;
+
+
 
 			&.end {
 				width: 1024px;
@@ -435,6 +486,12 @@ div,button{
   			}
 		}
 
+		&.pdf{
+			width: 984px;
+  			height: 728px;
+  			padding:20px;
+		}
+
 		&.dispatch{
 			button{
 				margin-top: 80px;
@@ -493,7 +550,6 @@ div,button{
 .container{
   height: 768px;
   width: 1024px;
-  position: relative;
   overflow: hidden;
   background: white;
 
@@ -1047,6 +1103,41 @@ div,button{
 			font-size: 16px;
 			line-height: 28px;
 		}
+
+		.circle{
+			border-radius:50%;
+			height:50px;
+			width: 50px;
+			font-size:20px;
+			background:$secondaryBlue;
+			color:white;
+			text-align: center;
+			margin: 12px 0;
+    		display: inline-block;
+    		position: absolute;
+    		bottom: 40px;
+
+    		&.shutdown{
+   	 			left: 220px;
+    		}
+
+    		&.fullscreen{
+   	 			left: 160px;
+    		}
+
+    		&.spc{
+   	 			left: 100px;
+    		}
+
+    		&.pi{
+    			left: 40px;
+    		}
+
+    		span{
+    			display: inline-block;
+    			margin: 12px 0;
+    		}
+		}
 	}
 
 	.right{
@@ -1524,9 +1615,49 @@ div,button{
 
 	.ng-submitted{
 
+		.but .assessment-selection{
+			.result{
+				@include at2x('../images/selected-icon',png, 17px, 17px);
+				width: 17px;
+				height: 17px;
+			}
+		}
+
+		.warning{
+
+			.assessment-selection{
+				background: $missedOrange;
+				color:white;
+			}
+			
+			.help,.help2{
+				@include at2x('../images/help-icon-warn',png, 22px, 22px);
+				width: 22px;
+				height: 22px;
+				position: absolute;
+				right: -35px;
+				bottom: 3px;
+			}
+		}
+
+		.incorrect-help2{
+			@include at2x('../images/help-icon-warn',png, 22px, 22px);
+			width: 22px;
+			height: 22px;
+			position: absolute;
+			right: -35px;
+			bottom: 3px;
+		}
+
 		.answer-row.active.incorrect{
 
-			
+			&.but .assessment-selection{
+				.result{
+					@include at2x('../images/selected-icon',png, 17px, 17px);
+					width: 17px;
+					height: 17px;
+				}
+			}
 
 			.assessment-selection{
 				background: $incorrect;
@@ -1972,15 +2103,95 @@ div,button{
 }
 
 .blocker-popup{
-	height:600px;
-	width:700px;
+	height:768px;
+	width:1024px;
 	background:$secondaryBlue;
 	color:white;
 	@extend %absolute-center;
+	position:absolute;
+    top: 1535px;
+    @include transition-property(all);
+	@include transition-duration(1s);	
+
+    &.active{
+    	top:0;
+    }
+
+	.left-content,.right-content{
+		width: 460px;
+	    padding: 0 15px;
+	    float: left;
+	    overflow: auto;
+	    height: 785px;
+	    display:block;
+	}
+
+	.left-content{
+		border-right :solid 2px white;
+	}
+
+	.footer{
+		width:100%;
+		float: left;
+		overflow: auto;
+		display:block;
+	}
+
+	.sub-header{
+		font-size: 22px;
+	}
+
+	.table-info{
+		background:$lightGrey;
+		color:#000;
+		border-collapse:collapse;
+		width:470px;
+
+		tr{
+			height:30px;
+			border-bottom: solid 1px white;
+
+			&.table-header{
+				height:45px;
+			}
+		}
+
+		
+
+		.table-sub-header{
+			text-align:left;
+			padding-left:5px;
+		}
+
+		.fa{
+			color: $highlightedBlue;
+			padding:0 8px;
+			float: left;
+		}
+
+		.second-col{
+			background: $labelGrey;
+			padding-left:5px;
+		}
+
+		.table-footer{
+			font-weight:bold;
+			text-align:center;
+			padding:0;
+		}
+	}
+	
+	.table-header{
+		background : $highlightedBlue;
+		color: white;
+		height: 45px;
+    	font-size: 20px;
+	}
 
 	.ct-scan{
-		width :499px;
-		height: 426px;
+		width :429px;
+		height: 366px;
+		margin:0 auto;
 		background-image: url('../images/ct-scan.png');
 	}
 
@@ -2038,12 +2249,13 @@ div,button{
 
 	h1{
 		 color: white;
+		 margin-top: 20px;
 	}
 
 	.close{
 		position: absolute;
-		top: -5px;
-		left: 625px;
+		top: 5px;
+		left: 950px;
 		z-index: 1000;
 		@include at2x('../images/close-drawer-icon',png, 30px, 30px);
 		width: 30px;
@@ -2122,6 +2334,40 @@ div,button{
 			padding-right: 45px;
 		}
 
+	}
+}
+
+.pdf{
+	
+	canvas{
+		    background: white;
+		    display: block;
+		    margin: 0 auto;
+	}
+
+	button{
+	    position: absolute;
+	    top: 345px;
+	    height: 50px;
+    	width: 50px;
+
+	    &.previous{
+	    	left: 100px;
+	    }
+
+	    &.next{
+	    	right: 100px;
+	    }
+	}
+
+	.close{
+		position: absolute;
+		top: 20px;
+		right: 105px;
+		z-index: 1000;
+		@include at2x('../images/close-drawer-icon',png, 30px, 30px);
+		width: 30px;
+		height: 30px;
 	}
 }
 

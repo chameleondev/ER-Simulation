@@ -102,7 +102,7 @@
 		<p>Follow-up and patient education</p>
 
 		<ul class="right-list">
-			<li>Before the patient is discharged, advice should be given, including <sup>1</sup>:
+			<li>Before the patient is discharged, advice should be given, including:<sup>1</sup>
 				<ul>
 					<li>Current dosing, frequency, duration and any dose changes needed</li>
 					<li>Signs and symptoms of recurrent VTE and bleeding events</li>
@@ -138,12 +138,17 @@
 	
 	<div class="confirm decision cert">
 		
+		<i class="close" ng-click="cert = !cert"></i>
 		
-		<form name="certificateForm" ng-submit="createCerificate('certificates/ER_Certificate.pdf','certificate')">
-			<input type="text" name="name" placeholder="name" ng-model="form.name" />
-			<input type="text" name="reference" placeholder="reference" ng-model="form.reference" />
-			<input type="submit" value="submit"/>	
+		<form name="certificateForm" ng-submit="createCerificate(form.name,form.reference,'Case1')">
+			<label>Name</label>
+			<input type="text" name="name" placeholder="" ng-model="form.name" />
+			<label>Registration Number</label>
+			<input type="text" name="reference" placeholder="" ng-model="form.reference" />
+			<input type="submit" value="Submit"/>	
 		</form>
+
+		<p class="message">You can find your certificate in the application root folder</p>
 
 	</div>
 

@@ -540,7 +540,7 @@
 					<i tooltip-missed class="help" title="Correct – CTPA is the imaging technique of choice to confirm a diagnosis of PE; an immediate CTPA should be arranged"></i> 
 			</div>
 
-			<div class="answer-row incorrect warning" ng-class="{'active':form.ventilation}">
+			<div class="answer-row incorrect but warning" ng-class="{'active':form.ventilation}">
 
 				<label 
 				for="ventilation" 
@@ -627,195 +627,218 @@
 					<i tooltip-incorrect class="help" title="If PE suspected, a diagnostic test is required"></i> 
 			</div>
 			
-			<div class="popup" ng-show="showSwiper">
-			<div class="blocker-popup">
-			<div  scroller scrollheight="540" class="blocker-content">
-			<div>
-				<i ng-click="showSwiper = false" class="close"></i>
-				
-				<h1>Diagnostics: Results</h1>
+			<!-- <div class="popup" ng-show="showSwiper">
+				<div class="blocker-popup">
+				<div  scroller scrollheight="540" class="blocker-content">
+				<div>
+					<i ng-click="showSwiper = false" class="close"></i>
+					
+					<h1>Diagnostics: Results</h1>
 
-				<ul class="right-list">
-					<li class="list-header"> <i class="header-icon"></i>Blood test results
-						<ul class="list-content">
-							<li>D-dimer elevated; VTE should not be ruled out</li>
-							<li>Troponin levels do not indicate MI or acute coronary syndrome</li>
-						</ul>
-					</li>
-
-					<li class="list-header"> <i class="header-icon"></i>Chest X-ray
-						<ul class="list-content">
-							<li>Imaging shows no pneumothorax; confirms no pneumonia</li>
-						</ul>
-					</li>
-
-					<li class="list-header">CTPA 
-						<ul class="list-content">
-							<li>Imaging confirms a bilateral PE with no evidence of right heart strain</li>
-						</ul>
-					</li>
-
-				</ul>
-
-				<div class="ct-scan"></div>
-
-				<h1>Prognosis and Treatment: Guidance</h1>
-
-				<p>Risk assessment: PE severity</p>
-
-				<table class="table-info">
-					<tr>
-						<th>Simplified PESI score (sPESI)</th>
-						<th></th>
-					</tr>
-					<tr>
-						<th>Parameter</th>
-						<th>Points</th>
-					</tr>
-					<tr>
-						<td>Age</td>
-						<td>1 (if age >80 years)</td>
-					</tr>
-					<tr>
-						<td>Cancer</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Chronic heart failure or chronic pulmonary disease</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Pulse rate ≥110 bpm</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Systolic blood pressure &lt;100 mm Hg</td>
-						<td>1</td>
-					</tr>
-					<tr>
-						<td>Arterial oxyhaemoglobin saturation &lt;90%</td>
-						<td>1</td>
-					</tr>
-				</table>
-
-				<p>0 points = 30-day mortality risk 1.0% (95% CI 0.0–2.1%) <br>
-					≥1 point = 30-day mortality rate 10.9% (95% CI 8.5–13.2%)</p>
-
-				<p>ESC 2014 PE guideline classification:</p>
-
-				<ul class="right-list">
-					<li class="list-header"> <i class="header-icon"></i>sPESI=0 (PESI class I–II): Low risk</li>
-					<li class="list-header"> <i class="header-icon"></i>sPESI≥1 (PESI class III–IV): Intermediate risk</li>
-					<ul>
-						<li>RV enlargement AND positive lab markers (MI or heart failure): Intermediate-high risk</li>
-						<li>RV enlargement OR positive lab markers OR both tests negative: Intermediate-low ris</li>
-					</ul>
-					<li>Shocked/hypotensive patient: High risk</li>
-				</ul>
-
-				<h1>References</h1>
-				
-				<p>
-					<small>
-						Konstantinides S et al. 2014 ESC Guidelines on the diagnosis and management of acute pulmonary embolism. Eur Heart J 2014;35:3033–3069<br>
-
-						Jimenez D et al. Simplification of the Pulmonary Embolism Severity Index for prognostication in patients with acute symptomatic pulmonary embolism. Arch Intern Med 2010;170:1383–1389
-					</small>
-				</p>
-				
-			</div>
-			</div>
-			
-			<!-- <div class="swiper-container" swiper>
-				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-					<div class="swiper-content">
-						<h1>Diagnosis: Results</h1>
-
-						<ul>
-							<li>Blood test results
-								<ul>
-									<li>D-dimer elevated; VTE should not be ruled out</li>
-									<li>Troponin levels do not indicate MI or acute coronary syndrome</li>
-								</ul>
-							</li>
-
-							<li>Chest X-ray
-								<ul>
-									<li>Imaging shows no pneumothorax; confirms no pneumonia</li>
-								</ul>
-							</li>
-
-							<li>CTPA 
-								<ul>
-									<li>Imaging confirms a bilateral PE with no evidence of right heart strain</li>
-								</ul>
-							</li>
-
-						</ul>
-					</div>
-					</div>
-					<div class="swiper-slide">
-					<div class="swiper-content">
-						<h1>Prognosis and Treatment: Guidance</h1>
-
-						<p>Risk assessment: PE severity</p>
-
-						<table class="table-info">
-							<tr>
-								<th>Simplified PESI score (sPESI)</th>
-								<th></th>
-							</tr>
-							<tr>
-								<th>Parameter</th>
-								<th>Points</th>
-							</tr>
-							<tr>
-								<td>Age</td>
-								<td>1 (if age >80 years)</td>
-							</tr>
-							<tr>
-								<td>Cancer</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>Chronic heart failure or chronic pulmonary disease</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>Pulse rate ≥110 bpm</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>Systolic blood pressure &lt;100 mm Hg</td>
-								<td>1</td>
-							</tr>
-							<tr>
-								<td>Arterial oxyhaemoglobin saturation &lt;90%</td>
-								<td>1</td>
-							</tr>
-						</table>
-
-						<p>0 points = 30-day mortality risk 1.0% (95% CI 0.0–2.1%) <br>
-							≥1 point = 30-day mortality rate 10.9% (95% CI 8.5–13.2%)</p>
-
-						<p>ESC 2014 PE guideline classification:</p>
-
-						<ul>
-							<li>sPESI=0 (PESI class I–II): Low risk</li>
-							<li>sPESI≥1 (PESI class III–IV): Intermediate risk</li>
-							<ul>
-								<li>RV enlargement AND positive lab markers (MI or heart failure): Intermediate-high risk</li>
-								<li>RV enlargement OR positive lab markers OR both tests negative: Intermediate-low ris</li>
+					<ul class="right-list">
+						<li class="list-header"> <i class="header-icon"></i>Blood test results
+							<ul class="list-content">
+								<li>D-dimer elevated; VTE should not be ruled out</li>
+								<li>Troponin levels do not indicate MI or acute coronary syndrome</li>
 							</ul>
-							<li>Shocked/hypotensive patient: High risk</li>
+						</li>
+
+						<li class="list-header"> <i class="header-icon"></i>Chest X-ray
+							<ul class="list-content">
+								<li>Imaging shows no pneumothorax; confirms no pneumonia</li>
+							</ul>
+						</li>
+
+						<li class="list-header">CTPA 
+							<ul class="list-content">
+								<li>Imaging confirms a bilateral PE with no evidence of right heart strain</li>
+							</ul>
+						</li>
+
+					</ul>
+
+					<div class="ct-scan"></div>
+
+					<h1>Prognosis and Treatment: Guidance</h1>
+
+					<p>Risk assessment: PE severity</p>
+
+					<table class="table-info">
+						<tr>
+							<th>Simplified PESI score (sPESI)</th>
+							<th></th>
+						</tr>
+						<tr>
+							<th>Parameter</th>
+							<th>Points</th>
+						</tr>
+						<tr>
+							<td>Age</td>
+							<td>1 (if age >80 years)</td>
+						</tr>
+						<tr>
+							<td>Cancer</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Chronic heart failure or chronic pulmonary disease</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Pulse rate ≥110 bpm</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Systolic blood pressure &lt;100 mm Hg</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>Arterial oxyhaemoglobin saturation &lt;90%</td>
+							<td>1</td>
+						</tr>
+					</table>
+
+					<p>0 points = 30-day mortality risk 1.0% (95% CI 0.0–2.1%) <br>
+						≥1 point = 30-day mortality rate 10.9% (95% CI 8.5–13.2%)</p>
+
+					<p>ESC 2014 PE guideline classification:</p>
+
+					<ul class="right-list">
+						<li class="list-header"> <i class="header-icon"></i>sPESI=0 (PESI class I–II): Low risk</li>
+						<li class="list-header"> <i class="header-icon"></i>sPESI≥1 (PESI class III–IV): Intermediate risk</li>
+						<ul>
+							<li>RV enlargement AND positive lab markers (MI or heart failure): Intermediate-high risk</li>
+							<li>RV enlargement OR positive lab markers OR both tests negative: Intermediate-low ris</li>
 						</ul>
-					</div>
+						<li>Shocked/hypotensive patient: High risk</li>
+					</ul>
+
+					<h1>References</h1>
+					
+					<p>
+						<small>
+							Konstantinides S et al. 2014 ESC Guidelines on the diagnosis and management of acute pulmonary embolism. Eur Heart J 2014;35:3033–3069<br>
+
+							Jimenez D et al. Simplification of the Pulmonary Embolism Severity Index for prognostication in patients with acute symptomatic pulmonary embolism. Arch Intern Med 2010;170:1383–1389
+						</small>
+					</p>
+					
+				</div>
+				</div>
+				
+				</div>
+			</div> -->
+
+			<div class="blocker-popup dillon" ng-class="{'active' : showBlocker}">
+				<div  scroller scrollheight="630" class="blocker-content">
+					<div style="overflow:auto">
+					<i ng-click="showBlocker = false" class="close"></i>
+						<div class="left-content">
+							<h1>Diagnostics: Results</h1>
+
+							<ul class="right-list">
+								<li class="list-header"> <i class="header-icon"></i>Blood test results
+									<ul class="list-content">
+										<li>D-dimer elevated; VTE should not be ruled out</li>
+										<li>Troponin levels do not indicate MI or acute coronary syndrome</li>
+									</ul>
+								</li>
+
+								<li class="list-header"> <i class="header-icon"></i>Chest X-ray
+									<ul class="list-content">
+										<li>Imaging shows no pneumothorax; confirms no pneumonia</li>
+									</ul>
+								</li>
+
+								<li class="list-header">CTPA 
+									<ul class="list-content">
+										<li>Imaging confirms a bilateral PE with no evidence of right heart strain</li>
+									</ul>
+								</li>
+
+							</ul>
+
+							<div class="ct-scan"></div>
+						</div>
+						<div class="right-content">
+							<h1>Prognosis and Treatment: Guidance</h1>
+
+							<p class="sub-header">Risk assessment: PE severity</p>
+
+							<table class="table-info" border="0" cellpadding="0" cellspacing="0">
+								<tr class="table-header">
+									<th colspan="2">Simplified PESI score (sPESI)</th>
+								</tr>
+								<tr>
+									<th class="table-sub-header">Parameter</th>
+									<th class="second-col table-sub-header">Points</th>
+								</tr>
+								<tr>
+									<td><span class="fa fa-angle-right"></span>Age</td>
+									<td class="second-col">1 (if age >80 years)</td>
+								</tr>
+								<tr>
+									<td><span class="fa fa-angle-right"></span>Cancer</td>
+									<td class="second-col">1</td>
+								</tr>
+								<tr>
+									<td>
+										<span class="fa fa-angle-right" style="float: left;"></span>
+										<span style="float: left;width: 220px;">Chronic heart failure or chronic pulmonary disease</span>
+									</td>
+									<td class="second-col">1</td>
+								</tr>
+								<tr>
+									<td><span class="fa fa-angle-right"></span>Pulse rate ≥110 bpm</td>
+									<td class="second-col">1</td>
+								</tr>
+								<tr>
+									<td><span class="fa fa-angle-right"></span>Systolic blood pressure &lt;100 mm Hg</td>
+									<td class="second-col">1</td>
+								</tr>
+								<tr>
+									<td><span class="fa fa-angle-right"></span>Arterial oxyhaemoglobin saturation &lt;90%</td>
+									<td class="second-col">1</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="second-col table-footer">
+										0 points = 30-day mortality risk 1.0% (95% CI 0.0–2.1%)
+									</td>
+								</tr>
+							</table>
+
+							<p>≥1 point = 30-day mortality rate 10.9% (95% CI 8.5–13.2%)</p>
+
+							<p>ESC 2014 PE guideline classification:</p>
+
+							<ul class="right-list">
+								<li class="list-header"> <i class="header-icon"></i>sPESI=0 (PESI class I–II): Low risk</li>
+								<li class="list-header"> <i class="header-icon"></i>sPESI≥1 (PESI class III–IV): Intermediate risk</li>
+								<ul>
+									<li>RV enlargement AND positive lab markers (MI or heart failure): Intermediate-high risk</li>
+									<li>RV enlargement OR positive lab markers OR both tests negative: Intermediate-low ris</li>
+								</ul>
+								<li>Shocked/hypotensive patient: High risk</li>
+							</ul>
+						</div>
+
+						<div class="footer">
+							<h1>References</h1>
+						
+							<p>
+								<small>
+									Konstantinides S et al. 2014 ESC Guidelines on the diagnosis and management of acute pulmonary embolism. Eur Heart J 2014;35:3033–3069<br>
+
+									Jimenez D et al. Simplification of the Pulmonary Embolism Severity Index for prognostication in patients with acute symptomatic pulmonary embolism. Arch Intern Med 2010;170:1383–1389
+								</small>
+							</p>
+						</div>
+
+						
+						
 					</div>
 				</div>
-				<i ng-click="showSwiper = false" class="close"></i>
-			</div> -->
-			</div>
+			
 			</div>
 		</form>
 	</div>
@@ -849,7 +872,7 @@
 					<li><div class="ul-title">A follow-up visit is arranged at the PE Clinic for 21 days' time, when the patient is switched to 20 mg rivaroxaban once daily for 3 months<sup>4,5</sup></div>
 						<ul>
 							<li>The once-daily regimen (similar to VKAs) may improve compliance and is better suited for younger, active patients</li>
-							<li>The risk of major bleeding associated with NOACs is lower than with warfarin<sup>14,15</sup></li>
+							<li>The risk of major bleeding associated with NOACs is lower than with warfarin<sup>16,17</sup></li>
 						</ul>
 					</li>
 
@@ -873,16 +896,16 @@
 				<h1>Correct</h1>
 
 				<ul class="right-list">
-					<li>The patient could be treated with daily, dose-adjusted LMWH overlapping with oral VKA, and they would need to remain in hospital until their INR was stable (this usually takes around 5 days)<sup>1,10,11</sup></li>
+					<li>The patient could be treated with daily, dose-adjusted LMWH overlapping with oral VKA, and they would need to remain in hospital until their INR was stable (this usually takes around 5 days)<sup>1,12,13</sup></li>
 
-					<li>After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions<sup>1,10,11</sup></li>
+					<li>After leaving hospital, routine coagulation monitoring/dose adjustment is needed to maintain the target INR, and the patient must comply with dietary restrictions<sup>1,12,13</sup></li>
 
-					<li><div class="ul-title">However, in this case, the patient has a low/intermediate severity PE with no comorbidities and would be a candidate for early discharge with a NOAC. <sup>1</sup> The following benefits may be observed with this approach:</div>
+					<li><div class="ul-title">However, in this case, the patient has a low/intermediate severity PE with no comorbidities and would be a candidate for early discharge with a NOAC.<sup>1</sup> The following benefits may be observed with this approach:</div>
 						
 						<ul>
-							<li>Reduced length of hospital stay <sup>16,17</sup></li>
+							<li>Reduced length of hospital stay <sup>18&ndash;20</sup></li>
 							<li>Reduced impact on patient’s quality of life – no need for routine coagulation monitoring, no known dietary restrictions or food interactions, can go home sooner and see her children</li>
-							<li>Lower risk of bleeding <sup>14,15</sup></li>
+							<li>Lower risk of bleeding <sup>16,17</sup></li>
 						</ul>
 
 					</li>
@@ -906,7 +929,7 @@
 
 					<li><div class="ul-title">At discharge, a follow-up visit should be arranged for 21 days after rivaroxaban was started</div>
 						<ul>
-							<li>An oral regimen with no monitoring may improve patient satisfaction <sup>18</sup></li>
+							<li>An oral regimen with no monitoring may improve patient satisfaction <sup>21</sup></li>
 							<li>For rivaroxaban, a dose change should occur at the Appointment at 21 days (15 mg bid to 20 mg od) <sup>4,5</sup></li>
 						</ul>
 					</li>

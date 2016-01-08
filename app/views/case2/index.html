@@ -160,7 +160,7 @@
 		<p>Follow-up and patient education</p>
 
 		<ul class="right-list">
-			<li>Before the patient is discharged, advice should be given, including <sup>1</sup>:
+			<li>Before the patient is discharged, advice should be given, including:<sup>1</sup>
 				<ul>
 					<li>Current dosing, frequency, duration and any dose changes needed</li>
 					<li>If using rivaroxaban, tablets should be taken with food</li>
@@ -182,12 +182,34 @@
 		</button> 
 
 		<button>
-			<a href="certificates/certificate.pdf" download> 
+			<a ng-click="cert = !cert"> 
 				<span class="fa fa-file-text"></span> 
 				<span>Module Certificate</span>
 			</a>
 		</button>
 		</div>
+	</div>
+
+</div>
+
+
+<div class="popup priority" ng-show="cert">
+	
+	<div class="confirm decision cert">
+		
+		<i class="close" ng-click="cert = !cert"></i>
+		
+		<form name="certificateForm" ng-submit="createCerificate(form.name,form.reference,'Case2')">
+			<label>Name</label>
+			<input type="text" name="name" placeholder="" ng-model="form.name" />
+			<label>Registration Number</label>
+			<input type="text" name="reference" placeholder="" ng-model="form.reference" />
+			<input type="submit" value="Submit"/>	
+		</form>
+
+		<p class="message">You can find your certificate in the application root folder</p>
+
+
 	</div>
 
 </div>

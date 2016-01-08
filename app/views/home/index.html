@@ -12,6 +12,26 @@
 
 		<p>Working through the patient simulations, guided by helpful hints, consultant advice and learning materials, will help you to apply scientific knowledge to clinical  practice. Decision points indicate the key stages of diagnosis and assessment and provide an opportunity to evaluate your level of understanding in each case.</p>
 
+		<div class="circle spc" ng-click="spc = !spc">
+			<span>SPC</span>
+		</div>
+
+		<div class="circle pi" ng-click="pi = !pi">
+			<span>PI</span>
+		</div>
+
+		<div class="circle fullscreen" ng-click="fullscreen()">
+			<span>
+				<i class="fa fa-arrows-alt"></i>
+			</span>
+		</div>
+
+		<div class="circle shutdown" ng-click="shutdown()">
+			<span>
+				<i class="fa fa-power-off"></i>
+			</span>
+		</div>
+
 	</div>
 
 	<div class="right">
@@ -54,3 +74,26 @@
 
 <div ui-view></div>
 
+<div class="popup" ng-show="spc">
+	
+	<div class="pdf">
+
+		<div class="wrapper" ng-controller="spcCtrl" ng-if="spc">
+			<ng-pdf template-url="views/home/viewer.html" ></ng-pdf>
+		</div>
+		
+	</div>
+
+</div>
+
+<div class="popup" ng-show="pi">
+	
+	<div class="pdf">
+
+		<div class="wrapper" ng-controller="piCtrl" ng-if="pi">
+			<ng-pdf template-url="views/home/viewer.html" ></ng-pdf>
+		</div>
+		
+	</div>
+
+</div>

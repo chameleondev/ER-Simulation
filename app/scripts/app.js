@@ -17,7 +17,8 @@ angular
     'ngAnimate',
     'ngTouch',
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'pdf'
 	// 'com.2fdevs.videogular',
 	// 'com.2fdevs.videogular.plugins.controls',
 	// 'com.2fdevs.videogular.plugins.overlayplay',
@@ -57,17 +58,29 @@ angular.module('ersimulationToolApp')
 	    .state('home', {
 	      url: '/',
 	      templateUrl: 'views/home/index.html',
-	      controller : function($rootScope){
+	      controller : function($rootScope,$scope,Nw){
 
 	      	window.rootsc = $rootScope;
 	      	$rootScope.stage = 1;
+
+	      	$scope.fullscreen = Nw.toggleFullscreen;
+
+	      	$scope.shutdown = Nw.shutdown;
 	      }
 	    })
 
 	    .state('home.terms', {
-	      url: '/',
 	      templateUrl: 'views/home/terms.html'
 	    })
+
+	    .state('home.spc', {
+	      templateUrl: 'views/home/spc.html'
+	    })
+
+	    .state('home.pi', {
+	      templateUrl: 'views/home/pi.html'
+	    })
+
 
 	    .state('case1', {
 	      url: '/',
@@ -326,3 +339,11 @@ angular.module('ersimulationToolApp')
 
 	}
 ]);
+
+angular.module('ersimulationToolApp').controller('spcCtrl', function($scope){
+	$scope.pdfUrl = 'pdf/Rivaroxaban_EU_SPC.PDF';
+});
+
+angular.module('ersimulationToolApp').controller('piCtrl', function($scope){
+	$scope.pdfUrl = 'pdf/Rivaroxaban_UK_PI.PDF';
+});

@@ -10,23 +10,17 @@
 angular.module('ersimulationToolApp')
   .controller('Case1Ctrl', function ($scope,$timeout,$rootScope,$state,Nw) {
 
-  	// if(is_nwjs()){
-  	// 	alert('nw js!');
-  	// 	$scope.osType = Nw.osType();
-  	// }
-  	
+  window.scope = $scope;
 
-  	window.scope = $scope;
+  $scope.form = {};
 
-  	$scope.form = {};
+  $scope.createCerificate = Nw.createPdf;
 
-  	scope.createCerificate = function(uri, name){
-  		$scope.cert = !$scope.cert;
-  		var link = document.createElement("a");
-	    link.download = name;
-	    link.href = uri;
-	    link.click();
-  	};
+  $scope.createCerificate = function(name,ref,appCase){
+    Nw.createPdf(name,ref,appCase);
+    $scope.cert = !$scope.cert;
+  };
+
 
 	$scope.showMenu = function(){
 		$timeout(function(){

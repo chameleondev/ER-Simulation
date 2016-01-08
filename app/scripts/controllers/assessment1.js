@@ -170,21 +170,21 @@ angular.module('ersimulationToolApp')
 				// on first submit of answers highlights wrong answers or proceeds to next section of case
 				submit();
 				$('.right-btn button:eq(1)').html('TRY AGAIN');
-				$("input").prop('disabled', true);
+				$("form[novalidate] input").prop('disabled', true);
 				allCorrectCheck();
 				break;
 
 				case 2 :
 				resetForm();
 				$('.right-btn button:eq(1)').html('SUBMIT');
-				$("input").prop('disabled', false);
+				$("form[novalidate] input").prop('disabled', false);
 				break;
 
 				case 3 :
 				submit();
 				// highlights wrong answers and selects correct ones
 				$('form .correct,form .warning').addClass('active');
-				$("input").prop('disabled', true);
+				$("form[novalidate] input").prop('disabled', true);
 				$('.correct .ng-pristine').parent().parent().addClass('missed');
 				$('.right-btn button:eq(1)').html('NEXT STEP')
 				allCorrectCheck();
@@ -204,7 +204,7 @@ angular.module('ersimulationToolApp')
 
 			if ($scope.assessment_form4.$submitted) {
 				resetForm();
-				$("input").prop('disabled', false);
+				$("form[novalidate] input").prop('disabled', false);
 				$scope.showDecision = false;
 				$('.right-btn button:eq(1)').html('SUBMIT');
 			} else {
@@ -212,7 +212,7 @@ angular.module('ersimulationToolApp')
 				submit();
 
 				$('.right-btn button:eq(1)').html('TRY AGAIN');
-				$("input").prop('disabled', true);
+				$("form[novalidate] input").prop('disabled', true);
 				allCorrectCheck();
 
 

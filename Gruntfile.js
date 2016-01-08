@@ -142,8 +142,7 @@ module.exports = function (grunt) {
           dot: true,
           src: [
             '.tmp',
-            '<%= yeoman.dist %>/{,*/}*',
-            '!<%= yeoman.dist %>/.git{,*/}*'
+            '<%= yeoman.dist %>/{,*/}*'
           ]
         }]
       },
@@ -255,7 +254,8 @@ module.exports = function (grunt) {
         flow: {
           html: {
             steps: {
-              js: ['concat', 'uglifyjs'],
+              // js: ['concat', 'uglifyjs'],
+              js: ['concat'],
               css: ['cssmin']
             },
             post: {}
@@ -379,7 +379,10 @@ module.exports = function (grunt) {
             'images/{,*/}*.{webp}',
             'fonts/{,*/}*.*',
             'videos/{,*/}*.*',
-	    'certificates/{,*/}*.*'
+            'pdfImage/*.*',
+            'pdf/*.*',
+	          'certificates/{,*/}*.*',
+            'node_modules/**'
           ]
         }, {
           expand: true,
@@ -400,6 +403,15 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      worker: {
+        expand : true,
+        cwd : 'dist/scripts/',
+        dest : 'dist/scripts/',
+        src : 'vendor*.js',
+        rename : function(dest, src){
+          return dest + src.replace('.js', '.worker.js')
+        }
       }
     },
 
@@ -433,6 +445,19 @@ module.exports = function (grunt) {
       },
       src: ['./dist'] // Your NW.js app
     },
+
+    shell: {
+        options: {
+            stderr: false
+        },
+        buildExec: {
+            command: 'nwbuild -p osx64 -o executable -v 0.12.3 dist'
+        },
+        launchExec: {
+          command : 'nwbuild -r -v 0.12.3 dist'
+        }
+    }
+
   });
 
 
@@ -476,15 +501,20 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'cssmin',
-    'uglify',
+    // 'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    // 'htmlmin',
+    'copy:worker'
   ]);
 
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('launchnw', [
+    'shell:launchExec'
   ]);
 };

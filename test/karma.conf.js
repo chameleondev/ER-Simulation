@@ -29,6 +29,9 @@ module.exports = function(config) {
       'bower_components/Swiper/dist/js/swiper.js',
       'bower_components/tooltipster/js/jquery.tooltipster.min.js',
       'bower_components/ui-router/release/angular-ui-router.js',
+      'bower_components/pdfjs-dist/build/pdf.js',
+      'bower_components/pdfjs-dist/build/pdf.worker.js',
+      'bower_components/angular-pdf/dist/angular-pdf.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
